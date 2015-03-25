@@ -28,6 +28,8 @@
 
 - (id<ComFasterxmlJacksonAnnotationObjectIdResolver>)newForDeserializationWithId:(id)context OBJC_METHOD_FAMILY_NONE;
 
+- (void)dealloc;
+
 - (void)copyAllFieldsTo:(ComFasterxmlJacksonAnnotationSimpleObjectIdResolver *)other;
 
 @end

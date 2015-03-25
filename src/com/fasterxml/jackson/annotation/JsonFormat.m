@@ -57,7 +57,7 @@ NSString * ComFasterxmlJacksonAnnotationJsonFormat_DEFAULT_TIMEZONE_ = @"##defau
 }
 
 + (IOSObjectArray *)__annotations {
-  return [IOSObjectArray arrayWithObjects:(id[]) { [[JavaLangAnnotationTarget alloc] initWithValue:[IOSObjectArray arrayWithObjects:(id[]) { JavaLangAnnotationElementTypeEnum_get_ANNOTATION_TYPE(), JavaLangAnnotationElementTypeEnum_get_FIELD(), JavaLangAnnotationElementTypeEnum_get_METHOD(), JavaLangAnnotationElementTypeEnum_get_PARAMETER(), JavaLangAnnotationElementTypeEnum_get_TYPE() } count:5 type:[[NSObject class] getClass]]], [[JavaLangAnnotationRetention alloc] initWithValue:JavaLangAnnotationRetentionPolicyEnum_get_RUNTIME()], [[ComFasterxmlJacksonAnnotationJacksonAnnotation alloc] init] } count:3 type:[IOSClass classWithProtocol:@protocol(JavaLangAnnotationAnnotation)]];
+  return [IOSObjectArray arrayWithObjects:(id[]) { [[[JavaLangAnnotationTarget alloc] initWithValue:[IOSObjectArray arrayWithObjects:(id[]) { JavaLangAnnotationElementTypeEnum_get_ANNOTATION_TYPE(), JavaLangAnnotationElementTypeEnum_get_FIELD(), JavaLangAnnotationElementTypeEnum_get_METHOD(), JavaLangAnnotationElementTypeEnum_get_PARAMETER(), JavaLangAnnotationElementTypeEnum_get_TYPE() } count:5 type:[[NSObject class] getClass]]] autorelease], [[[JavaLangAnnotationRetention alloc] initWithValue:JavaLangAnnotationRetentionPolicyEnum_get_RUNTIME()] autorelease], [[[ComFasterxmlJacksonAnnotationJacksonAnnotation alloc] init] autorelease] } count:3 type:[IOSClass classWithProtocol:@protocol(JavaLangAnnotationAnnotation)]];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -108,12 +108,12 @@ ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum *ComFasterxmlJacksonAnnotation
       return e;
     }
   }
-  @throw [[JavaLangIllegalArgumentException alloc] initWithNSString:name];
+  @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:name] autorelease];
   return nil;
 }
 
 - (id)copyWithZone:(NSZone *)zone {
-  return self;
+  return [self retain];
 }
 
 + (void)initialize {
@@ -169,7 +169,7 @@ ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum *ComFasterxmlJacksonAnnotation
                         withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:(ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum *)sh
                                                                  withNSString:(NSString *)localeStr
                                                                  withNSString:(NSString *)tzStr {
-  return [self initComFasterxmlJacksonAnnotationJsonFormat_ValueWithNSString:p withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:sh withJavaUtilLocale:(localeStr == nil || ((jint) [localeStr length]) == 0 || [((NSString *) nil_chk(ComFasterxmlJacksonAnnotationJsonFormat_get_DEFAULT_LOCALE_())) isEqual:localeStr]) ? nil : [[JavaUtilLocale alloc] initWithNSString:localeStr] withNSString:(tzStr == nil || ((jint) [tzStr length]) == 0 || [((NSString *) nil_chk(ComFasterxmlJacksonAnnotationJsonFormat_get_DEFAULT_TIMEZONE_())) isEqual:tzStr]) ? nil : tzStr withJavaUtilTimeZone:nil];
+  return [self initComFasterxmlJacksonAnnotationJsonFormat_ValueWithNSString:p withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:sh withJavaUtilLocale:(localeStr == nil || ((jint) [localeStr length]) == 0 || [((NSString *) nil_chk(ComFasterxmlJacksonAnnotationJsonFormat_get_DEFAULT_LOCALE_())) isEqual:localeStr]) ? nil : [[[JavaUtilLocale alloc] initWithNSString:localeStr] autorelease] withNSString:(tzStr == nil || ((jint) [tzStr length]) == 0 || [((NSString *) nil_chk(ComFasterxmlJacksonAnnotationJsonFormat_get_DEFAULT_TIMEZONE_())) isEqual:tzStr]) ? nil : tzStr withJavaUtilTimeZone:nil];
 }
 
 - (instancetype)initWithNSString:(NSString *)p
@@ -184,11 +184,11 @@ withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:(ComFasterxmlJacksonAnnota
               withJavaUtilLocale:(JavaUtilLocale *)l
             withJavaUtilTimeZone:(JavaUtilTimeZone *)tz {
   if (self = [super init]) {
-    pattern_ = p;
-    shape_ = (sh == nil) ? ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_get_ANY() : sh;
-    locale_ = l;
-    _timezone_ = tz;
-    timezoneStr_ = nil;
+    ComFasterxmlJacksonAnnotationJsonFormat_Value_set_pattern_(self, p);
+    ComFasterxmlJacksonAnnotationJsonFormat_Value_set_shape_(self, (sh == nil) ? ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_get_ANY() : sh);
+    ComFasterxmlJacksonAnnotationJsonFormat_Value_set_locale_(self, l);
+    ComFasterxmlJacksonAnnotationJsonFormat_Value_set__timezone_(self, tz);
+    ComFasterxmlJacksonAnnotationJsonFormat_Value_set_timezoneStr_(self, nil);
   }
   return self;
 }
@@ -199,11 +199,11 @@ withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:(ComFasterxmlJacksonAnnota
                                                                  withNSString:(NSString *)tzStr
                                                          withJavaUtilTimeZone:(JavaUtilTimeZone *)tz {
   if (self = [super init]) {
-    pattern_ = p;
-    shape_ = (sh == nil) ? ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_get_ANY() : sh;
-    locale_ = l;
-    _timezone_ = tz;
-    timezoneStr_ = tzStr;
+    ComFasterxmlJacksonAnnotationJsonFormat_Value_set_pattern_(self, p);
+    ComFasterxmlJacksonAnnotationJsonFormat_Value_set_shape_(self, (sh == nil) ? ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_get_ANY() : sh);
+    ComFasterxmlJacksonAnnotationJsonFormat_Value_set_locale_(self, l);
+    ComFasterxmlJacksonAnnotationJsonFormat_Value_set__timezone_(self, tz);
+    ComFasterxmlJacksonAnnotationJsonFormat_Value_set_timezoneStr_(self, tzStr);
   }
   return self;
 }
@@ -217,19 +217,19 @@ withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:(ComFasterxmlJacksonAnnota
 }
 
 - (ComFasterxmlJacksonAnnotationJsonFormat_Value *)withPatternWithNSString:(NSString *)p {
-  return [[ComFasterxmlJacksonAnnotationJsonFormat_Value alloc] initWithNSString:p withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:shape_ withJavaUtilLocale:locale_ withNSString:timezoneStr_ withJavaUtilTimeZone:_timezone_];
+  return [[[ComFasterxmlJacksonAnnotationJsonFormat_Value alloc] initWithNSString:p withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:shape_ withJavaUtilLocale:locale_ withNSString:timezoneStr_ withJavaUtilTimeZone:_timezone_] autorelease];
 }
 
 - (ComFasterxmlJacksonAnnotationJsonFormat_Value *)withShapeWithComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:(ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum *)s {
-  return [[ComFasterxmlJacksonAnnotationJsonFormat_Value alloc] initWithNSString:pattern_ withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:s withJavaUtilLocale:locale_ withNSString:timezoneStr_ withJavaUtilTimeZone:_timezone_];
+  return [[[ComFasterxmlJacksonAnnotationJsonFormat_Value alloc] initWithNSString:pattern_ withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:s withJavaUtilLocale:locale_ withNSString:timezoneStr_ withJavaUtilTimeZone:_timezone_] autorelease];
 }
 
 - (ComFasterxmlJacksonAnnotationJsonFormat_Value *)withLocaleWithJavaUtilLocale:(JavaUtilLocale *)l {
-  return [[ComFasterxmlJacksonAnnotationJsonFormat_Value alloc] initWithNSString:pattern_ withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:shape_ withJavaUtilLocale:l withNSString:timezoneStr_ withJavaUtilTimeZone:_timezone_];
+  return [[[ComFasterxmlJacksonAnnotationJsonFormat_Value alloc] initWithNSString:pattern_ withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:shape_ withJavaUtilLocale:l withNSString:timezoneStr_ withJavaUtilTimeZone:_timezone_] autorelease];
 }
 
 - (ComFasterxmlJacksonAnnotationJsonFormat_Value *)withTimeZoneWithJavaUtilTimeZone:(JavaUtilTimeZone *)tz {
-  return [[ComFasterxmlJacksonAnnotationJsonFormat_Value alloc] initWithNSString:pattern_ withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:shape_ withJavaUtilLocale:locale_ withNSString:nil withJavaUtilTimeZone:tz];
+  return [[[ComFasterxmlJacksonAnnotationJsonFormat_Value alloc] initWithNSString:pattern_ withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:shape_ withJavaUtilLocale:locale_ withNSString:nil withJavaUtilTimeZone:tz] autorelease];
 }
 
 - (NSString *)getPattern {
@@ -258,7 +258,7 @@ withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:(ComFasterxmlJacksonAnnota
       return nil;
     }
     tz = JavaUtilTimeZone_getTimeZoneWithNSString_(timezoneStr_);
-    _timezone_ = tz;
+    ComFasterxmlJacksonAnnotationJsonFormat_Value_set__timezone_(self, tz);
   }
   return tz;
 }
@@ -279,13 +279,22 @@ withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:(ComFasterxmlJacksonAnnota
   return (_timezone_ != nil) || (timezoneStr_ != nil && ![timezoneStr_ isEmpty]);
 }
 
+- (void)dealloc {
+  ComFasterxmlJacksonAnnotationJsonFormat_Value_set_pattern_(self, nil);
+  ComFasterxmlJacksonAnnotationJsonFormat_Value_set_shape_(self, nil);
+  ComFasterxmlJacksonAnnotationJsonFormat_Value_set_locale_(self, nil);
+  ComFasterxmlJacksonAnnotationJsonFormat_Value_set_timezoneStr_(self, nil);
+  ComFasterxmlJacksonAnnotationJsonFormat_Value_set__timezone_(self, nil);
+  [super dealloc];
+}
+
 - (void)copyAllFieldsTo:(ComFasterxmlJacksonAnnotationJsonFormat_Value *)other {
   [super copyAllFieldsTo:other];
-  other->pattern_ = pattern_;
-  other->shape_ = shape_;
-  other->locale_ = locale_;
-  other->timezoneStr_ = timezoneStr_;
-  other->_timezone_ = _timezone_;
+  ComFasterxmlJacksonAnnotationJsonFormat_Value_set_pattern_(other, pattern_);
+  ComFasterxmlJacksonAnnotationJsonFormat_Value_set_shape_(other, shape_);
+  ComFasterxmlJacksonAnnotationJsonFormat_Value_set_locale_(other, locale_);
+  ComFasterxmlJacksonAnnotationJsonFormat_Value_set_timezoneStr_(other, timezoneStr_);
+  ComFasterxmlJacksonAnnotationJsonFormat_Value_set__timezone_(other, _timezone_);
 }
 
 + (const J2ObjcClassInfo *)__metadata {

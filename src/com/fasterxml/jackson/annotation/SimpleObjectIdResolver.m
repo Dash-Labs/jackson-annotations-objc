@@ -20,12 +20,12 @@
 - (void)bindItemWithComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey:(ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey *)id_
                                                                   withId:(id)ob {
   if (_items_ == nil) {
-    _items_ = [[JavaUtilHashMap alloc] init];
+    ComFasterxmlJacksonAnnotationSimpleObjectIdResolver_setAndConsume__items_(self, [[JavaUtilHashMap alloc] init]);
   }
   else if ([_items_ containsKeyWithId:id_]) {
-    @throw [[JavaLangIllegalStateException alloc] initWithNSString:JreStrcat("$$$@C", @"Already had POJO for id (", [[nil_chk(((ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey *) nil_chk(id_))->key_) getClass] getName], @") [", id_, ']')];
+    @throw [[[JavaLangIllegalStateException alloc] initWithNSString:JreStrcat("$$$@C", @"Already had POJO for id (", [[nil_chk(((ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey *) nil_chk(id_))->key_) getClass] getName], @") [", id_, ']')] autorelease];
   }
-  (void) [((id<JavaUtilMap>) nil_chk(_items_)) putWithId:id_ withId:ob];
+  [((id<JavaUtilMap>) nil_chk(_items_)) putWithId:id_ withId:ob];
 }
 
 - (id)resolveIdWithComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey:(ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey *)id_ {
@@ -37,12 +37,17 @@
 }
 
 - (id<ComFasterxmlJacksonAnnotationObjectIdResolver>)newForDeserializationWithId:(id)context {
-  return [[ComFasterxmlJacksonAnnotationSimpleObjectIdResolver alloc] init];
+  return [[[ComFasterxmlJacksonAnnotationSimpleObjectIdResolver alloc] init] autorelease];
+}
+
+- (void)dealloc {
+  ComFasterxmlJacksonAnnotationSimpleObjectIdResolver_set__items_(self, nil);
+  [super dealloc];
 }
 
 - (void)copyAllFieldsTo:(ComFasterxmlJacksonAnnotationSimpleObjectIdResolver *)other {
   [super copyAllFieldsTo:other];
-  other->_items_ = _items_;
+  ComFasterxmlJacksonAnnotationSimpleObjectIdResolver_set__items_(other, _items_);
 }
 
 + (const J2ObjcClassInfo *)__metadata {

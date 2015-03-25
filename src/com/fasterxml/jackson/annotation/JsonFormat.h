@@ -167,6 +167,8 @@ withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:(ComFasterxmlJacksonAnnota
 
 - (jboolean)hasTimeZone;
 
+- (void)dealloc;
+
 - (void)copyAllFieldsTo:(ComFasterxmlJacksonAnnotationJsonFormat_Value *)other;
 
 @end

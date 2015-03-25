@@ -34,7 +34,7 @@
 }
 
 + (IOSObjectArray *)__annotations {
-  return [IOSObjectArray arrayWithObjects:(id[]) { [[JavaLangAnnotationTarget alloc] initWithValue:[IOSObjectArray arrayWithObjects:(id[]) { JavaLangAnnotationElementTypeEnum_get_ANNOTATION_TYPE(), JavaLangAnnotationElementTypeEnum_get_METHOD(), JavaLangAnnotationElementTypeEnum_get_CONSTRUCTOR() } count:3 type:[[NSObject class] getClass]]], [[JavaLangAnnotationRetention alloc] initWithValue:JavaLangAnnotationRetentionPolicyEnum_get_RUNTIME()], [[ComFasterxmlJacksonAnnotationJacksonAnnotation alloc] init] } count:3 type:[IOSClass classWithProtocol:@protocol(JavaLangAnnotationAnnotation)]];
+  return [IOSObjectArray arrayWithObjects:(id[]) { [[[JavaLangAnnotationTarget alloc] initWithValue:[IOSObjectArray arrayWithObjects:(id[]) { JavaLangAnnotationElementTypeEnum_get_ANNOTATION_TYPE(), JavaLangAnnotationElementTypeEnum_get_METHOD(), JavaLangAnnotationElementTypeEnum_get_CONSTRUCTOR() } count:3 type:[[NSObject class] getClass]]] autorelease], [[[JavaLangAnnotationRetention alloc] initWithValue:JavaLangAnnotationRetentionPolicyEnum_get_RUNTIME()] autorelease], [[[ComFasterxmlJacksonAnnotationJacksonAnnotation alloc] init] autorelease] } count:3 type:[IOSClass classWithProtocol:@protocol(JavaLangAnnotationAnnotation)]];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -73,12 +73,12 @@ ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum *ComFasterxmlJacksonAnnotation
       return e;
     }
   }
-  @throw [[JavaLangIllegalArgumentException alloc] initWithNSString:name];
+  @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:name] autorelease];
   return nil;
 }
 
 - (id)copyWithZone:(NSZone *)zone {
-  return self;
+  return [self retain];
 }
 
 + (void)initialize {

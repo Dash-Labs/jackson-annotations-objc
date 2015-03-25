@@ -56,12 +56,12 @@ ComFasterxmlJacksonAnnotationPropertyAccessorEnum *ComFasterxmlJacksonAnnotation
       return e;
     }
   }
-  @throw [[JavaLangIllegalArgumentException alloc] initWithNSString:name];
+  @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:name] autorelease];
   return nil;
 }
 
 - (id)copyWithZone:(NSZone *)zone {
-  return self;
+  return [self retain];
 }
 
 + (void)initialize {

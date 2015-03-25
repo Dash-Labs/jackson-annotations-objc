@@ -45,6 +45,8 @@ __attribute__((always_inline)) inline void ComFasterxmlJacksonAnnotationObjectId
 
 - (id)generateIdWithId:(id)forPojo;
 
+- (void)dealloc;
+
 - (void)copyAllFieldsTo:(ComFasterxmlJacksonAnnotationObjectIdGenerators_Base *)other;
 
 @end

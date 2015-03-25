@@ -56,6 +56,8 @@ __attribute__((always_inline)) inline void ComFasterxmlJacksonAnnotationObjectId
 
 - (jboolean)isEqual:(id)o;
 
+- (void)dealloc;
+
 - (void)copyAllFieldsTo:(ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey *)other;
 
 @end

@@ -46,7 +46,7 @@
 
 - (instancetype)initWithIOSClass:(IOSClass *)scope {
   if (self = [super init]) {
-    _scope_ = scope;
+    ComFasterxmlJacksonAnnotationObjectIdGenerators_Base_set__scope_(self, scope);
   }
   return self;
 }
@@ -65,9 +65,14 @@
   return 0;
 }
 
+- (void)dealloc {
+  ComFasterxmlJacksonAnnotationObjectIdGenerators_Base_set__scope_(self, nil);
+  [super dealloc];
+}
+
 - (void)copyAllFieldsTo:(ComFasterxmlJacksonAnnotationObjectIdGenerators_Base *)other {
   [super copyAllFieldsTo:other];
-  other->_scope_ = _scope_;
+  ComFasterxmlJacksonAnnotationObjectIdGenerators_Base_set__scope_(other, _scope_);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -131,15 +136,15 @@
 }
 
 - (ComFasterxmlJacksonAnnotationObjectIdGenerator *)forScopeWithIOSClass:(IOSClass *)scope {
-  return (_scope_ == scope) ? self : [[ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator alloc] initWithIOSClass:scope withInt:_nextValue_];
+  return (_scope_ == scope) ? self : [[[ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator alloc] initWithIOSClass:scope withInt:_nextValue_] autorelease];
 }
 
 - (ComFasterxmlJacksonAnnotationObjectIdGenerator *)newForSerializationWithId:(id)context {
-  return [[ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator alloc] initWithIOSClass:_scope_ withInt:[self initialValue]];
+  return [[[ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator alloc] initWithIOSClass:_scope_ withInt:[self initialValue]] autorelease];
 }
 
 - (ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey *)keyWithId:(id)key {
-  return [[ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey alloc] initWithIOSClass:[self getClass] withIOSClass:_scope_ withId:key];
+  return [[[ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey alloc] initWithIOSClass:[self getClass] withIOSClass:_scope_ withId:key] autorelease];
 }
 
 - (JavaLangInteger *)generateIdWithId:(id)forPojo {
@@ -201,7 +206,7 @@
 }
 
 - (ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey *)keyWithId:(id)key {
-  return [[ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey alloc] initWithIOSClass:[self getClass] withIOSClass:nil withId:key];
+  return [[[ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey alloc] initWithIOSClass:[self getClass] withIOSClass:nil withId:key] autorelease];
 }
 
 - (jboolean)canUseForWithComFasterxmlJacksonAnnotationObjectIdGenerator:(ComFasterxmlJacksonAnnotationObjectIdGenerator *)gen {

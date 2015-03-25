@@ -81,9 +81,9 @@
                     withIOSClass:(IOSClass *)scope
                           withId:(id)key {
   if (self = [super init]) {
-    self->type_ = type;
-    self->scope_ = scope;
-    self->key_ = key;
+    ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_set_type_(self, type);
+    ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_set_scope_(self, scope);
+    ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_set_key_(self, key);
     jint h = ((jint) [nil_chk(key) hash]) + ((jint) [((NSString *) nil_chk([((IOSClass *) nil_chk(type)) getName])) hash]);
     if (scope != nil) {
       h ^= ((jint) [((NSString *) nil_chk([scope getName])) hash]);
@@ -105,11 +105,18 @@
   return ([nil_chk(other->key_) isEqual:key_]) && (other->type_ == type_) && (other->scope_ == scope_);
 }
 
+- (void)dealloc {
+  ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_set_type_(self, nil);
+  ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_set_scope_(self, nil);
+  ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_set_key_(self, nil);
+  [super dealloc];
+}
+
 - (void)copyAllFieldsTo:(ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey *)other {
   [super copyAllFieldsTo:other];
-  other->type_ = type_;
-  other->scope_ = scope_;
-  other->key_ = key_;
+  ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_set_type_(other, type_);
+  ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_set_scope_(other, scope_);
+  ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_set_key_(other, key_);
   other->hashCode__ = hashCode__;
 }
 
