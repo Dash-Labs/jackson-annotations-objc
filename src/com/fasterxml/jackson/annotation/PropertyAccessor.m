@@ -77,27 +77,4 @@ ComFasterxmlJacksonAnnotationPropertyAccessorEnum *ComFasterxmlJacksonAnnotation
   }
 }
 
-+ (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "initWithNSString:withInt:", "PropertyAccessor", NULL, 0x2, NULL },
-    { "creatorEnabled", NULL, "Z", 0x1, NULL },
-    { "getterEnabled", NULL, "Z", 0x1, NULL },
-    { "isGetterEnabled", NULL, "Z", 0x1, NULL },
-    { "setterEnabled", NULL, "Z", 0x1, NULL },
-    { "fieldEnabled", NULL, "Z", 0x1, NULL },
-  };
-  static const J2ObjcFieldInfo fields[] = {
-    { "GETTER", "GETTER", 0x4019, "Lcom.fasterxml.jackson.annotation.PropertyAccessor;", &ComFasterxmlJacksonAnnotationPropertyAccessorEnum_GETTER,  },
-    { "SETTER", "SETTER", 0x4019, "Lcom.fasterxml.jackson.annotation.PropertyAccessor;", &ComFasterxmlJacksonAnnotationPropertyAccessorEnum_SETTER,  },
-    { "CREATOR", "CREATOR", 0x4019, "Lcom.fasterxml.jackson.annotation.PropertyAccessor;", &ComFasterxmlJacksonAnnotationPropertyAccessorEnum_CREATOR,  },
-    { "FIELD", "FIELD", 0x4019, "Lcom.fasterxml.jackson.annotation.PropertyAccessor;", &ComFasterxmlJacksonAnnotationPropertyAccessorEnum_FIELD,  },
-    { "IS_GETTER", "IS_GETTER", 0x4019, "Lcom.fasterxml.jackson.annotation.PropertyAccessor;", &ComFasterxmlJacksonAnnotationPropertyAccessorEnum_IS_GETTER,  },
-    { "NONE", "NONE", 0x4019, "Lcom.fasterxml.jackson.annotation.PropertyAccessor;", &ComFasterxmlJacksonAnnotationPropertyAccessorEnum_NONE,  },
-    { "ALL", "ALL", 0x4019, "Lcom.fasterxml.jackson.annotation.PropertyAccessor;", &ComFasterxmlJacksonAnnotationPropertyAccessorEnum_ALL,  },
-  };
-  static const char *superclass_type_args[] = {"Lcom.fasterxml.jackson.annotation.PropertyAccessor;"};
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationPropertyAccessorEnum = { "PropertyAccessor", "com.fasterxml.jackson.annotation", NULL, 0x4011, 6, methods, 7, fields, 1, superclass_type_args};
-  return &_ComFasterxmlJacksonAnnotationPropertyAccessorEnum;
-}
-
 @end

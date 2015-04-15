@@ -55,19 +55,6 @@ NSString * ComFasterxmlJacksonAnnotationJsonFormat_DEFAULT_TIMEZONE_ = @"##defau
   return [IOSClass classWithProtocol:@protocol(ComFasterxmlJacksonAnnotationJsonFormat)];
 }
 
-+ (IOSObjectArray *)__annotations {
-  return [IOSObjectArray arrayWithObjects:(id[]) { [[[JavaLangAnnotationTarget alloc] initWithValue:[IOSObjectArray arrayWithObjects:(id[]) { JavaLangAnnotationElementTypeEnum_get_ANNOTATION_TYPE(), JavaLangAnnotationElementTypeEnum_get_FIELD(), JavaLangAnnotationElementTypeEnum_get_METHOD(), JavaLangAnnotationElementTypeEnum_get_PARAMETER(), JavaLangAnnotationElementTypeEnum_get_TYPE() } count:5 type:[[NSObject class] getClass]]] autorelease], [[[JavaLangAnnotationRetention alloc] initWithValue:JavaLangAnnotationRetentionPolicyEnum_get_RUNTIME()] autorelease] } count:2 type:[IOSClass classWithProtocol:@protocol(JavaLangAnnotationAnnotation)]];
-}
-
-+ (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcFieldInfo fields[] = {
-    { "DEFAULT_LOCALE_", NULL, 0x19, "Ljava.lang.String;", &ComFasterxmlJacksonAnnotationJsonFormat_DEFAULT_LOCALE_,  },
-    { "DEFAULT_TIMEZONE_", NULL, 0x19, "Ljava.lang.String;", &ComFasterxmlJacksonAnnotationJsonFormat_DEFAULT_TIMEZONE_,  },
-  };
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonFormat = { "JsonFormat", "com.fasterxml.jackson.annotation", NULL, 0x2201, 0, NULL, 2, fields, 0, NULL};
-  return &_ComFasterxmlJacksonAnnotationJsonFormat;
-}
-
 @end
 
 BOOL ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_initialized = NO;
@@ -128,28 +115,6 @@ ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum *ComFasterxmlJacksonAnnotation
     ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_BOOLEAN = [[ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum alloc] initWithNSString:@"BOOLEAN" withInt:8];
     J2OBJC_SET_INITIALIZED(ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum)
   }
-}
-
-+ (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "isNumeric", NULL, "Z", 0x1, NULL },
-    { "isStructured", NULL, "Z", 0x1, NULL },
-    { "initWithNSString:withInt:", "init", NULL, 0x1, NULL },
-  };
-  static const J2ObjcFieldInfo fields[] = {
-    { "ANY", "ANY", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonFormat$Shape;", &ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_ANY,  },
-    { "SCALAR", "SCALAR", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonFormat$Shape;", &ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_SCALAR,  },
-    { "ARRAY", "ARRAY", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonFormat$Shape;", &ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_ARRAY,  },
-    { "OBJECT", "OBJECT", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonFormat$Shape;", &ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_OBJECT,  },
-    { "NUMBER", "NUMBER", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonFormat$Shape;", &ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_NUMBER,  },
-    { "NUMBER_FLOAT", "NUMBER_FLOAT", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonFormat$Shape;", &ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_NUMBER_FLOAT,  },
-    { "NUMBER_INT", "NUMBER_INT", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonFormat$Shape;", &ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_NUMBER_INT,  },
-    { "STRING", "STRING", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonFormat$Shape;", &ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_STRING,  },
-    { "BOOLEAN", "BOOLEAN", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonFormat$Shape;", &ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_BOOLEAN,  },
-  };
-  static const char *superclass_type_args[] = {"Lcom.fasterxml.jackson.annotation.JsonFormat$Shape;"};
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum = { "Shape", "com.fasterxml.jackson.annotation", "JsonFormat", 0x4019, 3, methods, 9, fields, 1, superclass_type_args};
-  return &_ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum;
 }
 
 @end
@@ -294,38 +259,6 @@ withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:(ComFasterxmlJacksonAnnota
   ComFasterxmlJacksonAnnotationJsonFormat_Value_set_locale_(other, locale_);
   ComFasterxmlJacksonAnnotationJsonFormat_Value_set_timezoneStr_(other, timezoneStr_);
   ComFasterxmlJacksonAnnotationJsonFormat_Value_set__timezone_(other, _timezone_);
-}
-
-+ (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "init", "Value", NULL, 0x1, NULL },
-    { "initWithComFasterxmlJacksonAnnotationJsonFormat:", "Value", NULL, 0x1, NULL },
-    { "initWithNSString:withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:withNSString:withNSString:", "Value", NULL, 0x1, NULL },
-    { "initWithNSString:withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:withJavaUtilLocale:withJavaUtilTimeZone:", "Value", NULL, 0x1, NULL },
-    { "initWithNSString:withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:withJavaUtilLocale:withNSString:withJavaUtilTimeZone:", "Value", NULL, 0x1, NULL },
-    { "withPatternWithNSString:", "withPattern", "Lcom.fasterxml.jackson.annotation.JsonFormat$Value;", 0x1, NULL },
-    { "withShapeWithComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:", "withShape", "Lcom.fasterxml.jackson.annotation.JsonFormat$Value;", 0x1, NULL },
-    { "withLocaleWithJavaUtilLocale:", "withLocale", "Lcom.fasterxml.jackson.annotation.JsonFormat$Value;", 0x1, NULL },
-    { "withTimeZoneWithJavaUtilTimeZone:", "withTimeZone", "Lcom.fasterxml.jackson.annotation.JsonFormat$Value;", 0x1, NULL },
-    { "getPattern", NULL, "Ljava.lang.String;", 0x1, NULL },
-    { "getShape", NULL, "Lcom.fasterxml.jackson.annotation.JsonFormat$Shape;", 0x1, NULL },
-    { "getLocale", NULL, "Ljava.util.Locale;", 0x1, NULL },
-    { "timeZoneAsString", NULL, "Ljava.lang.String;", 0x1, NULL },
-    { "getTimeZone", NULL, "Ljava.util.TimeZone;", 0x1, NULL },
-    { "hasShape", NULL, "Z", 0x1, NULL },
-    { "hasPattern", NULL, "Z", 0x1, NULL },
-    { "hasLocale", NULL, "Z", 0x1, NULL },
-    { "hasTimeZone", NULL, "Z", 0x1, NULL },
-  };
-  static const J2ObjcFieldInfo fields[] = {
-    { "pattern_", NULL, 0x12, "Ljava.lang.String;", NULL,  },
-    { "shape_", NULL, 0x12, "Lcom.fasterxml.jackson.annotation.JsonFormat$Shape;", NULL,  },
-    { "locale_", NULL, 0x12, "Ljava.util.Locale;", NULL,  },
-    { "timezoneStr_", NULL, 0x12, "Ljava.lang.String;", NULL,  },
-    { "_timezone_", NULL, 0x2, "Ljava.util.TimeZone;", NULL,  },
-  };
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonFormat_Value = { "Value", "com.fasterxml.jackson.annotation", "JsonFormat", 0x9, 18, methods, 5, fields, 0, NULL};
-  return &_ComFasterxmlJacksonAnnotationJsonFormat_Value;
 }
 
 @end

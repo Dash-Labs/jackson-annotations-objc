@@ -3,24 +3,4 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/ObjectIdResolver.java
 //
 
-#include "com/fasterxml/jackson/annotation/ObjectIdGenerator.h"
-#include "com/fasterxml/jackson/annotation/ObjectIdResolver.h"
-
-@interface ComFasterxmlJacksonAnnotationObjectIdResolver : NSObject
-@end
-
-@implementation ComFasterxmlJacksonAnnotationObjectIdResolver
-
-+ (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "bindItemWithComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey:withId:", "bindItem", "V", 0x401, NULL },
-    { "resolveIdWithComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey:", "resolveId", "Ljava.lang.Object;", 0x401, NULL },
-    { "newForDeserializationWithId:", "newForDeserialization", "Lcom.fasterxml.jackson.annotation.ObjectIdResolver;", 0x401, NULL },
-    { "canUseForWithComFasterxmlJacksonAnnotationObjectIdResolver:", "canUseFor", "Z", 0x401, NULL },
-  };
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationObjectIdResolver = { "ObjectIdResolver", "com.fasterxml.jackson.annotation", NULL, 0x201, 4, methods, 0, NULL, 0, NULL};
-  return &_ComFasterxmlJacksonAnnotationObjectIdResolver;
-}
-
-@end
-
+void ComFasterxmlJacksonAnnotationObjectIdResolver_unused() {}

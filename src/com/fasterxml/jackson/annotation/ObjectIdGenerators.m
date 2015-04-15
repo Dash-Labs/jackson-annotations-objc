@@ -9,18 +9,13 @@
 #include "java/lang/Integer.h"
 #include "java/util/UUID.h"
 
+#pragma clang diagnostic ignored "-Wprotocol"
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
+
 @implementation ComFasterxmlJacksonAnnotationObjectIdGenerators
 
 - (instancetype)init {
   return [super init];
-}
-
-+ (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "init", NULL, NULL, 0x1, NULL },
-  };
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationObjectIdGenerators = { "ObjectIdGenerators", "com.fasterxml.jackson.annotation", NULL, 0x1, 1, methods, 0, NULL, 0, NULL};
-  return &_ComFasterxmlJacksonAnnotationObjectIdGenerators;
 }
 
 @end
@@ -29,15 +24,6 @@
 
 - (instancetype)init {
   return [super init];
-}
-
-+ (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "init", NULL, NULL, 0x1, NULL },
-  };
-  static const char *superclass_type_args[] = {"Ljava.lang.Object;"};
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationObjectIdGenerators_None = { "None", "com.fasterxml.jackson.annotation", "ObjectIdGenerators", 0x409, 1, methods, 0, NULL, 1, superclass_type_args};
-  return &_ComFasterxmlJacksonAnnotationObjectIdGenerators_None;
 }
 
 @end
@@ -59,12 +45,6 @@
   return ([((ComFasterxmlJacksonAnnotationObjectIdGenerator *) nil_chk(gen)) getClass] == [self getClass]) && ([gen getScope] == _scope_);
 }
 
-- (id)generateIdWithId:(id)forPojo {
-  // can't call an abstract method
-  [self doesNotRecognizeSelector:_cmd];
-  return 0;
-}
-
 - (void)dealloc {
   ComFasterxmlJacksonAnnotationObjectIdGenerators_Base_set__scope_(self, nil);
   [super dealloc];
@@ -75,39 +55,12 @@
   ComFasterxmlJacksonAnnotationObjectIdGenerators_Base_set__scope_(other, _scope_);
 }
 
-+ (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "initWithIOSClass:", "Base", NULL, 0x4, NULL },
-    { "getScope", NULL, "Ljava.lang.Class;", 0x11, NULL },
-    { "canUseForWithComFasterxmlJacksonAnnotationObjectIdGenerator:", "canUseFor", "Z", 0x1, NULL },
-    { "generateIdWithId:", "generateId", "TT;", 0x401, NULL },
-  };
-  static const J2ObjcFieldInfo fields[] = {
-    { "_scope_", NULL, 0x14, "Ljava.lang.Class;", NULL,  },
-  };
-  static const char *superclass_type_args[] = {"TT;"};
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationObjectIdGenerators_Base = { "Base", "com.fasterxml.jackson.annotation", "ObjectIdGenerators", 0x40a, 4, methods, 1, fields, 1, superclass_type_args};
-  return &_ComFasterxmlJacksonAnnotationObjectIdGenerators_Base;
-}
-
 @end
 
 @implementation ComFasterxmlJacksonAnnotationObjectIdGenerators_PropertyGenerator
 
 - (instancetype)initWithIOSClass:(IOSClass *)scope {
   return [super initWithIOSClass:scope];
-}
-
-+ (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "initWithIOSClass:", "PropertyGenerator", NULL, 0x4, NULL },
-  };
-  static const J2ObjcFieldInfo fields[] = {
-    { "serialVersionUID_", NULL, 0x1a, "J", NULL, .constantValue.asLong = ComFasterxmlJacksonAnnotationObjectIdGenerators_PropertyGenerator_serialVersionUID },
-  };
-  static const char *superclass_type_args[] = {"Ljava.lang.Object;"};
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationObjectIdGenerators_PropertyGenerator = { "PropertyGenerator", "com.fasterxml.jackson.annotation", "ObjectIdGenerators", 0x409, 1, methods, 1, fields, 1, superclass_type_args};
-  return &_ComFasterxmlJacksonAnnotationObjectIdGenerators_PropertyGenerator;
 }
 
 @end
@@ -158,25 +111,6 @@
   other->_nextValue_ = _nextValue_;
 }
 
-+ (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "init", "IntSequenceGenerator", NULL, 0x1, NULL },
-    { "initWithIOSClass:withInt:", "IntSequenceGenerator", NULL, 0x1, NULL },
-    { "initialValue", NULL, "I", 0x4, NULL },
-    { "forScopeWithIOSClass:", "forScope", "Lcom.fasterxml.jackson.annotation.ObjectIdGenerator;", 0x1, NULL },
-    { "newForSerializationWithId:", "newForSerialization", "Lcom.fasterxml.jackson.annotation.ObjectIdGenerator;", 0x1, NULL },
-    { "keyWithId:", "key", "Lcom.fasterxml.jackson.annotation.ObjectIdGenerator$IdKey;", 0x1, NULL },
-    { "generateIdWithId:", "generateId", "Ljava.lang.Integer;", 0x1, NULL },
-  };
-  static const J2ObjcFieldInfo fields[] = {
-    { "serialVersionUID_", NULL, 0x1a, "J", NULL, .constantValue.asLong = ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator_serialVersionUID },
-    { "_nextValue_", NULL, 0x84, "I", NULL,  },
-  };
-  static const char *superclass_type_args[] = {"Ljava.lang.Integer;"};
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator = { "IntSequenceGenerator", "com.fasterxml.jackson.annotation", "ObjectIdGenerators", 0x19, 7, methods, 2, fields, 1, superclass_type_args};
-  return &_ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator;
-}
-
 @end
 
 @implementation ComFasterxmlJacksonAnnotationObjectIdGenerators_UUIDGenerator
@@ -211,24 +145,6 @@
 
 - (jboolean)canUseForWithComFasterxmlJacksonAnnotationObjectIdGenerator:(ComFasterxmlJacksonAnnotationObjectIdGenerator *)gen {
   return [((ComFasterxmlJacksonAnnotationObjectIdGenerator *) nil_chk(gen)) getClass] == [self getClass];
-}
-
-+ (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "init", "UUIDGenerator", NULL, 0x1, NULL },
-    { "initWithIOSClass:", "UUIDGenerator", NULL, 0x2, NULL },
-    { "forScopeWithIOSClass:", "forScope", "Lcom.fasterxml.jackson.annotation.ObjectIdGenerator;", 0x1, NULL },
-    { "newForSerializationWithId:", "newForSerialization", "Lcom.fasterxml.jackson.annotation.ObjectIdGenerator;", 0x1, NULL },
-    { "generateIdWithId:", "generateId", "Ljava.util.UUID;", 0x1, NULL },
-    { "keyWithId:", "key", "Lcom.fasterxml.jackson.annotation.ObjectIdGenerator$IdKey;", 0x1, NULL },
-    { "canUseForWithComFasterxmlJacksonAnnotationObjectIdGenerator:", "canUseFor", "Z", 0x1, NULL },
-  };
-  static const J2ObjcFieldInfo fields[] = {
-    { "serialVersionUID_", NULL, 0x1a, "J", NULL, .constantValue.asLong = ComFasterxmlJacksonAnnotationObjectIdGenerators_UUIDGenerator_serialVersionUID },
-  };
-  static const char *superclass_type_args[] = {"Ljava.util.UUID;"};
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationObjectIdGenerators_UUIDGenerator = { "UUIDGenerator", "com.fasterxml.jackson.annotation", "ObjectIdGenerators", 0x19, 7, methods, 1, fields, 1, superclass_type_args};
-  return &_ComFasterxmlJacksonAnnotationObjectIdGenerators_UUIDGenerator;
 }
 
 @end

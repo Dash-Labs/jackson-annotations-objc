@@ -53,15 +53,6 @@
   return [IOSClass classWithProtocol:@protocol(ComFasterxmlJacksonAnnotationJsonTypeInfo)];
 }
 
-+ (IOSObjectArray *)__annotations {
-  return [IOSObjectArray arrayWithObjects:(id[]) { [[[JavaLangAnnotationTarget alloc] initWithValue:[IOSObjectArray arrayWithObjects:(id[]) { JavaLangAnnotationElementTypeEnum_get_ANNOTATION_TYPE(), JavaLangAnnotationElementTypeEnum_get_TYPE(), JavaLangAnnotationElementTypeEnum_get_FIELD(), JavaLangAnnotationElementTypeEnum_get_METHOD(), JavaLangAnnotationElementTypeEnum_get_PARAMETER() } count:5 type:[[NSObject class] getClass]]] autorelease], [[[JavaLangAnnotationRetention alloc] initWithValue:JavaLangAnnotationRetentionPolicyEnum_get_RUNTIME()] autorelease] } count:2 type:[IOSClass classWithProtocol:@protocol(JavaLangAnnotationAnnotation)]];
-}
-
-+ (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonTypeInfo = { "JsonTypeInfo", "com.fasterxml.jackson.annotation", NULL, 0x2201, 0, NULL, 0, NULL, 0, NULL};
-  return &_ComFasterxmlJacksonAnnotationJsonTypeInfo;
-}
-
 @end
 
 BOOL ComFasterxmlJacksonAnnotationJsonTypeInfo_IdEnum_initialized = NO;
@@ -120,24 +111,6 @@ ComFasterxmlJacksonAnnotationJsonTypeInfo_IdEnum *ComFasterxmlJacksonAnnotationJ
   }
 }
 
-+ (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "initWithNSString:withNSString:withInt:", "Id", NULL, 0x2, NULL },
-    { "getDefaultPropertyName", NULL, "Ljava.lang.String;", 0x1, NULL },
-  };
-  static const J2ObjcFieldInfo fields[] = {
-    { "NONE", "NONE", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonTypeInfo$Id;", &ComFasterxmlJacksonAnnotationJsonTypeInfo_IdEnum_NONE,  },
-    { "CLASS", "CLASS", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonTypeInfo$Id;", &ComFasterxmlJacksonAnnotationJsonTypeInfo_IdEnum_CLASS,  },
-    { "MINIMAL_CLASS", "MINIMAL_CLASS", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonTypeInfo$Id;", &ComFasterxmlJacksonAnnotationJsonTypeInfo_IdEnum_MINIMAL_CLASS,  },
-    { "NAME", "NAME", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonTypeInfo$Id;", &ComFasterxmlJacksonAnnotationJsonTypeInfo_IdEnum_NAME,  },
-    { "CUSTOM", "CUSTOM", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonTypeInfo$Id;", &ComFasterxmlJacksonAnnotationJsonTypeInfo_IdEnum_CUSTOM,  },
-    { "_defaultPropertyName_", NULL, 0x12, "Ljava.lang.String;", NULL,  },
-  };
-  static const char *superclass_type_args[] = {"Lcom.fasterxml.jackson.annotation.JsonTypeInfo$Id;"};
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonTypeInfo_IdEnum = { "Id", "com.fasterxml.jackson.annotation", "JsonTypeInfo", 0x4019, 2, methods, 6, fields, 1, superclass_type_args};
-  return &_ComFasterxmlJacksonAnnotationJsonTypeInfo_IdEnum;
-}
-
 @end
 
 BOOL ComFasterxmlJacksonAnnotationJsonTypeInfo_AsEnum_initialized = NO;
@@ -188,40 +161,12 @@ ComFasterxmlJacksonAnnotationJsonTypeInfo_AsEnum *ComFasterxmlJacksonAnnotationJ
   }
 }
 
-+ (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "initWithNSString:withInt:", "init", NULL, 0x1, NULL },
-  };
-  static const J2ObjcFieldInfo fields[] = {
-    { "PROPERTY", "PROPERTY", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonTypeInfo$As;", &ComFasterxmlJacksonAnnotationJsonTypeInfo_AsEnum_PROPERTY,  },
-    { "WRAPPER_OBJECT", "WRAPPER_OBJECT", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonTypeInfo$As;", &ComFasterxmlJacksonAnnotationJsonTypeInfo_AsEnum_WRAPPER_OBJECT,  },
-    { "WRAPPER_ARRAY", "WRAPPER_ARRAY", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonTypeInfo$As;", &ComFasterxmlJacksonAnnotationJsonTypeInfo_AsEnum_WRAPPER_ARRAY,  },
-    { "EXTERNAL_PROPERTY", "EXTERNAL_PROPERTY", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonTypeInfo$As;", &ComFasterxmlJacksonAnnotationJsonTypeInfo_AsEnum_EXTERNAL_PROPERTY,  },
-    { "EXISTING_PROPERTY", "EXISTING_PROPERTY", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonTypeInfo$As;", &ComFasterxmlJacksonAnnotationJsonTypeInfo_AsEnum_EXISTING_PROPERTY,  },
-  };
-  static const char *superclass_type_args[] = {"Lcom.fasterxml.jackson.annotation.JsonTypeInfo$As;"};
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonTypeInfo_AsEnum = { "As", "com.fasterxml.jackson.annotation", "JsonTypeInfo", 0x4019, 1, methods, 5, fields, 1, superclass_type_args};
-  return &_ComFasterxmlJacksonAnnotationJsonTypeInfo_AsEnum;
-}
-
 @end
 
 @implementation ComFasterxmlJacksonAnnotationJsonTypeInfo_None
 
 - (instancetype)init {
   return [super init];
-}
-
-+ (IOSObjectArray *)__annotations {
-  return [IOSObjectArray arrayWithObjects:(id[]) { [[[JavaLangDeprecated alloc] init] autorelease] } count:1 type:[IOSClass classWithProtocol:@protocol(JavaLangAnnotationAnnotation)]];
-}
-
-+ (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "init", NULL, NULL, 0x1, NULL },
-  };
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonTypeInfo_None = { "None", "com.fasterxml.jackson.annotation", "JsonTypeInfo", 0x409, 1, methods, 0, NULL, 0, NULL};
-  return &_ComFasterxmlJacksonAnnotationJsonTypeInfo_None;
 }
 
 @end

@@ -32,15 +32,6 @@
   return [IOSClass classWithProtocol:@protocol(ComFasterxmlJacksonAnnotationJsonCreator)];
 }
 
-+ (IOSObjectArray *)__annotations {
-  return [IOSObjectArray arrayWithObjects:(id[]) { [[[JavaLangAnnotationTarget alloc] initWithValue:[IOSObjectArray arrayWithObjects:(id[]) { JavaLangAnnotationElementTypeEnum_get_ANNOTATION_TYPE(), JavaLangAnnotationElementTypeEnum_get_METHOD(), JavaLangAnnotationElementTypeEnum_get_CONSTRUCTOR() } count:3 type:[[NSObject class] getClass]]] autorelease], [[[JavaLangAnnotationRetention alloc] initWithValue:JavaLangAnnotationRetentionPolicyEnum_get_RUNTIME()] autorelease] } count:2 type:[IOSClass classWithProtocol:@protocol(JavaLangAnnotationAnnotation)]];
-}
-
-+ (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonCreator = { "JsonCreator", "com.fasterxml.jackson.annotation", NULL, 0x2201, 0, NULL, 0, NULL, 0, NULL};
-  return &_ComFasterxmlJacksonAnnotationJsonCreator;
-}
-
 @end
 
 BOOL ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_initialized = NO;
@@ -88,21 +79,6 @@ ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum *ComFasterxmlJacksonAnnotation
     ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_DISABLED = [[ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum alloc] initWithNSString:@"DISABLED" withInt:3];
     J2OBJC_SET_INITIALIZED(ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum)
   }
-}
-
-+ (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "initWithNSString:withInt:", "init", NULL, 0x1, NULL },
-  };
-  static const J2ObjcFieldInfo fields[] = {
-    { "DEFAULT", "DEFAULT", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonCreator$Mode;", &ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_DEFAULT,  },
-    { "DELEGATING", "DELEGATING", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonCreator$Mode;", &ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_DELEGATING,  },
-    { "PROPERTIES", "PROPERTIES", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonCreator$Mode;", &ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_PROPERTIES,  },
-    { "DISABLED", "DISABLED", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonCreator$Mode;", &ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_DISABLED,  },
-  };
-  static const char *superclass_type_args[] = {"Lcom.fasterxml.jackson.annotation.JsonCreator$Mode;"};
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum = { "Mode", "com.fasterxml.jackson.annotation", "JsonCreator", 0x4019, 1, methods, 4, fields, 1, superclass_type_args};
-  return &_ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum;
 }
 
 @end

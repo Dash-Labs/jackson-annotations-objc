@@ -50,19 +50,4 @@
   ComFasterxmlJacksonAnnotationSimpleObjectIdResolver_set__items_(other, _items_);
 }
 
-+ (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "init", "SimpleObjectIdResolver", NULL, 0x1, NULL },
-    { "bindItemWithComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey:withId:", "bindItem", "V", 0x1, NULL },
-    { "resolveIdWithComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey:", "resolveId", "Ljava.lang.Object;", 0x1, NULL },
-    { "canUseForWithComFasterxmlJacksonAnnotationObjectIdResolver:", "canUseFor", "Z", 0x1, NULL },
-    { "newForDeserializationWithId:", "newForDeserialization", "Lcom.fasterxml.jackson.annotation.ObjectIdResolver;", 0x1, NULL },
-  };
-  static const J2ObjcFieldInfo fields[] = {
-    { "_items_", NULL, 0x4, "Ljava.util.Map;", NULL,  },
-  };
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationSimpleObjectIdResolver = { "SimpleObjectIdResolver", "com.fasterxml.jackson.annotation", NULL, 0x1, 5, methods, 1, fields, 0, NULL};
-  return &_ComFasterxmlJacksonAnnotationSimpleObjectIdResolver;
-}
-
 @end

@@ -38,15 +38,6 @@
   return [IOSClass classWithProtocol:@protocol(ComFasterxmlJacksonAnnotationJsonInclude)];
 }
 
-+ (IOSObjectArray *)__annotations {
-  return [IOSObjectArray arrayWithObjects:(id[]) { [[[JavaLangAnnotationTarget alloc] initWithValue:[IOSObjectArray arrayWithObjects:(id[]) { JavaLangAnnotationElementTypeEnum_get_ANNOTATION_TYPE(), JavaLangAnnotationElementTypeEnum_get_METHOD(), JavaLangAnnotationElementTypeEnum_get_FIELD(), JavaLangAnnotationElementTypeEnum_get_TYPE(), JavaLangAnnotationElementTypeEnum_get_PARAMETER() } count:5 type:[[NSObject class] getClass]]] autorelease], [[[JavaLangAnnotationRetention alloc] initWithValue:JavaLangAnnotationRetentionPolicyEnum_get_RUNTIME()] autorelease] } count:2 type:[IOSClass classWithProtocol:@protocol(JavaLangAnnotationAnnotation)]];
-}
-
-+ (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonInclude = { "JsonInclude", "com.fasterxml.jackson.annotation", NULL, 0x2201, 0, NULL, 0, NULL, 0, NULL};
-  return &_ComFasterxmlJacksonAnnotationJsonInclude;
-}
-
 @end
 
 BOOL ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_initialized = NO;
@@ -94,21 +85,6 @@ ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum *ComFasterxmlJacksonAnnotat
     ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_NON_EMPTY = [[ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum alloc] initWithNSString:@"NON_EMPTY" withInt:3];
     J2OBJC_SET_INITIALIZED(ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum)
   }
-}
-
-+ (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "initWithNSString:withInt:", "init", NULL, 0x1, NULL },
-  };
-  static const J2ObjcFieldInfo fields[] = {
-    { "ALWAYS", "ALWAYS", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonInclude$Include;", &ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_ALWAYS,  },
-    { "NON_NULL", "NON_NULL", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonInclude$Include;", &ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_NON_NULL,  },
-    { "NON_DEFAULT", "NON_DEFAULT", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonInclude$Include;", &ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_NON_DEFAULT,  },
-    { "NON_EMPTY", "NON_EMPTY", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonInclude$Include;", &ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_NON_EMPTY,  },
-  };
-  static const char *superclass_type_args[] = {"Lcom.fasterxml.jackson.annotation.JsonInclude$Include;"};
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum = { "Include", "com.fasterxml.jackson.annotation", "JsonInclude", 0x4019, 1, methods, 4, fields, 1, superclass_type_args};
-  return &_ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum;
 }
 
 @end
