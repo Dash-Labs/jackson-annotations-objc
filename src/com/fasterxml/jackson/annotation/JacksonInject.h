@@ -3,11 +3,24 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JacksonInject.java
 //
 
-#ifndef _ComFasterxmlJacksonAnnotationJacksonInject_H_
-#define _ComFasterxmlJacksonAnnotationJacksonInject_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJacksonInject")
+#ifdef RESTRICT_ComFasterxmlJacksonAnnotationJacksonInject
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJacksonInject 0
+#else
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJacksonInject 1
+#endif
+#undef RESTRICT_ComFasterxmlJacksonAnnotationJacksonInject
+
+#if !defined (ComFasterxmlJacksonAnnotationJacksonInject_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationJacksonInject || defined(INCLUDE_ComFasterxmlJacksonAnnotationJacksonInject))
+#define ComFasterxmlJacksonAnnotationJacksonInject_
+
+#define RESTRICT_JavaLangAnnotationAnnotation 1
+#define INCLUDE_JavaLangAnnotationAnnotation 1
 #include "java/lang/annotation/Annotation.h"
+
+@class IOSClass;
 
 @protocol ComFasterxmlJacksonAnnotationJacksonInject < JavaLangAnnotationAnnotation >
 
@@ -16,18 +29,18 @@
 @end
 
 @interface ComFasterxmlJacksonAnnotationJacksonInject : NSObject < ComFasterxmlJacksonAnnotationJacksonInject > {
- @private
+ @public
   NSString *value_;
 }
-
-- (instancetype)initWithValue:(NSString *)value__;
-
-+ (NSString *)valueDefault;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationJacksonInject)
 
+FOUNDATION_EXPORT id<ComFasterxmlJacksonAnnotationJacksonInject> create_ComFasterxmlJacksonAnnotationJacksonInject(NSString *value);
+
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJacksonInject)
 
-#endif // _ComFasterxmlJacksonAnnotationJacksonInject_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJacksonInject")

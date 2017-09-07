@@ -3,11 +3,24 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JsonIdentityReference.java
 //
 
-#ifndef _ComFasterxmlJacksonAnnotationJsonIdentityReference_H_
-#define _ComFasterxmlJacksonAnnotationJsonIdentityReference_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonIdentityReference")
+#ifdef RESTRICT_ComFasterxmlJacksonAnnotationJsonIdentityReference
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonIdentityReference 0
+#else
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonIdentityReference 1
+#endif
+#undef RESTRICT_ComFasterxmlJacksonAnnotationJsonIdentityReference
+
+#if !defined (ComFasterxmlJacksonAnnotationJsonIdentityReference_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonIdentityReference || defined(INCLUDE_ComFasterxmlJacksonAnnotationJsonIdentityReference))
+#define ComFasterxmlJacksonAnnotationJsonIdentityReference_
+
+#define RESTRICT_JavaLangAnnotationAnnotation 1
+#define INCLUDE_JavaLangAnnotationAnnotation 1
 #include "java/lang/annotation/Annotation.h"
+
+@class IOSClass;
 
 @protocol ComFasterxmlJacksonAnnotationJsonIdentityReference < JavaLangAnnotationAnnotation >
 
@@ -16,18 +29,18 @@
 @end
 
 @interface ComFasterxmlJacksonAnnotationJsonIdentityReference : NSObject < ComFasterxmlJacksonAnnotationJsonIdentityReference > {
- @private
+ @public
   jboolean alwaysAsId_;
 }
-
-- (instancetype)initWithAlwaysAsId:(jboolean)alwaysAsId__;
-
-+ (jboolean)alwaysAsIdDefault;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonIdentityReference)
 
+FOUNDATION_EXPORT id<ComFasterxmlJacksonAnnotationJsonIdentityReference> create_ComFasterxmlJacksonAnnotationJsonIdentityReference(jboolean alwaysAsId);
+
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJsonIdentityReference)
 
-#endif // _ComFasterxmlJacksonAnnotationJsonIdentityReference_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonIdentityReference")

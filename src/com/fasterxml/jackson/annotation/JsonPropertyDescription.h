@@ -3,11 +3,24 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JsonPropertyDescription.java
 //
 
-#ifndef _ComFasterxmlJacksonAnnotationJsonPropertyDescription_H_
-#define _ComFasterxmlJacksonAnnotationJsonPropertyDescription_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonPropertyDescription")
+#ifdef RESTRICT_ComFasterxmlJacksonAnnotationJsonPropertyDescription
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonPropertyDescription 0
+#else
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonPropertyDescription 1
+#endif
+#undef RESTRICT_ComFasterxmlJacksonAnnotationJsonPropertyDescription
+
+#if !defined (ComFasterxmlJacksonAnnotationJsonPropertyDescription_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonPropertyDescription || defined(INCLUDE_ComFasterxmlJacksonAnnotationJsonPropertyDescription))
+#define ComFasterxmlJacksonAnnotationJsonPropertyDescription_
+
+#define RESTRICT_JavaLangAnnotationAnnotation 1
+#define INCLUDE_JavaLangAnnotationAnnotation 1
 #include "java/lang/annotation/Annotation.h"
+
+@class IOSClass;
 
 @protocol ComFasterxmlJacksonAnnotationJsonPropertyDescription < JavaLangAnnotationAnnotation >
 
@@ -16,18 +29,18 @@
 @end
 
 @interface ComFasterxmlJacksonAnnotationJsonPropertyDescription : NSObject < ComFasterxmlJacksonAnnotationJsonPropertyDescription > {
- @private
+ @public
   NSString *value_;
 }
-
-- (instancetype)initWithValue:(NSString *)value__;
-
-+ (NSString *)valueDefault;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonPropertyDescription)
 
+FOUNDATION_EXPORT id<ComFasterxmlJacksonAnnotationJsonPropertyDescription> create_ComFasterxmlJacksonAnnotationJsonPropertyDescription(NSString *value);
+
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJsonPropertyDescription)
 
-#endif // _ComFasterxmlJacksonAnnotationJsonPropertyDescription_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonPropertyDescription")

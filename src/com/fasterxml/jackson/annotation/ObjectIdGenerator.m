@@ -3,23 +3,29 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/ObjectIdGenerator.java
 //
 
-
 #include "IOSClass.h"
 #include "J2ObjC_source.h"
 #include "com/fasterxml/jackson/annotation/ObjectIdGenerator.h"
 
-#define ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_serialVersionUID 1LL
-
 @interface ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey () {
  @public
-  jint hashCode__;
+  jint hashCode_;
 }
 
 @end
 
-J2OBJC_STATIC_FIELD_GETTER(ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey, serialVersionUID, jlong)
+inline jlong ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_get_serialVersionUID();
+#define ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_serialVersionUID 1LL
+J2OBJC_STATIC_FIELD_CONSTANT(ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey, serialVersionUID, jlong)
 
 @implementation ComFasterxmlJacksonAnnotationObjectIdGenerator
+
+J2OBJC_IGNORE_DESIGNATED_BEGIN
+- (instancetype)init {
+  ComFasterxmlJacksonAnnotationObjectIdGenerator_init(self);
+  return self;
+}
+J2OBJC_IGNORE_DESIGNATED_END
 
 - (IOSClass *)getScope {
   // can't call an abstract method
@@ -34,12 +40,12 @@ J2OBJC_STATIC_FIELD_GETTER(ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey,
 }
 
 - (jboolean)maySerializeAsObject {
-  return NO;
+  return false;
 }
 
 - (jboolean)isValidReferencePropertyNameWithNSString:(NSString *)name
                                               withId:(id)parser {
-  return NO;
+  return false;
 }
 
 - (ComFasterxmlJacksonAnnotationObjectIdGenerator *)forScopeWithIOSClass:(IOSClass *)scope {
@@ -66,25 +72,32 @@ J2OBJC_STATIC_FIELD_GETTER(ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey,
   return 0;
 }
 
-- (instancetype)init {
-  ComFasterxmlJacksonAnnotationObjectIdGenerator_init(self);
-  return self;
-}
-
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "getScope", NULL, "Ljava.lang.Class;", 0x401, NULL, NULL },
-    { "canUseForWithComFasterxmlJacksonAnnotationObjectIdGenerator:", "canUseFor", "Z", 0x401, NULL, NULL },
-    { "maySerializeAsObject", NULL, "Z", 0x1, NULL, NULL },
-    { "isValidReferencePropertyNameWithNSString:withId:", "isValidReferencePropertyName", "Z", 0x1, NULL, NULL },
-    { "forScopeWithIOSClass:", "forScope", "Lcom.fasterxml.jackson.annotation.ObjectIdGenerator;", 0x401, NULL, NULL },
-    { "newForSerializationWithId:", "newForSerialization", "Lcom.fasterxml.jackson.annotation.ObjectIdGenerator;", 0x401, NULL, NULL },
-    { "keyWithId:", "key", "Lcom.fasterxml.jackson.annotation.ObjectIdGenerator$IdKey;", 0x401, NULL, NULL },
-    { "generateIdWithId:", "generateId", "TT;", 0x401, NULL, "(Ljava/lang/Object;)TT;" },
-    { "init", NULL, NULL, 0x1, NULL, NULL },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, NULL, 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LIOSClass;", 0x401, -1, -1, -1, 0, -1, -1 },
+    { NULL, "Z", 0x401, 1, 2, -1, 3, -1, -1 },
+    { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "Z", 0x1, 4, 5, -1, -1, -1, -1 },
+    { NULL, "LComFasterxmlJacksonAnnotationObjectIdGenerator;", 0x401, 6, 7, -1, 8, -1, -1 },
+    { NULL, "LComFasterxmlJacksonAnnotationObjectIdGenerator;", 0x401, 9, 10, -1, 11, -1, -1 },
+    { NULL, "LComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey;", 0x401, 12, 10, -1, -1, -1, -1 },
+    { NULL, "LNSObject;", 0x401, 13, 10, -1, 14, -1, -1 },
   };
-  static const char *inner_classes[] = {"Lcom.fasterxml.jackson.annotation.ObjectIdGenerator$IdKey;"};
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationObjectIdGenerator = { 2, "ObjectIdGenerator", "com.fasterxml.jackson.annotation", NULL, 0x401, 9, methods, 0, NULL, 0, NULL, 1, inner_classes, NULL, "<T:Ljava/lang/Object;>Ljava/lang/Object;Ljava/io/Serializable;" };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(init);
+  methods[1].selector = @selector(getScope);
+  methods[2].selector = @selector(canUseForWithComFasterxmlJacksonAnnotationObjectIdGenerator:);
+  methods[3].selector = @selector(maySerializeAsObject);
+  methods[4].selector = @selector(isValidReferencePropertyNameWithNSString:withId:);
+  methods[5].selector = @selector(forScopeWithIOSClass:);
+  methods[6].selector = @selector(newForSerializationWithId:);
+  methods[7].selector = @selector(keyWithId:);
+  methods[8].selector = @selector(generateIdWithId:);
+  #pragma clang diagnostic pop
+  static const void *ptrTable[] = { "()Ljava/lang/Class<*>;", "canUseFor", "LComFasterxmlJacksonAnnotationObjectIdGenerator;", "(Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<*>;)Z", "isValidReferencePropertyName", "LNSString;LNSObject;", "forScope", "LIOSClass;", "(Ljava/lang/Class<*>;)Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<TT;>;", "newForSerialization", "LNSObject;", "(Ljava/lang/Object;)Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<TT;>;", "key", "generateId", "(Ljava/lang/Object;)TT;", "LComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey;", "<T:Ljava/lang/Object;>Ljava/lang/Object;Ljava/io/Serializable;" };
+  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationObjectIdGenerator = { "ObjectIdGenerator", "com.fasterxml.jackson.annotation", ptrTable, methods, NULL, 7, 0x401, 9, 0, -1, 15, -1, 16, -1 };
   return &_ComFasterxmlJacksonAnnotationObjectIdGenerator;
 }
 
@@ -106,14 +119,14 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationObjectIdGenerator)
 }
 
 - (NSUInteger)hash {
-  return hashCode__;
+  return hashCode_;
 }
 
 - (jboolean)isEqual:(id)o {
-  if (o == self) return YES;
-  if (o == nil) return NO;
-  if ([nil_chk(o) getClass] != [self getClass]) return NO;
-  ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey *other = (ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey *) check_class_cast(o, [ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey class]);
+  if (o == self) return true;
+  if (o == nil) return false;
+  if ([o java_getClass] != [self java_getClass]) return false;
+  ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey *other = (ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey *) cast_chk(o, [ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey class]);
   return ([nil_chk(other->key_) isEqual:key_]) && (other->type_ == type_) && (other->scope_ == scope_);
 }
 
@@ -125,19 +138,26 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationObjectIdGenerator)
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "initWithIOSClass:withIOSClass:withId:", "IdKey", NULL, 0x1, NULL, NULL },
-    { "hash", "hashCode", "I", 0x1, NULL, NULL },
-    { "isEqual:", "equals", "Z", 0x1, NULL, NULL },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, NULL, 0x1, -1, 0, -1, 1, -1, -1 },
+    { NULL, "I", 0x1, 2, -1, -1, -1, -1, -1 },
+    { NULL, "Z", 0x1, 3, 4, -1, -1, -1, -1 },
   };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(initWithIOSClass:withIOSClass:withId:);
+  methods[1].selector = @selector(hash);
+  methods[2].selector = @selector(isEqual:);
+  #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "serialVersionUID_", NULL, 0x1a, "J", NULL, NULL, .constantValue.asLong = ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_serialVersionUID },
-    { "type_", NULL, 0x11, "Ljava.lang.Class;", NULL, "Ljava/lang/Class<*>;",  },
-    { "scope_", NULL, 0x11, "Ljava.lang.Class;", NULL, "Ljava/lang/Class<*>;",  },
-    { "key_", NULL, 0x11, "Ljava.lang.Object;", NULL, NULL,  },
-    { "hashCode__", "hashCode", 0x12, "I", NULL, NULL,  },
+    { "serialVersionUID", "J", .constantValue.asLong = ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_serialVersionUID, 0x1a, -1, -1, -1, -1 },
+    { "type_", "LIOSClass;", .constantValue.asLong = 0, 0x11, -1, -1, 5, -1 },
+    { "scope_", "LIOSClass;", .constantValue.asLong = 0, 0x11, -1, -1, 5, -1 },
+    { "key_", "LNSObject;", .constantValue.asLong = 0, 0x11, -1, -1, -1, -1 },
+    { "hashCode_", "I", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey = { 2, "IdKey", "com.fasterxml.jackson.annotation", "ObjectIdGenerator", 0x19, 3, methods, 5, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const void *ptrTable[] = { "LIOSClass;LIOSClass;LNSObject;", "(Ljava/lang/Class<*>;Ljava/lang/Class<*>;Ljava/lang/Object;)V", "hashCode", "equals", "LNSObject;", "Ljava/lang/Class<*>;", "LComFasterxmlJacksonAnnotationObjectIdGenerator;" };
+  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey = { "IdKey", "com.fasterxml.jackson.annotation", ptrTable, methods, fields, 7, 0x19, 3, 5, 6, -1, -1, -1, -1 };
   return &_ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey;
 }
 
@@ -145,20 +165,22 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationObjectIdGenerator)
 
 void ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_initWithIOSClass_withIOSClass_withId_(ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey *self, IOSClass *type, IOSClass *scope, id key) {
   NSObject_init(self);
-  ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_set_type_(self, type);
-  ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_set_scope_(self, scope);
-  ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_set_key_(self, key);
+  JreStrongAssign(&self->type_, type);
+  JreStrongAssign(&self->scope_, scope);
+  JreStrongAssign(&self->key_, key);
   jint h = ((jint) [nil_chk(key) hash]) + ((jint) [((NSString *) nil_chk([((IOSClass *) nil_chk(type)) getName])) hash]);
   if (scope != nil) {
     h ^= ((jint) [((NSString *) nil_chk([scope getName])) hash]);
   }
-  self->hashCode__ = h;
+  self->hashCode_ = h;
 }
 
 ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey *new_ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_initWithIOSClass_withIOSClass_withId_(IOSClass *type, IOSClass *scope, id key) {
-  ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey *self = [ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey alloc];
-  ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_initWithIOSClass_withIOSClass_withId_(self, type, scope, key);
-  return self;
+  J2OBJC_NEW_IMPL(ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey, initWithIOSClass_withIOSClass_withId_, type, scope, key)
+}
+
+ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey *create_ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_initWithIOSClass_withIOSClass_withId_(IOSClass *type, IOSClass *scope, id key) {
+  J2OBJC_CREATE_IMPL(ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey, initWithIOSClass_withIOSClass_withId_, type, scope, key)
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey)

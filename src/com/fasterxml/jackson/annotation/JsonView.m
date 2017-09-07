@@ -3,30 +3,25 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JsonView.java
 //
 
-
 #include "IOSClass.h"
 #include "IOSObjectArray.h"
 #include "J2ObjC_source.h"
 #include "com/fasterxml/jackson/annotation/JacksonAnnotation.h"
 #include "com/fasterxml/jackson/annotation/JsonView.h"
+#include "java/lang/annotation/Annotation.h"
 #include "java/lang/annotation/ElementType.h"
 #include "java/lang/annotation/Retention.h"
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonView__Annotations$0();
+
 @implementation ComFasterxmlJacksonAnnotationJsonView
 
 @synthesize value = value_;
 
-- (instancetype)initWithValue:(IOSObjectArray *)value__ {
-  if ((self = [super init])) {
-    self->value_ = RETAIN_(value__);
-  }
-  return self;
-}
-
 + (IOSObjectArray *)valueDefault {
-  return [IOSObjectArray arrayWithObjects:(id[]){  } count:0 type:IOSClass_class_()];
+  return [IOSObjectArray arrayWithLength:0 type:IOSClass_class_()];
 }
 
 - (IOSClass *)annotationType {
@@ -34,22 +29,40 @@
 }
 
 - (NSString *)description {
-  return @"@com.fasterxml.jackson.annotation.JsonView()";
+  return [NSString stringWithFormat:@"@com.fasterxml.jackson.annotation.JsonView(value=%@)", value_];
 }
 
-+ (IOSObjectArray *)__annotations {
-  return [IOSObjectArray arrayWithObjects:(id[]) { [[[JavaLangAnnotationTarget alloc] initWithValue:[IOSObjectArray arrayWithObjects:(id[]) { JavaLangAnnotationElementTypeEnum_get_ANNOTATION_TYPE(), JavaLangAnnotationElementTypeEnum_get_METHOD(), JavaLangAnnotationElementTypeEnum_get_FIELD(), JavaLangAnnotationElementTypeEnum_get_PARAMETER() } count:4 type:NSObject_class_()]] autorelease], [[[JavaLangAnnotationRetention alloc] initWithValue:JavaLangAnnotationRetentionPolicyEnum_get_RUNTIME()] autorelease], [[[ComFasterxmlJacksonAnnotationJacksonAnnotation alloc] init] autorelease] } count:3 type:JavaLangAnnotationAnnotation_class_()];
+- (void)dealloc {
+  RELEASE_(value_);
+  [super dealloc];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "value", "value", "[Ljava.lang.Class;", 0x401, NULL, NULL },
-    { "valueDefault", "value", "[Ljava.lang.Class;", 0x100a, NULL, NULL },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, "[LIOSClass;", 0x401, -1, -1, -1, -1, -1, -1 },
   };
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonView = { 2, "JsonView", "com.fasterxml.jackson.annotation", NULL, 0x2609, 2, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(value);
+  #pragma clang diagnostic pop
+  static const J2ObjcFieldInfo fields[] = {
+    { "value_", "[LIOSClass;", .constantValue.asLong = 0, 0x1000, -1, -1, 0, -1 },
+  };
+  static const void *ptrTable[] = { "[Ljava/lang/Class<*>;", (void *)&ComFasterxmlJacksonAnnotationJsonView__Annotations$0 };
+  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonView = { "JsonView", "com.fasterxml.jackson.annotation", ptrTable, methods, fields, 7, 0x2609, 1, 1, -1, -1, -1, -1, 1 };
   return &_ComFasterxmlJacksonAnnotationJsonView;
 }
 
 @end
+
+id<ComFasterxmlJacksonAnnotationJsonView> create_ComFasterxmlJacksonAnnotationJsonView(IOSObjectArray *value) {
+  ComFasterxmlJacksonAnnotationJsonView *self = AUTORELEASE([[ComFasterxmlJacksonAnnotationJsonView alloc] init]);
+  self->value_ = RETAIN_(value);
+  return self;
+}
+
+IOSObjectArray *ComFasterxmlJacksonAnnotationJsonView__Annotations$0() {
+  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, ANNOTATION_TYPE), JreLoadEnum(JavaLangAnnotationElementType, METHOD), JreLoadEnum(JavaLangAnnotationElementType, FIELD), JreLoadEnum(JavaLangAnnotationElementType, PARAMETER) } count:4 type:JavaLangAnnotationElementType_class_()]), create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_ComFasterxmlJacksonAnnotationJacksonAnnotation() } count:3 type:JavaLangAnnotationAnnotation_class_()];
+}
 
 J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationJsonView)

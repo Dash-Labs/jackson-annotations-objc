@@ -3,73 +3,107 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JsonCreator.java
 //
 
-#ifndef _ComFasterxmlJacksonAnnotationJsonCreator_H_
-#define _ComFasterxmlJacksonAnnotationJsonCreator_H_
-
 #include "J2ObjC_header.h"
-#include "java/lang/Enum.h"
+
+#pragma push_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonCreator")
+#ifdef RESTRICT_ComFasterxmlJacksonAnnotationJsonCreator
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonCreator 0
+#else
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonCreator 1
+#endif
+#undef RESTRICT_ComFasterxmlJacksonAnnotationJsonCreator
+
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
+#if !defined (ComFasterxmlJacksonAnnotationJsonCreator_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonCreator || defined(INCLUDE_ComFasterxmlJacksonAnnotationJsonCreator))
+#define ComFasterxmlJacksonAnnotationJsonCreator_
+
+#define RESTRICT_JavaLangAnnotationAnnotation 1
+#define INCLUDE_JavaLangAnnotationAnnotation 1
 #include "java/lang/annotation/Annotation.h"
 
-@class ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum;
+@class ComFasterxmlJacksonAnnotationJsonCreator_Mode;
+@class IOSClass;
 
 @protocol ComFasterxmlJacksonAnnotationJsonCreator < JavaLangAnnotationAnnotation >
 
-@property (readonly) ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum *mode;
+@property (readonly) ComFasterxmlJacksonAnnotationJsonCreator_Mode *mode;
 
 @end
 
 @interface ComFasterxmlJacksonAnnotationJsonCreator : NSObject < ComFasterxmlJacksonAnnotationJsonCreator > {
- @private
-  ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum *mode_;
+ @public
+  ComFasterxmlJacksonAnnotationJsonCreator_Mode *mode_;
 }
-
-- (instancetype)initWithMode:(ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum *)mode__;
-
-+ (ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum *)modeDefault;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonCreator)
 
+FOUNDATION_EXPORT id<ComFasterxmlJacksonAnnotationJsonCreator> create_ComFasterxmlJacksonAnnotationJsonCreator(ComFasterxmlJacksonAnnotationJsonCreator_Mode *mode);
+
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJsonCreator)
 
-typedef NS_ENUM(NSUInteger, ComFasterxmlJacksonAnnotationJsonCreator_Mode) {
-  ComFasterxmlJacksonAnnotationJsonCreator_Mode_DEFAULT = 0,
-  ComFasterxmlJacksonAnnotationJsonCreator_Mode_DELEGATING = 1,
-  ComFasterxmlJacksonAnnotationJsonCreator_Mode_PROPERTIES = 2,
-  ComFasterxmlJacksonAnnotationJsonCreator_Mode_DISABLED = 3,
+#endif
+
+#if !defined (ComFasterxmlJacksonAnnotationJsonCreator_Mode_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonCreator || defined(INCLUDE_ComFasterxmlJacksonAnnotationJsonCreator_Mode))
+#define ComFasterxmlJacksonAnnotationJsonCreator_Mode_
+
+#define RESTRICT_JavaLangEnum 1
+#define INCLUDE_JavaLangEnum 1
+#include "java/lang/Enum.h"
+
+@class IOSObjectArray;
+
+typedef NS_ENUM(NSUInteger, ComFasterxmlJacksonAnnotationJsonCreator_Mode_Enum) {
+  ComFasterxmlJacksonAnnotationJsonCreator_Mode_Enum_DEFAULT = 0,
+  ComFasterxmlJacksonAnnotationJsonCreator_Mode_Enum_DELEGATING = 1,
+  ComFasterxmlJacksonAnnotationJsonCreator_Mode_Enum_PROPERTIES = 2,
+  ComFasterxmlJacksonAnnotationJsonCreator_Mode_Enum_DISABLED = 3,
 };
 
-@interface ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum : JavaLangEnum < NSCopying >
+@interface ComFasterxmlJacksonAnnotationJsonCreator_Mode : JavaLangEnum
 
-#pragma mark Package-Private
+#pragma mark Public
+
++ (ComFasterxmlJacksonAnnotationJsonCreator_Mode *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_values();
-
-+ (ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum *)valueOfWithNSString:(NSString *)name;
-FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum *ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_valueOfWithNSString_(NSString *name);
-
-- (id)copyWithZone:(NSZone *)zone;
 
 @end
 
-J2OBJC_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum)
+J2OBJC_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonCreator_Mode)
 
-FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum *ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_values_[];
+/*! INTERNAL ONLY - Use enum accessors declared below. */
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonCreator_Mode *ComFasterxmlJacksonAnnotationJsonCreator_Mode_values_[];
 
-#define ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_DEFAULT ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_values_[ComFasterxmlJacksonAnnotationJsonCreator_Mode_DEFAULT]
-J2OBJC_ENUM_CONSTANT_GETTER(ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum, DEFAULT)
+inline ComFasterxmlJacksonAnnotationJsonCreator_Mode *ComFasterxmlJacksonAnnotationJsonCreator_Mode_get_DEFAULT();
+J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonCreator_Mode, DEFAULT)
 
-#define ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_DELEGATING ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_values_[ComFasterxmlJacksonAnnotationJsonCreator_Mode_DELEGATING]
-J2OBJC_ENUM_CONSTANT_GETTER(ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum, DELEGATING)
+inline ComFasterxmlJacksonAnnotationJsonCreator_Mode *ComFasterxmlJacksonAnnotationJsonCreator_Mode_get_DELEGATING();
+J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonCreator_Mode, DELEGATING)
 
-#define ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_PROPERTIES ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_values_[ComFasterxmlJacksonAnnotationJsonCreator_Mode_PROPERTIES]
-J2OBJC_ENUM_CONSTANT_GETTER(ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum, PROPERTIES)
+inline ComFasterxmlJacksonAnnotationJsonCreator_Mode *ComFasterxmlJacksonAnnotationJsonCreator_Mode_get_PROPERTIES();
+J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonCreator_Mode, PROPERTIES)
 
-#define ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_DISABLED ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_values_[ComFasterxmlJacksonAnnotationJsonCreator_Mode_DISABLED]
-J2OBJC_ENUM_CONSTANT_GETTER(ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum, DISABLED)
+inline ComFasterxmlJacksonAnnotationJsonCreator_Mode *ComFasterxmlJacksonAnnotationJsonCreator_Mode_get_DISABLED();
+J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonCreator_Mode, DISABLED)
 
-J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum)
+FOUNDATION_EXPORT IOSObjectArray *ComFasterxmlJacksonAnnotationJsonCreator_Mode_values();
 
-#endif // _ComFasterxmlJacksonAnnotationJsonCreator_H_
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonCreator_Mode *ComFasterxmlJacksonAnnotationJsonCreator_Mode_valueOfWithNSString_(NSString *name);
+
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonCreator_Mode *ComFasterxmlJacksonAnnotationJsonCreator_Mode_fromOrdinal(NSUInteger ordinal);
+
+J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJsonCreator_Mode)
+
+#endif
+
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
+#pragma pop_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonCreator")

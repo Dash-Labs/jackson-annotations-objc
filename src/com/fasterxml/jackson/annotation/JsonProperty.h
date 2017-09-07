@@ -3,13 +3,24 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JsonProperty.java
 //
 
-#ifndef _ComFasterxmlJacksonAnnotationJsonProperty_H_
-#define _ComFasterxmlJacksonAnnotationJsonProperty_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonProperty")
+#ifdef RESTRICT_ComFasterxmlJacksonAnnotationJsonProperty
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonProperty 0
+#else
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonProperty 1
+#endif
+#undef RESTRICT_ComFasterxmlJacksonAnnotationJsonProperty
+
+#if !defined (ComFasterxmlJacksonAnnotationJsonProperty_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonProperty || defined(INCLUDE_ComFasterxmlJacksonAnnotationJsonProperty))
+#define ComFasterxmlJacksonAnnotationJsonProperty_
+
+#define RESTRICT_JavaLangAnnotationAnnotation 1
+#define INCLUDE_JavaLangAnnotationAnnotation 1
 #include "java/lang/annotation/Annotation.h"
 
-#define ComFasterxmlJacksonAnnotationJsonProperty_INDEX_UNKNOWN -1
+@class IOSClass;
 
 @protocol ComFasterxmlJacksonAnnotationJsonProperty < JavaLangAnnotationAnnotation >
 
@@ -21,29 +32,30 @@
 @end
 
 @interface ComFasterxmlJacksonAnnotationJsonProperty : NSObject < ComFasterxmlJacksonAnnotationJsonProperty > {
- @private
+ @public
   NSString *value_;
   jboolean required_;
   jint index_;
   NSString *defaultValue_;
 }
 
-- (instancetype)initWithDefaultValue:(NSString *)defaultValue__ withIndex:(jint)index__ withRequired:(jboolean)required__ withValue:(NSString *)value__;
-
-+ (NSString *)valueDefault;
-+ (jboolean)requiredDefault;
-+ (jint)indexDefault;
-+ (NSString *)defaultValueDefault;
-
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonProperty)
 
-FOUNDATION_EXPORT NSString *ComFasterxmlJacksonAnnotationJsonProperty_USE_DEFAULT_NAME_;
-J2OBJC_STATIC_FIELD_GETTER(ComFasterxmlJacksonAnnotationJsonProperty, USE_DEFAULT_NAME_, NSString *)
+inline NSString *ComFasterxmlJacksonAnnotationJsonProperty_get_USE_DEFAULT_NAME();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *ComFasterxmlJacksonAnnotationJsonProperty_USE_DEFAULT_NAME;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(ComFasterxmlJacksonAnnotationJsonProperty, USE_DEFAULT_NAME, NSString *)
 
-J2OBJC_STATIC_FIELD_GETTER(ComFasterxmlJacksonAnnotationJsonProperty, INDEX_UNKNOWN, jint)
+inline jint ComFasterxmlJacksonAnnotationJsonProperty_get_INDEX_UNKNOWN();
+#define ComFasterxmlJacksonAnnotationJsonProperty_INDEX_UNKNOWN -1
+J2OBJC_STATIC_FIELD_CONSTANT(ComFasterxmlJacksonAnnotationJsonProperty, INDEX_UNKNOWN, jint)
+
+FOUNDATION_EXPORT id<ComFasterxmlJacksonAnnotationJsonProperty> create_ComFasterxmlJacksonAnnotationJsonProperty(NSString *defaultValue, jint index, jboolean required, NSString *value);
 
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJsonProperty)
 
-#endif // _ComFasterxmlJacksonAnnotationJsonProperty_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonProperty")

@@ -3,11 +3,24 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JsonRawValue.java
 //
 
-#ifndef _ComFasterxmlJacksonAnnotationJsonRawValue_H_
-#define _ComFasterxmlJacksonAnnotationJsonRawValue_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonRawValue")
+#ifdef RESTRICT_ComFasterxmlJacksonAnnotationJsonRawValue
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonRawValue 0
+#else
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonRawValue 1
+#endif
+#undef RESTRICT_ComFasterxmlJacksonAnnotationJsonRawValue
+
+#if !defined (ComFasterxmlJacksonAnnotationJsonRawValue_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonRawValue || defined(INCLUDE_ComFasterxmlJacksonAnnotationJsonRawValue))
+#define ComFasterxmlJacksonAnnotationJsonRawValue_
+
+#define RESTRICT_JavaLangAnnotationAnnotation 1
+#define INCLUDE_JavaLangAnnotationAnnotation 1
 #include "java/lang/annotation/Annotation.h"
+
+@class IOSClass;
 
 @protocol ComFasterxmlJacksonAnnotationJsonRawValue < JavaLangAnnotationAnnotation >
 
@@ -16,18 +29,18 @@
 @end
 
 @interface ComFasterxmlJacksonAnnotationJsonRawValue : NSObject < ComFasterxmlJacksonAnnotationJsonRawValue > {
- @private
+ @public
   jboolean value_;
 }
-
-- (instancetype)initWithValue:(jboolean)value__;
-
-+ (jboolean)valueDefault;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonRawValue)
 
+FOUNDATION_EXPORT id<ComFasterxmlJacksonAnnotationJsonRawValue> create_ComFasterxmlJacksonAnnotationJsonRawValue(jboolean value);
+
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJsonRawValue)
 
-#endif // _ComFasterxmlJacksonAnnotationJsonRawValue_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonRawValue")

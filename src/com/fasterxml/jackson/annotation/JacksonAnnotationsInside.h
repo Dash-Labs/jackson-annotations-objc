@@ -3,11 +3,24 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JacksonAnnotationsInside.java
 //
 
-#ifndef _ComFasterxmlJacksonAnnotationJacksonAnnotationsInside_H_
-#define _ComFasterxmlJacksonAnnotationJacksonAnnotationsInside_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJacksonAnnotationsInside")
+#ifdef RESTRICT_ComFasterxmlJacksonAnnotationJacksonAnnotationsInside
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJacksonAnnotationsInside 0
+#else
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJacksonAnnotationsInside 1
+#endif
+#undef RESTRICT_ComFasterxmlJacksonAnnotationJacksonAnnotationsInside
+
+#if !defined (ComFasterxmlJacksonAnnotationJacksonAnnotationsInside_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationJacksonAnnotationsInside || defined(INCLUDE_ComFasterxmlJacksonAnnotationJacksonAnnotationsInside))
+#define ComFasterxmlJacksonAnnotationJacksonAnnotationsInside_
+
+#define RESTRICT_JavaLangAnnotationAnnotation 1
+#define INCLUDE_JavaLangAnnotationAnnotation 1
 #include "java/lang/annotation/Annotation.h"
+
+@class IOSClass;
 
 @protocol ComFasterxmlJacksonAnnotationJacksonAnnotationsInside < JavaLangAnnotationAnnotation >
 
@@ -19,6 +32,10 @@
 
 J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationJacksonAnnotationsInside)
 
+FOUNDATION_EXPORT id<ComFasterxmlJacksonAnnotationJacksonAnnotationsInside> create_ComFasterxmlJacksonAnnotationJacksonAnnotationsInside();
+
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJacksonAnnotationsInside)
 
-#endif // _ComFasterxmlJacksonAnnotationJacksonAnnotationsInside_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJacksonAnnotationsInside")

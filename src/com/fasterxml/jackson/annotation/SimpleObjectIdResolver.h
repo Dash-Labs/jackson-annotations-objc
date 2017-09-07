@@ -3,10 +3,21 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/SimpleObjectIdResolver.java
 //
 
-#ifndef _ComFasterxmlJacksonAnnotationSimpleObjectIdResolver_H_
-#define _ComFasterxmlJacksonAnnotationSimpleObjectIdResolver_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationSimpleObjectIdResolver")
+#ifdef RESTRICT_ComFasterxmlJacksonAnnotationSimpleObjectIdResolver
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationSimpleObjectIdResolver 0
+#else
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationSimpleObjectIdResolver 1
+#endif
+#undef RESTRICT_ComFasterxmlJacksonAnnotationSimpleObjectIdResolver
+
+#if !defined (ComFasterxmlJacksonAnnotationSimpleObjectIdResolver_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationSimpleObjectIdResolver || defined(INCLUDE_ComFasterxmlJacksonAnnotationSimpleObjectIdResolver))
+#define ComFasterxmlJacksonAnnotationSimpleObjectIdResolver_
+
+#define RESTRICT_ComFasterxmlJacksonAnnotationObjectIdResolver 1
+#define INCLUDE_ComFasterxmlJacksonAnnotationObjectIdResolver 1
 #include "com/fasterxml/jackson/annotation/ObjectIdResolver.h"
 
 @class ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey;
@@ -40,6 +51,10 @@ FOUNDATION_EXPORT void ComFasterxmlJacksonAnnotationSimpleObjectIdResolver_init(
 
 FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationSimpleObjectIdResolver *new_ComFasterxmlJacksonAnnotationSimpleObjectIdResolver_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationSimpleObjectIdResolver *create_ComFasterxmlJacksonAnnotationSimpleObjectIdResolver_init();
+
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationSimpleObjectIdResolver)
 
-#endif // _ComFasterxmlJacksonAnnotationSimpleObjectIdResolver_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationSimpleObjectIdResolver")

@@ -3,76 +3,109 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JsonInclude.java
 //
 
-#ifndef _ComFasterxmlJacksonAnnotationJsonInclude_H_
-#define _ComFasterxmlJacksonAnnotationJsonInclude_H_
-
 #include "J2ObjC_header.h"
-#include "java/lang/Enum.h"
+
+#pragma push_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonInclude")
+#ifdef RESTRICT_ComFasterxmlJacksonAnnotationJsonInclude
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonInclude 0
+#else
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonInclude 1
+#endif
+#undef RESTRICT_ComFasterxmlJacksonAnnotationJsonInclude
+
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
+#if !defined (ComFasterxmlJacksonAnnotationJsonInclude_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonInclude || defined(INCLUDE_ComFasterxmlJacksonAnnotationJsonInclude))
+#define ComFasterxmlJacksonAnnotationJsonInclude_
+
+#define RESTRICT_JavaLangAnnotationAnnotation 1
+#define INCLUDE_JavaLangAnnotationAnnotation 1
 #include "java/lang/annotation/Annotation.h"
 
-@class ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum;
+@class ComFasterxmlJacksonAnnotationJsonInclude_Include;
+@class IOSClass;
 
 @protocol ComFasterxmlJacksonAnnotationJsonInclude < JavaLangAnnotationAnnotation >
 
-@property (readonly) ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum *value;
-@property (readonly) ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum *content;
+@property (readonly) ComFasterxmlJacksonAnnotationJsonInclude_Include *value;
+@property (readonly) ComFasterxmlJacksonAnnotationJsonInclude_Include *content;
 
 @end
 
 @interface ComFasterxmlJacksonAnnotationJsonInclude : NSObject < ComFasterxmlJacksonAnnotationJsonInclude > {
- @private
-  ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum *value_;
-  ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum *content_;
+ @public
+  ComFasterxmlJacksonAnnotationJsonInclude_Include *value_;
+  ComFasterxmlJacksonAnnotationJsonInclude_Include *content_;
 }
-
-- (instancetype)initWithContent:(ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum *)content__ withValue:(ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum *)value__;
-
-+ (ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum *)valueDefault;
-+ (ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum *)contentDefault;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonInclude)
 
+FOUNDATION_EXPORT id<ComFasterxmlJacksonAnnotationJsonInclude> create_ComFasterxmlJacksonAnnotationJsonInclude(ComFasterxmlJacksonAnnotationJsonInclude_Include *content, ComFasterxmlJacksonAnnotationJsonInclude_Include *value);
+
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJsonInclude)
 
-typedef NS_ENUM(NSUInteger, ComFasterxmlJacksonAnnotationJsonInclude_Include) {
-  ComFasterxmlJacksonAnnotationJsonInclude_Include_ALWAYS = 0,
-  ComFasterxmlJacksonAnnotationJsonInclude_Include_NON_NULL = 1,
-  ComFasterxmlJacksonAnnotationJsonInclude_Include_NON_DEFAULT = 2,
-  ComFasterxmlJacksonAnnotationJsonInclude_Include_NON_EMPTY = 3,
+#endif
+
+#if !defined (ComFasterxmlJacksonAnnotationJsonInclude_Include_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonInclude || defined(INCLUDE_ComFasterxmlJacksonAnnotationJsonInclude_Include))
+#define ComFasterxmlJacksonAnnotationJsonInclude_Include_
+
+#define RESTRICT_JavaLangEnum 1
+#define INCLUDE_JavaLangEnum 1
+#include "java/lang/Enum.h"
+
+@class IOSObjectArray;
+
+typedef NS_ENUM(NSUInteger, ComFasterxmlJacksonAnnotationJsonInclude_Include_Enum) {
+  ComFasterxmlJacksonAnnotationJsonInclude_Include_Enum_ALWAYS = 0,
+  ComFasterxmlJacksonAnnotationJsonInclude_Include_Enum_NON_NULL = 1,
+  ComFasterxmlJacksonAnnotationJsonInclude_Include_Enum_NON_DEFAULT = 2,
+  ComFasterxmlJacksonAnnotationJsonInclude_Include_Enum_NON_EMPTY = 3,
 };
 
-@interface ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum : JavaLangEnum < NSCopying >
+@interface ComFasterxmlJacksonAnnotationJsonInclude_Include : JavaLangEnum
 
-#pragma mark Package-Private
+#pragma mark Public
+
++ (ComFasterxmlJacksonAnnotationJsonInclude_Include *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_values();
-
-+ (ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum *)valueOfWithNSString:(NSString *)name;
-FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum *ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_valueOfWithNSString_(NSString *name);
-
-- (id)copyWithZone:(NSZone *)zone;
 
 @end
 
-J2OBJC_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum)
+J2OBJC_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonInclude_Include)
 
-FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum *ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_values_[];
+/*! INTERNAL ONLY - Use enum accessors declared below. */
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonInclude_Include *ComFasterxmlJacksonAnnotationJsonInclude_Include_values_[];
 
-#define ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_ALWAYS ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_values_[ComFasterxmlJacksonAnnotationJsonInclude_Include_ALWAYS]
-J2OBJC_ENUM_CONSTANT_GETTER(ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum, ALWAYS)
+inline ComFasterxmlJacksonAnnotationJsonInclude_Include *ComFasterxmlJacksonAnnotationJsonInclude_Include_get_ALWAYS();
+J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonInclude_Include, ALWAYS)
 
-#define ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_NON_NULL ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_values_[ComFasterxmlJacksonAnnotationJsonInclude_Include_NON_NULL]
-J2OBJC_ENUM_CONSTANT_GETTER(ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum, NON_NULL)
+inline ComFasterxmlJacksonAnnotationJsonInclude_Include *ComFasterxmlJacksonAnnotationJsonInclude_Include_get_NON_NULL();
+J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonInclude_Include, NON_NULL)
 
-#define ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_NON_DEFAULT ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_values_[ComFasterxmlJacksonAnnotationJsonInclude_Include_NON_DEFAULT]
-J2OBJC_ENUM_CONSTANT_GETTER(ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum, NON_DEFAULT)
+inline ComFasterxmlJacksonAnnotationJsonInclude_Include *ComFasterxmlJacksonAnnotationJsonInclude_Include_get_NON_DEFAULT();
+J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonInclude_Include, NON_DEFAULT)
 
-#define ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_NON_EMPTY ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_values_[ComFasterxmlJacksonAnnotationJsonInclude_Include_NON_EMPTY]
-J2OBJC_ENUM_CONSTANT_GETTER(ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum, NON_EMPTY)
+inline ComFasterxmlJacksonAnnotationJsonInclude_Include *ComFasterxmlJacksonAnnotationJsonInclude_Include_get_NON_EMPTY();
+J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonInclude_Include, NON_EMPTY)
 
-J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum)
+FOUNDATION_EXPORT IOSObjectArray *ComFasterxmlJacksonAnnotationJsonInclude_Include_values();
 
-#endif // _ComFasterxmlJacksonAnnotationJsonInclude_H_
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonInclude_Include *ComFasterxmlJacksonAnnotationJsonInclude_Include_valueOfWithNSString_(NSString *name);
+
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonInclude_Include *ComFasterxmlJacksonAnnotationJsonInclude_Include_fromOrdinal(NSUInteger ordinal);
+
+J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJsonInclude_Include)
+
+#endif
+
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
+#pragma pop_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonInclude")

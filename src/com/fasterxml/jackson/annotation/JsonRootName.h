@@ -3,11 +3,24 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JsonRootName.java
 //
 
-#ifndef _ComFasterxmlJacksonAnnotationJsonRootName_H_
-#define _ComFasterxmlJacksonAnnotationJsonRootName_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonRootName")
+#ifdef RESTRICT_ComFasterxmlJacksonAnnotationJsonRootName
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonRootName 0
+#else
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonRootName 1
+#endif
+#undef RESTRICT_ComFasterxmlJacksonAnnotationJsonRootName
+
+#if !defined (ComFasterxmlJacksonAnnotationJsonRootName_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonRootName || defined(INCLUDE_ComFasterxmlJacksonAnnotationJsonRootName))
+#define ComFasterxmlJacksonAnnotationJsonRootName_
+
+#define RESTRICT_JavaLangAnnotationAnnotation 1
+#define INCLUDE_JavaLangAnnotationAnnotation 1
 #include "java/lang/annotation/Annotation.h"
+
+@class IOSClass;
 
 @protocol ComFasterxmlJacksonAnnotationJsonRootName < JavaLangAnnotationAnnotation >
 
@@ -17,19 +30,19 @@
 @end
 
 @interface ComFasterxmlJacksonAnnotationJsonRootName : NSObject < ComFasterxmlJacksonAnnotationJsonRootName > {
- @private
+ @public
   NSString *value_;
   NSString *namespace___;
 }
-
-- (instancetype)initWithNamespace__:(NSString *)namespace____ withValue:(NSString *)value__;
-
-+ (NSString *)namespace__Default;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonRootName)
 
+FOUNDATION_EXPORT id<ComFasterxmlJacksonAnnotationJsonRootName> create_ComFasterxmlJacksonAnnotationJsonRootName(NSString *namespace__, NSString *value);
+
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJsonRootName)
 
-#endif // _ComFasterxmlJacksonAnnotationJsonRootName_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonRootName")

@@ -3,7 +3,6 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JsonInclude.java
 //
 
-
 #include "IOSClass.h"
 #include "IOSObjectArray.h"
 #include "J2ObjC_source.h"
@@ -11,34 +10,27 @@
 #include "com/fasterxml/jackson/annotation/JsonInclude.h"
 #include "java/lang/Enum.h"
 #include "java/lang/IllegalArgumentException.h"
+#include "java/lang/annotation/Annotation.h"
 #include "java/lang/annotation/ElementType.h"
 #include "java/lang/annotation/Retention.h"
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static void ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_initWithNSString_withInt_(ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum *self, NSString *__name, jint __ordinal);
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonInclude__Annotations$0();
 
-__attribute__((unused)) static ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum *new_ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_initWithNSString_withInt_(NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
+__attribute__((unused)) static void ComFasterxmlJacksonAnnotationJsonInclude_Include_initWithNSString_withInt_(ComFasterxmlJacksonAnnotationJsonInclude_Include *self, NSString *__name, jint __ordinal);
 
 @implementation ComFasterxmlJacksonAnnotationJsonInclude
 
 @synthesize value = value_;
 @synthesize content = content_;
 
-- (instancetype)initWithContent:(ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum *)content__ withValue:(ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum *)value__ {
-  if ((self = [super init])) {
-    self->content_ = RETAIN_(content__);
-    self->value_ = RETAIN_(value__);
-  }
-  return self;
++ (ComFasterxmlJacksonAnnotationJsonInclude_Include *)valueDefault {
+  return JreLoadEnum(ComFasterxmlJacksonAnnotationJsonInclude_Include, ALWAYS);
 }
 
-+ (ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum *)valueDefault {
-  return ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_get_ALWAYS();
-}
-
-+ (ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum *)contentDefault {
-  return ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_get_ALWAYS();
++ (ComFasterxmlJacksonAnnotationJsonInclude_Include *)contentDefault {
+  return JreLoadEnum(ComFasterxmlJacksonAnnotationJsonInclude_Include, ALWAYS);
 }
 
 - (IOSClass *)annotationType {
@@ -46,102 +38,130 @@ __attribute__((unused)) static ComFasterxmlJacksonAnnotationJsonInclude_IncludeE
 }
 
 - (NSString *)description {
-  return @"@com.fasterxml.jackson.annotation.JsonInclude()";
+  return [NSString stringWithFormat:@"@com.fasterxml.jackson.annotation.JsonInclude(value=%@, content=%@)", value_, content_];
 }
 
-+ (IOSObjectArray *)__annotations {
-  return [IOSObjectArray arrayWithObjects:(id[]) { [[[JavaLangAnnotationTarget alloc] initWithValue:[IOSObjectArray arrayWithObjects:(id[]) { JavaLangAnnotationElementTypeEnum_get_ANNOTATION_TYPE(), JavaLangAnnotationElementTypeEnum_get_METHOD(), JavaLangAnnotationElementTypeEnum_get_FIELD(), JavaLangAnnotationElementTypeEnum_get_TYPE(), JavaLangAnnotationElementTypeEnum_get_PARAMETER() } count:5 type:NSObject_class_()]] autorelease], [[[JavaLangAnnotationRetention alloc] initWithValue:JavaLangAnnotationRetentionPolicyEnum_get_RUNTIME()] autorelease], [[[ComFasterxmlJacksonAnnotationJacksonAnnotation alloc] init] autorelease] } count:3 type:JavaLangAnnotationAnnotation_class_()];
+- (void)dealloc {
+  RELEASE_(value_);
+  RELEASE_(content_);
+  [super dealloc];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "value", "value", "Lcom.fasterxml.jackson.annotation.JsonInclude$Include;", 0x401, NULL, NULL },
-    { "valueDefault", "value", "Lcom.fasterxml.jackson.annotation.JsonInclude$Include;", 0x100a, NULL, NULL },
-    { "content", "content", "Lcom.fasterxml.jackson.annotation.JsonInclude$Include;", 0x401, NULL, NULL },
-    { "contentDefault", "content", "Lcom.fasterxml.jackson.annotation.JsonInclude$Include;", 0x100a, NULL, NULL },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, "LComFasterxmlJacksonAnnotationJsonInclude_Include;", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LComFasterxmlJacksonAnnotationJsonInclude_Include;", 0x401, -1, -1, -1, -1, -1, -1 },
   };
-  static const char *inner_classes[] = {"Lcom.fasterxml.jackson.annotation.JsonInclude$Include;"};
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonInclude = { 2, "JsonInclude", "com.fasterxml.jackson.annotation", NULL, 0x2609, 4, methods, 0, NULL, 0, NULL, 1, inner_classes, NULL, NULL };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(value);
+  methods[1].selector = @selector(content);
+  #pragma clang diagnostic pop
+  static const J2ObjcFieldInfo fields[] = {
+    { "value_", "LComFasterxmlJacksonAnnotationJsonInclude_Include;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
+    { "content_", "LComFasterxmlJacksonAnnotationJsonInclude_Include;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
+  };
+  static const void *ptrTable[] = { "LComFasterxmlJacksonAnnotationJsonInclude_Include;", (void *)&ComFasterxmlJacksonAnnotationJsonInclude__Annotations$0 };
+  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonInclude = { "JsonInclude", "com.fasterxml.jackson.annotation", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, 0, -1, -1, 1 };
   return &_ComFasterxmlJacksonAnnotationJsonInclude;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationJsonInclude)
-
-J2OBJC_INITIALIZED_DEFN(ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum)
-
-ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum *ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_values_[4];
-
-@implementation ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum
-
-- (instancetype)initWithNSString:(NSString *)__name
-                         withInt:(jint)__ordinal {
-  ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_initWithNSString_withInt_(self, __name, __ordinal);
+id<ComFasterxmlJacksonAnnotationJsonInclude> create_ComFasterxmlJacksonAnnotationJsonInclude(ComFasterxmlJacksonAnnotationJsonInclude_Include *content, ComFasterxmlJacksonAnnotationJsonInclude_Include *value) {
+  ComFasterxmlJacksonAnnotationJsonInclude *self = AUTORELEASE([[ComFasterxmlJacksonAnnotationJsonInclude alloc] init]);
+  self->content_ = RETAIN_(content);
+  self->value_ = RETAIN_(value);
   return self;
 }
 
-IOSObjectArray *ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_values() {
-  ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_initialize();
-  return [IOSObjectArray arrayWithObjects:ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_values_ count:4 type:ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_class_()];
+IOSObjectArray *ComFasterxmlJacksonAnnotationJsonInclude__Annotations$0() {
+  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, ANNOTATION_TYPE), JreLoadEnum(JavaLangAnnotationElementType, METHOD), JreLoadEnum(JavaLangAnnotationElementType, FIELD), JreLoadEnum(JavaLangAnnotationElementType, TYPE), JreLoadEnum(JavaLangAnnotationElementType, PARAMETER) } count:5 type:JavaLangAnnotationElementType_class_()]), create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_ComFasterxmlJacksonAnnotationJacksonAnnotation() } count:3 type:JavaLangAnnotationAnnotation_class_()];
 }
+
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationJsonInclude)
+
+J2OBJC_INITIALIZED_DEFN(ComFasterxmlJacksonAnnotationJsonInclude_Include)
+
+ComFasterxmlJacksonAnnotationJsonInclude_Include *ComFasterxmlJacksonAnnotationJsonInclude_Include_values_[4];
+
+@implementation ComFasterxmlJacksonAnnotationJsonInclude_Include
 
 + (IOSObjectArray *)values {
-  return ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_values();
+  return ComFasterxmlJacksonAnnotationJsonInclude_Include_values();
 }
 
-+ (ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum *)valueOfWithNSString:(NSString *)name {
-  return ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_valueOfWithNSString_(name);
-}
-
-ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum *ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_valueOfWithNSString_(NSString *name) {
-  ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_initialize();
-  for (int i = 0; i < 4; i++) {
-    ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum *e = ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_values_[i];
-    if ([name isEqual:[e name]]) {
-      return e;
-    }
-  }
-  @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:name] autorelease];
-  return nil;
-}
-
-- (id)copyWithZone:(NSZone *)zone {
-  return [self retain];
-}
-
-+ (void)initialize {
-  if (self == [ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum class]) {
-    ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_ALWAYS = new_ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_initWithNSString_withInt_(@"ALWAYS", 0);
-    ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_NON_NULL = new_ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_initWithNSString_withInt_(@"NON_NULL", 1);
-    ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_NON_DEFAULT = new_ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_initWithNSString_withInt_(@"NON_DEFAULT", 2);
-    ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_NON_EMPTY = new_ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_initWithNSString_withInt_(@"NON_EMPTY", 3);
-    J2OBJC_SET_INITIALIZED(ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum)
-  }
++ (ComFasterxmlJacksonAnnotationJsonInclude_Include *)valueOfWithNSString:(NSString *)name {
+  return ComFasterxmlJacksonAnnotationJsonInclude_Include_valueOfWithNSString_(name);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcFieldInfo fields[] = {
-    { "ALWAYS", "ALWAYS", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonInclude$Include;", &ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_ALWAYS, NULL,  },
-    { "NON_NULL", "NON_NULL", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonInclude$Include;", &ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_NON_NULL, NULL,  },
-    { "NON_DEFAULT", "NON_DEFAULT", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonInclude$Include;", &ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_NON_DEFAULT, NULL,  },
-    { "NON_EMPTY", "NON_EMPTY", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonInclude$Include;", &ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_NON_EMPTY, NULL,  },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, "[LComFasterxmlJacksonAnnotationJsonInclude_Include;", 0x9, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LComFasterxmlJacksonAnnotationJsonInclude_Include;", 0x9, 0, 1, -1, -1, -1, -1 },
   };
-  static const char *superclass_type_args[] = {"Lcom.fasterxml.jackson.annotation.JsonInclude$Include;"};
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum = { 2, "Include", "com.fasterxml.jackson.annotation", "JsonInclude", 0x4019, 0, NULL, 4, fields, 1, superclass_type_args, 0, NULL, NULL, "Ljava/lang/Enum<Lcom/fasterxml/jackson/annotation/JsonInclude$Include;>;" };
-  return &_ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum;
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(values);
+  methods[1].selector = @selector(valueOfWithNSString:);
+  #pragma clang diagnostic pop
+  static const J2ObjcFieldInfo fields[] = {
+    { "ALWAYS", "LComFasterxmlJacksonAnnotationJsonInclude_Include;", .constantValue.asLong = 0, 0x4019, -1, 2, -1, -1 },
+    { "NON_NULL", "LComFasterxmlJacksonAnnotationJsonInclude_Include;", .constantValue.asLong = 0, 0x4019, -1, 3, -1, -1 },
+    { "NON_DEFAULT", "LComFasterxmlJacksonAnnotationJsonInclude_Include;", .constantValue.asLong = 0, 0x4019, -1, 4, -1, -1 },
+    { "NON_EMPTY", "LComFasterxmlJacksonAnnotationJsonInclude_Include;", .constantValue.asLong = 0, 0x4019, -1, 5, -1, -1 },
+  };
+  static const void *ptrTable[] = { "valueOf", "LNSString;", &JreEnum(ComFasterxmlJacksonAnnotationJsonInclude_Include, ALWAYS), &JreEnum(ComFasterxmlJacksonAnnotationJsonInclude_Include, NON_NULL), &JreEnum(ComFasterxmlJacksonAnnotationJsonInclude_Include, NON_DEFAULT), &JreEnum(ComFasterxmlJacksonAnnotationJsonInclude_Include, NON_EMPTY), "LComFasterxmlJacksonAnnotationJsonInclude;", "Ljava/lang/Enum<Lcom/fasterxml/jackson/annotation/JsonInclude$Include;>;" };
+  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonInclude_Include = { "Include", "com.fasterxml.jackson.annotation", ptrTable, methods, fields, 7, 0x4019, 2, 4, 6, -1, -1, 7, -1 };
+  return &_ComFasterxmlJacksonAnnotationJsonInclude_Include;
+}
+
++ (void)initialize {
+  if (self == [ComFasterxmlJacksonAnnotationJsonInclude_Include class]) {
+    size_t objSize = class_getInstanceSize(self);
+    size_t allocSize = 4 * objSize;
+    uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
+    id e;
+    id names[] = {
+      @"ALWAYS", @"NON_NULL", @"NON_DEFAULT", @"NON_EMPTY",
+    };
+    for (jint i = 0; i < 4; i++) {
+      (ComFasterxmlJacksonAnnotationJsonInclude_Include_values_[i] = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+      ComFasterxmlJacksonAnnotationJsonInclude_Include_initWithNSString_withInt_(e, names[i], i);
+    }
+    J2OBJC_SET_INITIALIZED(ComFasterxmlJacksonAnnotationJsonInclude_Include)
+  }
 }
 
 @end
 
-void ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_initWithNSString_withInt_(ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum *self, NSString *__name, jint __ordinal) {
+void ComFasterxmlJacksonAnnotationJsonInclude_Include_initWithNSString_withInt_(ComFasterxmlJacksonAnnotationJsonInclude_Include *self, NSString *__name, jint __ordinal) {
   JavaLangEnum_initWithNSString_withInt_(self, __name, __ordinal);
 }
 
-ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum *new_ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_initWithNSString_withInt_(NSString *__name, jint __ordinal) {
-  ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum *self = [ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum alloc];
-  ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum_initWithNSString_withInt_(self, __name, __ordinal);
-  return self;
+IOSObjectArray *ComFasterxmlJacksonAnnotationJsonInclude_Include_values() {
+  ComFasterxmlJacksonAnnotationJsonInclude_Include_initialize();
+  return [IOSObjectArray arrayWithObjects:ComFasterxmlJacksonAnnotationJsonInclude_Include_values_ count:4 type:ComFasterxmlJacksonAnnotationJsonInclude_Include_class_()];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationJsonInclude_IncludeEnum)
+ComFasterxmlJacksonAnnotationJsonInclude_Include *ComFasterxmlJacksonAnnotationJsonInclude_Include_valueOfWithNSString_(NSString *name) {
+  ComFasterxmlJacksonAnnotationJsonInclude_Include_initialize();
+  for (int i = 0; i < 4; i++) {
+    ComFasterxmlJacksonAnnotationJsonInclude_Include *e = ComFasterxmlJacksonAnnotationJsonInclude_Include_values_[i];
+    if ([name isEqual:[e name]]) {
+      return e;
+    }
+  }
+  @throw create_JavaLangIllegalArgumentException_initWithNSString_(name);
+  return nil;
+}
+
+ComFasterxmlJacksonAnnotationJsonInclude_Include *ComFasterxmlJacksonAnnotationJsonInclude_Include_fromOrdinal(NSUInteger ordinal) {
+  ComFasterxmlJacksonAnnotationJsonInclude_Include_initialize();
+  if (ordinal >= 4) {
+    return nil;
+  }
+  return ComFasterxmlJacksonAnnotationJsonInclude_Include_values_[ordinal];
+}
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationJsonInclude_Include)

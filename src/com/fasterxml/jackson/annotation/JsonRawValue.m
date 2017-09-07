@@ -3,30 +3,25 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JsonRawValue.java
 //
 
-
 #include "IOSClass.h"
 #include "IOSObjectArray.h"
 #include "J2ObjC_source.h"
 #include "com/fasterxml/jackson/annotation/JacksonAnnotation.h"
 #include "com/fasterxml/jackson/annotation/JsonRawValue.h"
+#include "java/lang/annotation/Annotation.h"
 #include "java/lang/annotation/ElementType.h"
 #include "java/lang/annotation/Retention.h"
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonRawValue__Annotations$0();
+
 @implementation ComFasterxmlJacksonAnnotationJsonRawValue
 
 @synthesize value = value_;
 
-- (instancetype)initWithValue:(jboolean)value__ {
-  if ((self = [super init])) {
-    self->value_ = value__;
-  }
-  return self;
-}
-
 + (jboolean)valueDefault {
-  return YES;
+  return true;
 }
 
 - (IOSClass *)annotationType {
@@ -34,22 +29,35 @@
 }
 
 - (NSString *)description {
-  return @"@com.fasterxml.jackson.annotation.JsonRawValue()";
-}
-
-+ (IOSObjectArray *)__annotations {
-  return [IOSObjectArray arrayWithObjects:(id[]) { [[[JavaLangAnnotationTarget alloc] initWithValue:[IOSObjectArray arrayWithObjects:(id[]) { JavaLangAnnotationElementTypeEnum_get_ANNOTATION_TYPE(), JavaLangAnnotationElementTypeEnum_get_METHOD(), JavaLangAnnotationElementTypeEnum_get_FIELD() } count:3 type:NSObject_class_()]] autorelease], [[[JavaLangAnnotationRetention alloc] initWithValue:JavaLangAnnotationRetentionPolicyEnum_get_RUNTIME()] autorelease], [[[ComFasterxmlJacksonAnnotationJacksonAnnotation alloc] init] autorelease] } count:3 type:JavaLangAnnotationAnnotation_class_()];
+  return [NSString stringWithFormat:@"@com.fasterxml.jackson.annotation.JsonRawValue(value=%d)", value_];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "value", "value", "Z", 0x401, NULL, NULL },
-    { "valueDefault", "value", "Z", 0x100a, NULL, NULL },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, "Z", 0x401, -1, -1, -1, -1, -1, -1 },
   };
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonRawValue = { 2, "JsonRawValue", "com.fasterxml.jackson.annotation", NULL, 0x2609, 2, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(value);
+  #pragma clang diagnostic pop
+  static const J2ObjcFieldInfo fields[] = {
+    { "value_", "Z", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
+  };
+  static const void *ptrTable[] = { (void *)&ComFasterxmlJacksonAnnotationJsonRawValue__Annotations$0 };
+  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonRawValue = { "JsonRawValue", "com.fasterxml.jackson.annotation", ptrTable, methods, fields, 7, 0x2609, 1, 1, -1, -1, -1, -1, 0 };
   return &_ComFasterxmlJacksonAnnotationJsonRawValue;
 }
 
 @end
+
+id<ComFasterxmlJacksonAnnotationJsonRawValue> create_ComFasterxmlJacksonAnnotationJsonRawValue(jboolean value) {
+  ComFasterxmlJacksonAnnotationJsonRawValue *self = AUTORELEASE([[ComFasterxmlJacksonAnnotationJsonRawValue alloc] init]);
+  self->value_ = value;
+  return self;
+}
+
+IOSObjectArray *ComFasterxmlJacksonAnnotationJsonRawValue__Annotations$0() {
+  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, ANNOTATION_TYPE), JreLoadEnum(JavaLangAnnotationElementType, METHOD), JreLoadEnum(JavaLangAnnotationElementType, FIELD) } count:3 type:JavaLangAnnotationElementType_class_()]), create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_ComFasterxmlJacksonAnnotationJacksonAnnotation() } count:3 type:JavaLangAnnotationAnnotation_class_()];
+}
 
 J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationJsonRawValue)

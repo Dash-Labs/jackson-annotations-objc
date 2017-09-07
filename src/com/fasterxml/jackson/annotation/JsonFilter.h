@@ -3,11 +3,24 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JsonFilter.java
 //
 
-#ifndef _ComFasterxmlJacksonAnnotationJsonFilter_H_
-#define _ComFasterxmlJacksonAnnotationJsonFilter_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonFilter")
+#ifdef RESTRICT_ComFasterxmlJacksonAnnotationJsonFilter
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonFilter 0
+#else
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonFilter 1
+#endif
+#undef RESTRICT_ComFasterxmlJacksonAnnotationJsonFilter
+
+#if !defined (ComFasterxmlJacksonAnnotationJsonFilter_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonFilter || defined(INCLUDE_ComFasterxmlJacksonAnnotationJsonFilter))
+#define ComFasterxmlJacksonAnnotationJsonFilter_
+
+#define RESTRICT_JavaLangAnnotationAnnotation 1
+#define INCLUDE_JavaLangAnnotationAnnotation 1
 #include "java/lang/annotation/Annotation.h"
+
+@class IOSClass;
 
 @protocol ComFasterxmlJacksonAnnotationJsonFilter < JavaLangAnnotationAnnotation >
 
@@ -16,16 +29,18 @@
 @end
 
 @interface ComFasterxmlJacksonAnnotationJsonFilter : NSObject < ComFasterxmlJacksonAnnotationJsonFilter > {
- @private
+ @public
   NSString *value_;
 }
-
-- (instancetype)initWithValue:(NSString *)value__;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonFilter)
 
+FOUNDATION_EXPORT id<ComFasterxmlJacksonAnnotationJsonFilter> create_ComFasterxmlJacksonAnnotationJsonFilter(NSString *value);
+
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJsonFilter)
 
-#endif // _ComFasterxmlJacksonAnnotationJsonFilter_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonFilter")

@@ -3,18 +3,20 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JsonProperty.java
 //
 
-
 #include "IOSClass.h"
 #include "IOSObjectArray.h"
 #include "J2ObjC_source.h"
 #include "com/fasterxml/jackson/annotation/JacksonAnnotation.h"
 #include "com/fasterxml/jackson/annotation/JsonProperty.h"
+#include "java/lang/annotation/Annotation.h"
 #include "java/lang/annotation/ElementType.h"
 #include "java/lang/annotation/Retention.h"
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-NSString *ComFasterxmlJacksonAnnotationJsonProperty_USE_DEFAULT_NAME_ = @"";
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonProperty__Annotations$0();
+
+NSString *ComFasterxmlJacksonAnnotationJsonProperty_USE_DEFAULT_NAME = @"";
 
 @implementation ComFasterxmlJacksonAnnotationJsonProperty
 
@@ -23,26 +25,16 @@ NSString *ComFasterxmlJacksonAnnotationJsonProperty_USE_DEFAULT_NAME_ = @"";
 @synthesize index = index_;
 @synthesize defaultValue = defaultValue_;
 
-- (instancetype)initWithDefaultValue:(NSString *)defaultValue__ withIndex:(jint)index__ withRequired:(jboolean)required__ withValue:(NSString *)value__ {
-  if ((self = [super init])) {
-    self->defaultValue_ = RETAIN_(defaultValue__);
-    self->index_ = index__;
-    self->required_ = required__;
-    self->value_ = RETAIN_(value__);
-  }
-  return self;
-}
-
 + (NSString *)valueDefault {
-  return ComFasterxmlJacksonAnnotationJsonProperty_USE_DEFAULT_NAME_;
+  return @"";
 }
 
 + (jboolean)requiredDefault {
-  return NO;
+  return false;
 }
 
 + (jint)indexDefault {
-  return ComFasterxmlJacksonAnnotationJsonProperty_INDEX_UNKNOWN;
+  return -1;
 }
 
 + (NSString *)defaultValueDefault {
@@ -54,32 +46,55 @@ NSString *ComFasterxmlJacksonAnnotationJsonProperty_USE_DEFAULT_NAME_ = @"";
 }
 
 - (NSString *)description {
-  return @"@com.fasterxml.jackson.annotation.JsonProperty()";
+  return [NSString stringWithFormat:@"@com.fasterxml.jackson.annotation.JsonProperty(value=%@, required=%d, index=%d, defaultValue=%@)", value_, required_, index_, defaultValue_];
 }
 
-+ (IOSObjectArray *)__annotations {
-  return [IOSObjectArray arrayWithObjects:(id[]) { [[[JavaLangAnnotationTarget alloc] initWithValue:[IOSObjectArray arrayWithObjects:(id[]) { JavaLangAnnotationElementTypeEnum_get_ANNOTATION_TYPE(), JavaLangAnnotationElementTypeEnum_get_FIELD(), JavaLangAnnotationElementTypeEnum_get_METHOD(), JavaLangAnnotationElementTypeEnum_get_PARAMETER() } count:4 type:NSObject_class_()]] autorelease], [[[JavaLangAnnotationRetention alloc] initWithValue:JavaLangAnnotationRetentionPolicyEnum_get_RUNTIME()] autorelease], [[[ComFasterxmlJacksonAnnotationJacksonAnnotation alloc] init] autorelease] } count:3 type:JavaLangAnnotationAnnotation_class_()];
+- (void)dealloc {
+  RELEASE_(value_);
+  RELEASE_(defaultValue_);
+  [super dealloc];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "value", "value", "Ljava.lang.String;", 0x401, NULL, NULL },
-    { "valueDefault", "value", "Ljava.lang.String;", 0x100a, NULL, NULL },
-    { "required", "required", "Z", 0x401, NULL, NULL },
-    { "requiredDefault", "required", "Z", 0x100a, NULL, NULL },
-    { "index", "index", "I", 0x401, NULL, NULL },
-    { "indexDefault", "index", "I", 0x100a, NULL, NULL },
-    { "defaultValue", "defaultValue", "Ljava.lang.String;", 0x401, NULL, NULL },
-    { "defaultValueDefault", "defaultValue", "Ljava.lang.String;", 0x100a, NULL, NULL },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, "LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "Z", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "I", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
   };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(value);
+  methods[1].selector = @selector(required);
+  methods[2].selector = @selector(index);
+  methods[3].selector = @selector(defaultValue);
+  #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "USE_DEFAULT_NAME_", NULL, 0x19, "Ljava.lang.String;", &ComFasterxmlJacksonAnnotationJsonProperty_USE_DEFAULT_NAME_, NULL,  },
-    { "INDEX_UNKNOWN_", NULL, 0x19, "I", NULL, NULL, .constantValue.asInt = ComFasterxmlJacksonAnnotationJsonProperty_INDEX_UNKNOWN },
+    { "USE_DEFAULT_NAME", "LNSString;", .constantValue.asLong = 0, 0x19, -1, 0, -1, -1 },
+    { "INDEX_UNKNOWN", "I", .constantValue.asInt = ComFasterxmlJacksonAnnotationJsonProperty_INDEX_UNKNOWN, 0x19, -1, -1, -1, -1 },
+    { "value_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
+    { "required_", "Z", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
+    { "index_", "I", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
+    { "defaultValue_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonProperty = { 2, "JsonProperty", "com.fasterxml.jackson.annotation", NULL, 0x2609, 8, methods, 2, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const void *ptrTable[] = { &ComFasterxmlJacksonAnnotationJsonProperty_USE_DEFAULT_NAME, (void *)&ComFasterxmlJacksonAnnotationJsonProperty__Annotations$0 };
+  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonProperty = { "JsonProperty", "com.fasterxml.jackson.annotation", ptrTable, methods, fields, 7, 0x2609, 4, 6, -1, -1, -1, -1, 1 };
   return &_ComFasterxmlJacksonAnnotationJsonProperty;
 }
 
 @end
+
+id<ComFasterxmlJacksonAnnotationJsonProperty> create_ComFasterxmlJacksonAnnotationJsonProperty(NSString *defaultValue, jint index, jboolean required, NSString *value) {
+  ComFasterxmlJacksonAnnotationJsonProperty *self = AUTORELEASE([[ComFasterxmlJacksonAnnotationJsonProperty alloc] init]);
+  self->defaultValue_ = RETAIN_(defaultValue);
+  self->index_ = index;
+  self->required_ = required;
+  self->value_ = RETAIN_(value);
+  return self;
+}
+
+IOSObjectArray *ComFasterxmlJacksonAnnotationJsonProperty__Annotations$0() {
+  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, ANNOTATION_TYPE), JreLoadEnum(JavaLangAnnotationElementType, FIELD), JreLoadEnum(JavaLangAnnotationElementType, METHOD), JreLoadEnum(JavaLangAnnotationElementType, PARAMETER) } count:4 type:JavaLangAnnotationElementType_class_()]), create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_ComFasterxmlJacksonAnnotationJacksonAnnotation() } count:3 type:JavaLangAnnotationAnnotation_class_()];
+}
 
 J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationJsonProperty)

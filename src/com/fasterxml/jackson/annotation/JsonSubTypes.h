@@ -3,10 +3,21 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JsonSubTypes.java
 //
 
-#ifndef _ComFasterxmlJacksonAnnotationJsonSubTypes_H_
-#define _ComFasterxmlJacksonAnnotationJsonSubTypes_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonSubTypes")
+#ifdef RESTRICT_ComFasterxmlJacksonAnnotationJsonSubTypes
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonSubTypes 0
+#else
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonSubTypes 1
+#endif
+#undef RESTRICT_ComFasterxmlJacksonAnnotationJsonSubTypes
+
+#if !defined (ComFasterxmlJacksonAnnotationJsonSubTypes_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonSubTypes || defined(INCLUDE_ComFasterxmlJacksonAnnotationJsonSubTypes))
+#define ComFasterxmlJacksonAnnotationJsonSubTypes_
+
+#define RESTRICT_JavaLangAnnotationAnnotation 1
+#define INCLUDE_JavaLangAnnotationAnnotation 1
 #include "java/lang/annotation/Annotation.h"
 
 @class IOSClass;
@@ -19,34 +30,28 @@
 @end
 
 @interface ComFasterxmlJacksonAnnotationJsonSubTypes : NSObject < ComFasterxmlJacksonAnnotationJsonSubTypes > {
- @private
+ @public
   IOSObjectArray *value_;
 }
-
-- (instancetype)initWithValue:(IOSObjectArray *)value__;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonSubTypes)
 
+FOUNDATION_EXPORT id<ComFasterxmlJacksonAnnotationJsonSubTypes> create_ComFasterxmlJacksonAnnotationJsonSubTypes(IOSObjectArray *value);
+
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJsonSubTypes)
 
+#endif
+
+#if !defined (ComFasterxmlJacksonAnnotationJsonSubTypes_Type_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonSubTypes || defined(INCLUDE_ComFasterxmlJacksonAnnotationJsonSubTypes_Type))
+#define ComFasterxmlJacksonAnnotationJsonSubTypes_Type_
+
+#define RESTRICT_JavaLangAnnotationAnnotation 1
+#define INCLUDE_JavaLangAnnotationAnnotation 1
+#include "java/lang/annotation/Annotation.h"
+
 @protocol ComFasterxmlJacksonAnnotationJsonSubTypes_Type < JavaLangAnnotationAnnotation >
-
-@property (readonly) IOSClass *value;
-@property (readonly) NSString *name;
-
-@end
-
-@interface ComFasterxmlJacksonAnnotationJsonSubTypes_Type : NSObject < ComFasterxmlJacksonAnnotationJsonSubTypes_Type > {
- @private
-  IOSClass *value_;
-  NSString *name_;
-}
-
-- (instancetype)initWithName:(NSString *)name__ withValue:(IOSClass *)value__;
-
-+ (NSString *)nameDefault;
 
 @end
 
@@ -54,4 +59,6 @@ J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonSubTypes_Type)
 
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJsonSubTypes_Type)
 
-#endif // _ComFasterxmlJacksonAnnotationJsonSubTypes_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonSubTypes")

@@ -3,11 +3,24 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JsonManagedReference.java
 //
 
-#ifndef _ComFasterxmlJacksonAnnotationJsonManagedReference_H_
-#define _ComFasterxmlJacksonAnnotationJsonManagedReference_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonManagedReference")
+#ifdef RESTRICT_ComFasterxmlJacksonAnnotationJsonManagedReference
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonManagedReference 0
+#else
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonManagedReference 1
+#endif
+#undef RESTRICT_ComFasterxmlJacksonAnnotationJsonManagedReference
+
+#if !defined (ComFasterxmlJacksonAnnotationJsonManagedReference_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonManagedReference || defined(INCLUDE_ComFasterxmlJacksonAnnotationJsonManagedReference))
+#define ComFasterxmlJacksonAnnotationJsonManagedReference_
+
+#define RESTRICT_JavaLangAnnotationAnnotation 1
+#define INCLUDE_JavaLangAnnotationAnnotation 1
 #include "java/lang/annotation/Annotation.h"
+
+@class IOSClass;
 
 @protocol ComFasterxmlJacksonAnnotationJsonManagedReference < JavaLangAnnotationAnnotation >
 
@@ -16,18 +29,18 @@
 @end
 
 @interface ComFasterxmlJacksonAnnotationJsonManagedReference : NSObject < ComFasterxmlJacksonAnnotationJsonManagedReference > {
- @private
+ @public
   NSString *value_;
 }
-
-- (instancetype)initWithValue:(NSString *)value__;
-
-+ (NSString *)valueDefault;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonManagedReference)
 
+FOUNDATION_EXPORT id<ComFasterxmlJacksonAnnotationJsonManagedReference> create_ComFasterxmlJacksonAnnotationJsonManagedReference(NSString *value);
+
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJsonManagedReference)
 
-#endif // _ComFasterxmlJacksonAnnotationJsonManagedReference_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonManagedReference")

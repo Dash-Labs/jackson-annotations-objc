@@ -3,11 +3,24 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JsonSetter.java
 //
 
-#ifndef _ComFasterxmlJacksonAnnotationJsonSetter_H_
-#define _ComFasterxmlJacksonAnnotationJsonSetter_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonSetter")
+#ifdef RESTRICT_ComFasterxmlJacksonAnnotationJsonSetter
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonSetter 0
+#else
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonSetter 1
+#endif
+#undef RESTRICT_ComFasterxmlJacksonAnnotationJsonSetter
+
+#if !defined (ComFasterxmlJacksonAnnotationJsonSetter_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonSetter || defined(INCLUDE_ComFasterxmlJacksonAnnotationJsonSetter))
+#define ComFasterxmlJacksonAnnotationJsonSetter_
+
+#define RESTRICT_JavaLangAnnotationAnnotation 1
+#define INCLUDE_JavaLangAnnotationAnnotation 1
 #include "java/lang/annotation/Annotation.h"
+
+@class IOSClass;
 
 @protocol ComFasterxmlJacksonAnnotationJsonSetter < JavaLangAnnotationAnnotation >
 
@@ -16,18 +29,18 @@
 @end
 
 @interface ComFasterxmlJacksonAnnotationJsonSetter : NSObject < ComFasterxmlJacksonAnnotationJsonSetter > {
- @private
+ @public
   NSString *value_;
 }
-
-- (instancetype)initWithValue:(NSString *)value__;
-
-+ (NSString *)valueDefault;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonSetter)
 
+FOUNDATION_EXPORT id<ComFasterxmlJacksonAnnotationJsonSetter> create_ComFasterxmlJacksonAnnotationJsonSetter(NSString *value);
+
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJsonSetter)
 
-#endif // _ComFasterxmlJacksonAnnotationJsonSetter_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonSetter")

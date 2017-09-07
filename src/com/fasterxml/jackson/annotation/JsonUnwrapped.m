@@ -3,16 +3,18 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JsonUnwrapped.java
 //
 
-
 #include "IOSClass.h"
 #include "IOSObjectArray.h"
 #include "J2ObjC_source.h"
 #include "com/fasterxml/jackson/annotation/JacksonAnnotation.h"
 #include "com/fasterxml/jackson/annotation/JsonUnwrapped.h"
+#include "java/lang/annotation/Annotation.h"
 #include "java/lang/annotation/ElementType.h"
 #include "java/lang/annotation/Retention.h"
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
+
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonUnwrapped__Annotations$0();
 
 @implementation ComFasterxmlJacksonAnnotationJsonUnwrapped
 
@@ -20,17 +22,8 @@
 @synthesize prefix = prefix_;
 @synthesize suffix = suffix_;
 
-- (instancetype)initWithEnabled:(jboolean)enabled__ withPrefix:(NSString *)prefix__ withSuffix:(NSString *)suffix__ {
-  if ((self = [super init])) {
-    self->enabled_ = enabled__;
-    self->prefix_ = RETAIN_(prefix__);
-    self->suffix_ = RETAIN_(suffix__);
-  }
-  return self;
-}
-
 + (jboolean)enabledDefault {
-  return YES;
+  return true;
 }
 
 + (NSString *)prefixDefault {
@@ -46,26 +39,49 @@
 }
 
 - (NSString *)description {
-  return @"@com.fasterxml.jackson.annotation.JsonUnwrapped()";
+  return [NSString stringWithFormat:@"@com.fasterxml.jackson.annotation.JsonUnwrapped(enabled=%d, prefix=%@, suffix=%@)", enabled_, prefix_, suffix_];
 }
 
-+ (IOSObjectArray *)__annotations {
-  return [IOSObjectArray arrayWithObjects:(id[]) { [[[JavaLangAnnotationTarget alloc] initWithValue:[IOSObjectArray arrayWithObjects:(id[]) { JavaLangAnnotationElementTypeEnum_get_ANNOTATION_TYPE(), JavaLangAnnotationElementTypeEnum_get_FIELD(), JavaLangAnnotationElementTypeEnum_get_METHOD(), JavaLangAnnotationElementTypeEnum_get_PARAMETER() } count:4 type:NSObject_class_()]] autorelease], [[[JavaLangAnnotationRetention alloc] initWithValue:JavaLangAnnotationRetentionPolicyEnum_get_RUNTIME()] autorelease], [[[ComFasterxmlJacksonAnnotationJacksonAnnotation alloc] init] autorelease] } count:3 type:JavaLangAnnotationAnnotation_class_()];
+- (void)dealloc {
+  RELEASE_(prefix_);
+  RELEASE_(suffix_);
+  [super dealloc];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "enabled", "enabled", "Z", 0x401, NULL, NULL },
-    { "enabledDefault", "enabled", "Z", 0x100a, NULL, NULL },
-    { "prefix", "prefix", "Ljava.lang.String;", 0x401, NULL, NULL },
-    { "prefixDefault", "prefix", "Ljava.lang.String;", 0x100a, NULL, NULL },
-    { "suffix", "suffix", "Ljava.lang.String;", 0x401, NULL, NULL },
-    { "suffixDefault", "suffix", "Ljava.lang.String;", 0x100a, NULL, NULL },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, "Z", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
   };
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonUnwrapped = { 2, "JsonUnwrapped", "com.fasterxml.jackson.annotation", NULL, 0x2609, 6, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(enabled);
+  methods[1].selector = @selector(prefix);
+  methods[2].selector = @selector(suffix);
+  #pragma clang diagnostic pop
+  static const J2ObjcFieldInfo fields[] = {
+    { "enabled_", "Z", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
+    { "prefix_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
+    { "suffix_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
+  };
+  static const void *ptrTable[] = { (void *)&ComFasterxmlJacksonAnnotationJsonUnwrapped__Annotations$0 };
+  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonUnwrapped = { "JsonUnwrapped", "com.fasterxml.jackson.annotation", ptrTable, methods, fields, 7, 0x2609, 3, 3, -1, -1, -1, -1, 0 };
   return &_ComFasterxmlJacksonAnnotationJsonUnwrapped;
 }
 
 @end
+
+id<ComFasterxmlJacksonAnnotationJsonUnwrapped> create_ComFasterxmlJacksonAnnotationJsonUnwrapped(jboolean enabled, NSString *prefix, NSString *suffix) {
+  ComFasterxmlJacksonAnnotationJsonUnwrapped *self = AUTORELEASE([[ComFasterxmlJacksonAnnotationJsonUnwrapped alloc] init]);
+  self->enabled_ = enabled;
+  self->prefix_ = RETAIN_(prefix);
+  self->suffix_ = RETAIN_(suffix);
+  return self;
+}
+
+IOSObjectArray *ComFasterxmlJacksonAnnotationJsonUnwrapped__Annotations$0() {
+  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, ANNOTATION_TYPE), JreLoadEnum(JavaLangAnnotationElementType, FIELD), JreLoadEnum(JavaLangAnnotationElementType, METHOD), JreLoadEnum(JavaLangAnnotationElementType, PARAMETER) } count:4 type:JavaLangAnnotationElementType_class_()]), create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_ComFasterxmlJacksonAnnotationJacksonAnnotation() } count:3 type:JavaLangAnnotationAnnotation_class_()];
+}
 
 J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationJsonUnwrapped)

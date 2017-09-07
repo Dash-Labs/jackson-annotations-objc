@@ -3,11 +3,24 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JsonAnyGetter.java
 //
 
-#ifndef _ComFasterxmlJacksonAnnotationJsonAnyGetter_H_
-#define _ComFasterxmlJacksonAnnotationJsonAnyGetter_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonAnyGetter")
+#ifdef RESTRICT_ComFasterxmlJacksonAnnotationJsonAnyGetter
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonAnyGetter 0
+#else
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonAnyGetter 1
+#endif
+#undef RESTRICT_ComFasterxmlJacksonAnnotationJsonAnyGetter
+
+#if !defined (ComFasterxmlJacksonAnnotationJsonAnyGetter_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonAnyGetter || defined(INCLUDE_ComFasterxmlJacksonAnnotationJsonAnyGetter))
+#define ComFasterxmlJacksonAnnotationJsonAnyGetter_
+
+#define RESTRICT_JavaLangAnnotationAnnotation 1
+#define INCLUDE_JavaLangAnnotationAnnotation 1
 #include "java/lang/annotation/Annotation.h"
+
+@class IOSClass;
 
 @protocol ComFasterxmlJacksonAnnotationJsonAnyGetter < JavaLangAnnotationAnnotation >
 
@@ -19,6 +32,10 @@
 
 J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonAnyGetter)
 
+FOUNDATION_EXPORT id<ComFasterxmlJacksonAnnotationJsonAnyGetter> create_ComFasterxmlJacksonAnnotationJsonAnyGetter();
+
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJsonAnyGetter)
 
-#endif // _ComFasterxmlJacksonAnnotationJsonAnyGetter_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonAnyGetter")

@@ -3,15 +3,17 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JacksonAnnotation.java
 //
 
-
 #include "IOSClass.h"
 #include "IOSObjectArray.h"
 #include "J2ObjC_source.h"
 #include "com/fasterxml/jackson/annotation/JacksonAnnotation.h"
+#include "java/lang/annotation/Annotation.h"
 #include "java/lang/annotation/ElementType.h"
 #include "java/lang/annotation/Retention.h"
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
+
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJacksonAnnotation__Annotations$0();
 
 @implementation ComFasterxmlJacksonAnnotationJacksonAnnotation
 
@@ -23,15 +25,21 @@
   return @"@com.fasterxml.jackson.annotation.JacksonAnnotation()";
 }
 
-+ (IOSObjectArray *)__annotations {
-  return [IOSObjectArray arrayWithObjects:(id[]) { [[[JavaLangAnnotationTarget alloc] initWithValue:[IOSObjectArray arrayWithObjects:(id[]) { JavaLangAnnotationElementTypeEnum_get_ANNOTATION_TYPE() } count:1 type:NSObject_class_()]] autorelease], [[[JavaLangAnnotationRetention alloc] initWithValue:JavaLangAnnotationRetentionPolicyEnum_get_RUNTIME()] autorelease] } count:2 type:JavaLangAnnotationAnnotation_class_()];
-}
-
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJacksonAnnotation = { 2, "JacksonAnnotation", "com.fasterxml.jackson.annotation", NULL, 0x2609, 0, NULL, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
+  static const void *ptrTable[] = { (void *)&ComFasterxmlJacksonAnnotationJacksonAnnotation__Annotations$0 };
+  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJacksonAnnotation = { "JacksonAnnotation", "com.fasterxml.jackson.annotation", ptrTable, NULL, NULL, 7, 0x2609, 0, 0, -1, -1, -1, -1, 0 };
   return &_ComFasterxmlJacksonAnnotationJacksonAnnotation;
 }
 
 @end
+
+id<ComFasterxmlJacksonAnnotationJacksonAnnotation> create_ComFasterxmlJacksonAnnotationJacksonAnnotation() {
+  ComFasterxmlJacksonAnnotationJacksonAnnotation *self = AUTORELEASE([[ComFasterxmlJacksonAnnotationJacksonAnnotation alloc] init]);
+  return self;
+}
+
+IOSObjectArray *ComFasterxmlJacksonAnnotationJacksonAnnotation__Annotations$0() {
+  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, ANNOTATION_TYPE) } count:1 type:JavaLangAnnotationElementType_class_()]), create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)) } count:2 type:JavaLangAnnotationAnnotation_class_()];
+}
 
 J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationJacksonAnnotation)

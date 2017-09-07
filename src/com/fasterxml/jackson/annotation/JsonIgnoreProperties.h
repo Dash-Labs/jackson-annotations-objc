@@ -3,12 +3,24 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JsonIgnoreProperties.java
 //
 
-#ifndef _ComFasterxmlJacksonAnnotationJsonIgnoreProperties_H_
-#define _ComFasterxmlJacksonAnnotationJsonIgnoreProperties_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonIgnoreProperties")
+#ifdef RESTRICT_ComFasterxmlJacksonAnnotationJsonIgnoreProperties
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonIgnoreProperties 0
+#else
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonIgnoreProperties 1
+#endif
+#undef RESTRICT_ComFasterxmlJacksonAnnotationJsonIgnoreProperties
+
+#if !defined (ComFasterxmlJacksonAnnotationJsonIgnoreProperties_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonIgnoreProperties || defined(INCLUDE_ComFasterxmlJacksonAnnotationJsonIgnoreProperties))
+#define ComFasterxmlJacksonAnnotationJsonIgnoreProperties_
+
+#define RESTRICT_JavaLangAnnotationAnnotation 1
+#define INCLUDE_JavaLangAnnotationAnnotation 1
 #include "java/lang/annotation/Annotation.h"
 
+@class IOSClass;
 @class IOSObjectArray;
 
 @protocol ComFasterxmlJacksonAnnotationJsonIgnoreProperties < JavaLangAnnotationAnnotation >
@@ -19,20 +31,19 @@
 @end
 
 @interface ComFasterxmlJacksonAnnotationJsonIgnoreProperties : NSObject < ComFasterxmlJacksonAnnotationJsonIgnoreProperties > {
- @private
+ @public
   IOSObjectArray *value_;
   jboolean ignoreUnknown_;
 }
-
-- (instancetype)initWithIgnoreUnknown:(jboolean)ignoreUnknown__ withValue:(IOSObjectArray *)value__;
-
-+ (IOSObjectArray *)valueDefault;
-+ (jboolean)ignoreUnknownDefault;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonIgnoreProperties)
 
+FOUNDATION_EXPORT id<ComFasterxmlJacksonAnnotationJsonIgnoreProperties> create_ComFasterxmlJacksonAnnotationJsonIgnoreProperties(jboolean ignoreUnknown, IOSObjectArray *value);
+
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJsonIgnoreProperties)
 
-#endif // _ComFasterxmlJacksonAnnotationJsonIgnoreProperties_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonIgnoreProperties")

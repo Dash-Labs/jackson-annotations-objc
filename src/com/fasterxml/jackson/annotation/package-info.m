@@ -3,3 +3,5 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/package-info.java
 //
 
+#include "J2ObjC_source.h"
+#include "com/fasterxml/jackson/annotation/package-info.h"

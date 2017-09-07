@@ -3,17 +3,19 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JsonIdentityInfo.java
 //
 
-
 #include "IOSClass.h"
 #include "IOSObjectArray.h"
 #include "J2ObjC_source.h"
 #include "com/fasterxml/jackson/annotation/JacksonAnnotation.h"
 #include "com/fasterxml/jackson/annotation/JsonIdentityInfo.h"
 #include "com/fasterxml/jackson/annotation/SimpleObjectIdResolver.h"
+#include "java/lang/annotation/Annotation.h"
 #include "java/lang/annotation/ElementType.h"
 #include "java/lang/annotation/Retention.h"
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
+
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonIdentityInfo__Annotations$0();
 
 @implementation ComFasterxmlJacksonAnnotationJsonIdentityInfo
 
@@ -21,16 +23,6 @@
 @synthesize generator = generator_;
 @synthesize resolver = resolver_;
 @synthesize scope = scope_;
-
-- (instancetype)initWithGenerator:(IOSClass *)generator__ withProperty:(NSString *)property__ withResolver:(IOSClass *)resolver__ withScope:(IOSClass *)scope__ {
-  if ((self = [super init])) {
-    self->generator_ = RETAIN_(generator__);
-    self->property_ = RETAIN_(property__);
-    self->resolver_ = RETAIN_(resolver__);
-    self->scope_ = RETAIN_(scope__);
-  }
-  return self;
-}
 
 + (NSString *)propertyDefault {
   return @"@id";
@@ -49,28 +41,55 @@
 }
 
 - (NSString *)description {
-  return @"@com.fasterxml.jackson.annotation.JsonIdentityInfo()";
+  return [NSString stringWithFormat:@"@com.fasterxml.jackson.annotation.JsonIdentityInfo(property=%@, generator=%@, resolver=%@, scope=%@)", property_, generator_, resolver_, scope_];
 }
 
-+ (IOSObjectArray *)__annotations {
-  return [IOSObjectArray arrayWithObjects:(id[]) { [[[JavaLangAnnotationTarget alloc] initWithValue:[IOSObjectArray arrayWithObjects:(id[]) { JavaLangAnnotationElementTypeEnum_get_ANNOTATION_TYPE(), JavaLangAnnotationElementTypeEnum_get_TYPE(), JavaLangAnnotationElementTypeEnum_get_FIELD(), JavaLangAnnotationElementTypeEnum_get_METHOD(), JavaLangAnnotationElementTypeEnum_get_PARAMETER() } count:5 type:NSObject_class_()]] autorelease], [[[JavaLangAnnotationRetention alloc] initWithValue:JavaLangAnnotationRetentionPolicyEnum_get_RUNTIME()] autorelease], [[[ComFasterxmlJacksonAnnotationJacksonAnnotation alloc] init] autorelease] } count:3 type:JavaLangAnnotationAnnotation_class_()];
+- (void)dealloc {
+  RELEASE_(property_);
+  RELEASE_(generator_);
+  RELEASE_(resolver_);
+  RELEASE_(scope_);
+  [super dealloc];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "property", "property", "Ljava.lang.String;", 0x401, NULL, NULL },
-    { "propertyDefault", "property", "Ljava.lang.String;", 0x100a, NULL, NULL },
-    { "generator", "generator", "Ljava.lang.Class;", 0x401, NULL, NULL },
-    { "generatorDefault", "generator", "Ljava.lang.Class;", 0x100a, NULL, NULL },
-    { "resolver", "resolver", "Ljava.lang.Class;", 0x401, NULL, NULL },
-    { "resolverDefault", "resolver", "Ljava.lang.Class;", 0x100a, NULL, NULL },
-    { "scope", "scope", "Ljava.lang.Class;", 0x401, NULL, NULL },
-    { "scopeDefault", "scope", "Ljava.lang.Class;", 0x100a, NULL, NULL },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, "LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LIOSClass;", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LIOSClass;", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LIOSClass;", 0x401, -1, -1, -1, -1, -1, -1 },
   };
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonIdentityInfo = { 2, "JsonIdentityInfo", "com.fasterxml.jackson.annotation", NULL, 0x2609, 8, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(property);
+  methods[1].selector = @selector(generator);
+  methods[2].selector = @selector(resolver);
+  methods[3].selector = @selector(scope);
+  #pragma clang diagnostic pop
+  static const J2ObjcFieldInfo fields[] = {
+    { "property_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
+    { "generator_", "LIOSClass;", .constantValue.asLong = 0, 0x1000, -1, -1, 0, -1 },
+    { "resolver_", "LIOSClass;", .constantValue.asLong = 0, 0x1000, -1, -1, 1, -1 },
+    { "scope_", "LIOSClass;", .constantValue.asLong = 0, 0x1000, -1, -1, 2, -1 },
+  };
+  static const void *ptrTable[] = { "Ljava/lang/Class<+Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<*>;>;", "Ljava/lang/Class<+Lcom/fasterxml/jackson/annotation/ObjectIdResolver;>;", "Ljava/lang/Class<*>;", (void *)&ComFasterxmlJacksonAnnotationJsonIdentityInfo__Annotations$0 };
+  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonIdentityInfo = { "JsonIdentityInfo", "com.fasterxml.jackson.annotation", ptrTable, methods, fields, 7, 0x2609, 4, 4, -1, -1, -1, -1, 3 };
   return &_ComFasterxmlJacksonAnnotationJsonIdentityInfo;
 }
 
 @end
+
+id<ComFasterxmlJacksonAnnotationJsonIdentityInfo> create_ComFasterxmlJacksonAnnotationJsonIdentityInfo(IOSClass *generator, NSString *property, IOSClass *resolver, IOSClass *scope) {
+  ComFasterxmlJacksonAnnotationJsonIdentityInfo *self = AUTORELEASE([[ComFasterxmlJacksonAnnotationJsonIdentityInfo alloc] init]);
+  self->generator_ = RETAIN_(generator);
+  self->property_ = RETAIN_(property);
+  self->resolver_ = RETAIN_(resolver);
+  self->scope_ = RETAIN_(scope);
+  return self;
+}
+
+IOSObjectArray *ComFasterxmlJacksonAnnotationJsonIdentityInfo__Annotations$0() {
+  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, ANNOTATION_TYPE), JreLoadEnum(JavaLangAnnotationElementType, TYPE), JreLoadEnum(JavaLangAnnotationElementType, FIELD), JreLoadEnum(JavaLangAnnotationElementType, METHOD), JreLoadEnum(JavaLangAnnotationElementType, PARAMETER) } count:5 type:JavaLangAnnotationElementType_class_()]), create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_ComFasterxmlJacksonAnnotationJacksonAnnotation() } count:3 type:JavaLangAnnotationAnnotation_class_()];
+}
 
 J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationJsonIdentityInfo)

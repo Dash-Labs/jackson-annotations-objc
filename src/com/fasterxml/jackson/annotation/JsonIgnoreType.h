@@ -3,11 +3,24 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JsonIgnoreType.java
 //
 
-#ifndef _ComFasterxmlJacksonAnnotationJsonIgnoreType_H_
-#define _ComFasterxmlJacksonAnnotationJsonIgnoreType_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonIgnoreType")
+#ifdef RESTRICT_ComFasterxmlJacksonAnnotationJsonIgnoreType
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonIgnoreType 0
+#else
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonIgnoreType 1
+#endif
+#undef RESTRICT_ComFasterxmlJacksonAnnotationJsonIgnoreType
+
+#if !defined (ComFasterxmlJacksonAnnotationJsonIgnoreType_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonIgnoreType || defined(INCLUDE_ComFasterxmlJacksonAnnotationJsonIgnoreType))
+#define ComFasterxmlJacksonAnnotationJsonIgnoreType_
+
+#define RESTRICT_JavaLangAnnotationAnnotation 1
+#define INCLUDE_JavaLangAnnotationAnnotation 1
 #include "java/lang/annotation/Annotation.h"
+
+@class IOSClass;
 
 @protocol ComFasterxmlJacksonAnnotationJsonIgnoreType < JavaLangAnnotationAnnotation >
 
@@ -16,18 +29,18 @@
 @end
 
 @interface ComFasterxmlJacksonAnnotationJsonIgnoreType : NSObject < ComFasterxmlJacksonAnnotationJsonIgnoreType > {
- @private
+ @public
   jboolean value_;
 }
-
-- (instancetype)initWithValue:(jboolean)value__;
-
-+ (jboolean)valueDefault;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonIgnoreType)
 
+FOUNDATION_EXPORT id<ComFasterxmlJacksonAnnotationJsonIgnoreType> create_ComFasterxmlJacksonAnnotationJsonIgnoreType(jboolean value);
+
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJsonIgnoreType)
 
-#endif // _ComFasterxmlJacksonAnnotationJsonIgnoreType_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonIgnoreType")

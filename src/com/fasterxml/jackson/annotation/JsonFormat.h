@@ -3,66 +3,90 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JsonFormat.java
 //
 
-#ifndef _ComFasterxmlJacksonAnnotationJsonFormat_H_
-#define _ComFasterxmlJacksonAnnotationJsonFormat_H_
-
 #include "J2ObjC_header.h"
-#include "java/lang/Enum.h"
+
+#pragma push_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonFormat")
+#ifdef RESTRICT_ComFasterxmlJacksonAnnotationJsonFormat
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonFormat 0
+#else
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonFormat 1
+#endif
+#undef RESTRICT_ComFasterxmlJacksonAnnotationJsonFormat
+
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
+#if !defined (ComFasterxmlJacksonAnnotationJsonFormat_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonFormat || defined(INCLUDE_ComFasterxmlJacksonAnnotationJsonFormat))
+#define ComFasterxmlJacksonAnnotationJsonFormat_
+
+#define RESTRICT_JavaLangAnnotationAnnotation 1
+#define INCLUDE_JavaLangAnnotationAnnotation 1
 #include "java/lang/annotation/Annotation.h"
 
-@class ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum;
-@class JavaUtilLocale;
-@class JavaUtilTimeZone;
+@class ComFasterxmlJacksonAnnotationJsonFormat_Shape;
+@class IOSClass;
 
 @protocol ComFasterxmlJacksonAnnotationJsonFormat < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *pattern;
-@property (readonly) ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum *shape;
+@property (readonly) ComFasterxmlJacksonAnnotationJsonFormat_Shape *shape;
 @property (readonly) NSString *locale;
 @property (readonly) NSString *timezone;
 
 @end
 
 @interface ComFasterxmlJacksonAnnotationJsonFormat : NSObject < ComFasterxmlJacksonAnnotationJsonFormat > {
- @private
+ @public
   NSString *pattern_;
-  ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum *shape_;
+  ComFasterxmlJacksonAnnotationJsonFormat_Shape *shape_;
   NSString *locale_;
   NSString *timezone_;
 }
-
-- (instancetype)initWithLocale:(NSString *)locale__ withPattern:(NSString *)pattern__ withShape:(ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum *)shape__ withTimezone:(NSString *)timezone__;
-
-+ (NSString *)patternDefault;
-+ (ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum *)shapeDefault;
-+ (NSString *)localeDefault;
-+ (NSString *)timezoneDefault;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonFormat)
 
-FOUNDATION_EXPORT NSString *ComFasterxmlJacksonAnnotationJsonFormat_DEFAULT_LOCALE_;
-J2OBJC_STATIC_FIELD_GETTER(ComFasterxmlJacksonAnnotationJsonFormat, DEFAULT_LOCALE_, NSString *)
+inline NSString *ComFasterxmlJacksonAnnotationJsonFormat_get_DEFAULT_LOCALE();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *ComFasterxmlJacksonAnnotationJsonFormat_DEFAULT_LOCALE;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(ComFasterxmlJacksonAnnotationJsonFormat, DEFAULT_LOCALE, NSString *)
 
-FOUNDATION_EXPORT NSString *ComFasterxmlJacksonAnnotationJsonFormat_DEFAULT_TIMEZONE_;
-J2OBJC_STATIC_FIELD_GETTER(ComFasterxmlJacksonAnnotationJsonFormat, DEFAULT_TIMEZONE_, NSString *)
+inline NSString *ComFasterxmlJacksonAnnotationJsonFormat_get_DEFAULT_TIMEZONE();
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT NSString *ComFasterxmlJacksonAnnotationJsonFormat_DEFAULT_TIMEZONE;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(ComFasterxmlJacksonAnnotationJsonFormat, DEFAULT_TIMEZONE, NSString *)
+
+FOUNDATION_EXPORT id<ComFasterxmlJacksonAnnotationJsonFormat> create_ComFasterxmlJacksonAnnotationJsonFormat(NSString *locale, NSString *pattern, ComFasterxmlJacksonAnnotationJsonFormat_Shape *shape, NSString *timezone);
 
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJsonFormat)
 
-typedef NS_ENUM(NSUInteger, ComFasterxmlJacksonAnnotationJsonFormat_Shape) {
-  ComFasterxmlJacksonAnnotationJsonFormat_Shape_ANY = 0,
-  ComFasterxmlJacksonAnnotationJsonFormat_Shape_SCALAR = 1,
-  ComFasterxmlJacksonAnnotationJsonFormat_Shape_ARRAY = 2,
-  ComFasterxmlJacksonAnnotationJsonFormat_Shape_OBJECT = 3,
-  ComFasterxmlJacksonAnnotationJsonFormat_Shape_NUMBER = 4,
-  ComFasterxmlJacksonAnnotationJsonFormat_Shape_NUMBER_FLOAT = 5,
-  ComFasterxmlJacksonAnnotationJsonFormat_Shape_NUMBER_INT = 6,
-  ComFasterxmlJacksonAnnotationJsonFormat_Shape_STRING = 7,
-  ComFasterxmlJacksonAnnotationJsonFormat_Shape_BOOLEAN = 8,
+#endif
+
+#if !defined (ComFasterxmlJacksonAnnotationJsonFormat_Shape_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonFormat || defined(INCLUDE_ComFasterxmlJacksonAnnotationJsonFormat_Shape))
+#define ComFasterxmlJacksonAnnotationJsonFormat_Shape_
+
+#define RESTRICT_JavaLangEnum 1
+#define INCLUDE_JavaLangEnum 1
+#include "java/lang/Enum.h"
+
+@class IOSObjectArray;
+
+typedef NS_ENUM(NSUInteger, ComFasterxmlJacksonAnnotationJsonFormat_Shape_Enum) {
+  ComFasterxmlJacksonAnnotationJsonFormat_Shape_Enum_ANY = 0,
+  ComFasterxmlJacksonAnnotationJsonFormat_Shape_Enum_SCALAR = 1,
+  ComFasterxmlJacksonAnnotationJsonFormat_Shape_Enum_ARRAY = 2,
+  ComFasterxmlJacksonAnnotationJsonFormat_Shape_Enum_OBJECT = 3,
+  ComFasterxmlJacksonAnnotationJsonFormat_Shape_Enum_NUMBER = 4,
+  ComFasterxmlJacksonAnnotationJsonFormat_Shape_Enum_NUMBER_FLOAT = 5,
+  ComFasterxmlJacksonAnnotationJsonFormat_Shape_Enum_NUMBER_INT = 6,
+  ComFasterxmlJacksonAnnotationJsonFormat_Shape_Enum_STRING = 7,
+  ComFasterxmlJacksonAnnotationJsonFormat_Shape_Enum_BOOLEAN = 8,
 };
 
-@interface ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum : JavaLangEnum < NSCopying >
+@interface ComFasterxmlJacksonAnnotationJsonFormat_Shape : JavaLangEnum
 
 #pragma mark Public
 
@@ -70,50 +94,61 @@ typedef NS_ENUM(NSUInteger, ComFasterxmlJacksonAnnotationJsonFormat_Shape) {
 
 - (jboolean)isStructured;
 
-#pragma mark Package-Private
++ (ComFasterxmlJacksonAnnotationJsonFormat_Shape *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_values();
-
-+ (ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum *)valueOfWithNSString:(NSString *)name;
-FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum *ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_valueOfWithNSString_(NSString *name);
-
-- (id)copyWithZone:(NSZone *)zone;
 
 @end
 
-J2OBJC_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum)
+J2OBJC_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonFormat_Shape)
 
-FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum *ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_values_[];
+/*! INTERNAL ONLY - Use enum accessors declared below. */
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_values_[];
 
-#define ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_ANY ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_values_[ComFasterxmlJacksonAnnotationJsonFormat_Shape_ANY]
-J2OBJC_ENUM_CONSTANT_GETTER(ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum, ANY)
+inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_ANY();
+J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonFormat_Shape, ANY)
 
-#define ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_SCALAR ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_values_[ComFasterxmlJacksonAnnotationJsonFormat_Shape_SCALAR]
-J2OBJC_ENUM_CONSTANT_GETTER(ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum, SCALAR)
+inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_SCALAR();
+J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonFormat_Shape, SCALAR)
 
-#define ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_ARRAY ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_values_[ComFasterxmlJacksonAnnotationJsonFormat_Shape_ARRAY]
-J2OBJC_ENUM_CONSTANT_GETTER(ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum, ARRAY)
+inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_ARRAY();
+J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonFormat_Shape, ARRAY)
 
-#define ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_OBJECT ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_values_[ComFasterxmlJacksonAnnotationJsonFormat_Shape_OBJECT]
-J2OBJC_ENUM_CONSTANT_GETTER(ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum, OBJECT)
+inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_OBJECT();
+J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonFormat_Shape, OBJECT)
 
-#define ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_NUMBER ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_values_[ComFasterxmlJacksonAnnotationJsonFormat_Shape_NUMBER]
-J2OBJC_ENUM_CONSTANT_GETTER(ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum, NUMBER)
+inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_NUMBER();
+J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonFormat_Shape, NUMBER)
 
-#define ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_NUMBER_FLOAT ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_values_[ComFasterxmlJacksonAnnotationJsonFormat_Shape_NUMBER_FLOAT]
-J2OBJC_ENUM_CONSTANT_GETTER(ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum, NUMBER_FLOAT)
+inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_NUMBER_FLOAT();
+J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonFormat_Shape, NUMBER_FLOAT)
 
-#define ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_NUMBER_INT ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_values_[ComFasterxmlJacksonAnnotationJsonFormat_Shape_NUMBER_INT]
-J2OBJC_ENUM_CONSTANT_GETTER(ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum, NUMBER_INT)
+inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_NUMBER_INT();
+J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonFormat_Shape, NUMBER_INT)
 
-#define ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_STRING ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_values_[ComFasterxmlJacksonAnnotationJsonFormat_Shape_STRING]
-J2OBJC_ENUM_CONSTANT_GETTER(ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum, STRING)
+inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_STRING();
+J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonFormat_Shape, STRING)
 
-#define ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_BOOLEAN ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_values_[ComFasterxmlJacksonAnnotationJsonFormat_Shape_BOOLEAN]
-J2OBJC_ENUM_CONSTANT_GETTER(ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum, BOOLEAN)
+inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_BOOLEAN();
+J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonFormat_Shape, BOOLEAN)
 
-J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum)
+FOUNDATION_EXPORT IOSObjectArray *ComFasterxmlJacksonAnnotationJsonFormat_Shape_values();
+
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_valueOfWithNSString_(NSString *name);
+
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_fromOrdinal(NSUInteger ordinal);
+
+J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJsonFormat_Shape)
+
+#endif
+
+#if !defined (ComFasterxmlJacksonAnnotationJsonFormat_Value_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonFormat || defined(INCLUDE_ComFasterxmlJacksonAnnotationJsonFormat_Value))
+#define ComFasterxmlJacksonAnnotationJsonFormat_Value_
+
+@class ComFasterxmlJacksonAnnotationJsonFormat_Shape;
+@class JavaUtilLocale;
+@class JavaUtilTimeZone;
+@protocol ComFasterxmlJacksonAnnotationJsonFormat;
 
 @interface ComFasterxmlJacksonAnnotationJsonFormat_Value : NSObject
 
@@ -124,18 +159,18 @@ J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum)
 - (instancetype)initWithComFasterxmlJacksonAnnotationJsonFormat:(id<ComFasterxmlJacksonAnnotationJsonFormat>)ann;
 
 - (instancetype)initWithNSString:(NSString *)p
-withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:(ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum *)sh
+withComFasterxmlJacksonAnnotationJsonFormat_Shape:(ComFasterxmlJacksonAnnotationJsonFormat_Shape *)sh
               withJavaUtilLocale:(JavaUtilLocale *)l
                     withNSString:(NSString *)tzStr
             withJavaUtilTimeZone:(JavaUtilTimeZone *)tz;
 
 - (instancetype)initWithNSString:(NSString *)p
-withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:(ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum *)sh
+withComFasterxmlJacksonAnnotationJsonFormat_Shape:(ComFasterxmlJacksonAnnotationJsonFormat_Shape *)sh
               withJavaUtilLocale:(JavaUtilLocale *)l
             withJavaUtilTimeZone:(JavaUtilTimeZone *)tz;
 
 - (instancetype)initWithNSString:(NSString *)p
-withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:(ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum *)sh
+withComFasterxmlJacksonAnnotationJsonFormat_Shape:(ComFasterxmlJacksonAnnotationJsonFormat_Shape *)sh
                     withNSString:(NSString *)localeStr
                     withNSString:(NSString *)tzStr;
 
@@ -143,7 +178,7 @@ withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:(ComFasterxmlJacksonAnnota
 
 - (NSString *)getPattern;
 
-- (ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum *)getShape;
+- (ComFasterxmlJacksonAnnotationJsonFormat_Shape *)getShape;
 
 - (JavaUtilTimeZone *)getTimeZone;
 
@@ -161,7 +196,7 @@ withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:(ComFasterxmlJacksonAnnota
 
 - (ComFasterxmlJacksonAnnotationJsonFormat_Value *)withPatternWithNSString:(NSString *)p;
 
-- (ComFasterxmlJacksonAnnotationJsonFormat_Value *)withShapeWithComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum:(ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum *)s;
+- (ComFasterxmlJacksonAnnotationJsonFormat_Value *)withShapeWithComFasterxmlJacksonAnnotationJsonFormat_Shape:(ComFasterxmlJacksonAnnotationJsonFormat_Shape *)s;
 
 - (ComFasterxmlJacksonAnnotationJsonFormat_Value *)withTimeZoneWithJavaUtilTimeZone:(JavaUtilTimeZone *)tz;
 
@@ -173,22 +208,38 @@ FOUNDATION_EXPORT void ComFasterxmlJacksonAnnotationJsonFormat_Value_init(ComFas
 
 FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonFormat_Value *new_ComFasterxmlJacksonAnnotationJsonFormat_Value_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonFormat_Value *create_ComFasterxmlJacksonAnnotationJsonFormat_Value_init();
+
 FOUNDATION_EXPORT void ComFasterxmlJacksonAnnotationJsonFormat_Value_initWithComFasterxmlJacksonAnnotationJsonFormat_(ComFasterxmlJacksonAnnotationJsonFormat_Value *self, id<ComFasterxmlJacksonAnnotationJsonFormat> ann);
 
 FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonFormat_Value *new_ComFasterxmlJacksonAnnotationJsonFormat_Value_initWithComFasterxmlJacksonAnnotationJsonFormat_(id<ComFasterxmlJacksonAnnotationJsonFormat> ann) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT void ComFasterxmlJacksonAnnotationJsonFormat_Value_initWithNSString_withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_withNSString_withNSString_(ComFasterxmlJacksonAnnotationJsonFormat_Value *self, NSString *p, ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum *sh, NSString *localeStr, NSString *tzStr);
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonFormat_Value *create_ComFasterxmlJacksonAnnotationJsonFormat_Value_initWithComFasterxmlJacksonAnnotationJsonFormat_(id<ComFasterxmlJacksonAnnotationJsonFormat> ann);
 
-FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonFormat_Value *new_ComFasterxmlJacksonAnnotationJsonFormat_Value_initWithNSString_withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_withNSString_withNSString_(NSString *p, ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum *sh, NSString *localeStr, NSString *tzStr) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT void ComFasterxmlJacksonAnnotationJsonFormat_Value_initWithNSString_withComFasterxmlJacksonAnnotationJsonFormat_Shape_withNSString_withNSString_(ComFasterxmlJacksonAnnotationJsonFormat_Value *self, NSString *p, ComFasterxmlJacksonAnnotationJsonFormat_Shape *sh, NSString *localeStr, NSString *tzStr);
 
-FOUNDATION_EXPORT void ComFasterxmlJacksonAnnotationJsonFormat_Value_initWithNSString_withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_withJavaUtilLocale_withJavaUtilTimeZone_(ComFasterxmlJacksonAnnotationJsonFormat_Value *self, NSString *p, ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum *sh, JavaUtilLocale *l, JavaUtilTimeZone *tz);
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonFormat_Value *new_ComFasterxmlJacksonAnnotationJsonFormat_Value_initWithNSString_withComFasterxmlJacksonAnnotationJsonFormat_Shape_withNSString_withNSString_(NSString *p, ComFasterxmlJacksonAnnotationJsonFormat_Shape *sh, NSString *localeStr, NSString *tzStr) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonFormat_Value *new_ComFasterxmlJacksonAnnotationJsonFormat_Value_initWithNSString_withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_withJavaUtilLocale_withJavaUtilTimeZone_(NSString *p, ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum *sh, JavaUtilLocale *l, JavaUtilTimeZone *tz) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonFormat_Value *create_ComFasterxmlJacksonAnnotationJsonFormat_Value_initWithNSString_withComFasterxmlJacksonAnnotationJsonFormat_Shape_withNSString_withNSString_(NSString *p, ComFasterxmlJacksonAnnotationJsonFormat_Shape *sh, NSString *localeStr, NSString *tzStr);
 
-FOUNDATION_EXPORT void ComFasterxmlJacksonAnnotationJsonFormat_Value_initWithNSString_withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_withJavaUtilLocale_withNSString_withJavaUtilTimeZone_(ComFasterxmlJacksonAnnotationJsonFormat_Value *self, NSString *p, ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum *sh, JavaUtilLocale *l, NSString *tzStr, JavaUtilTimeZone *tz);
+FOUNDATION_EXPORT void ComFasterxmlJacksonAnnotationJsonFormat_Value_initWithNSString_withComFasterxmlJacksonAnnotationJsonFormat_Shape_withJavaUtilLocale_withJavaUtilTimeZone_(ComFasterxmlJacksonAnnotationJsonFormat_Value *self, NSString *p, ComFasterxmlJacksonAnnotationJsonFormat_Shape *sh, JavaUtilLocale *l, JavaUtilTimeZone *tz);
 
-FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonFormat_Value *new_ComFasterxmlJacksonAnnotationJsonFormat_Value_initWithNSString_withComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum_withJavaUtilLocale_withNSString_withJavaUtilTimeZone_(NSString *p, ComFasterxmlJacksonAnnotationJsonFormat_ShapeEnum *sh, JavaUtilLocale *l, NSString *tzStr, JavaUtilTimeZone *tz) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonFormat_Value *new_ComFasterxmlJacksonAnnotationJsonFormat_Value_initWithNSString_withComFasterxmlJacksonAnnotationJsonFormat_Shape_withJavaUtilLocale_withJavaUtilTimeZone_(NSString *p, ComFasterxmlJacksonAnnotationJsonFormat_Shape *sh, JavaUtilLocale *l, JavaUtilTimeZone *tz) NS_RETURNS_RETAINED;
+
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonFormat_Value *create_ComFasterxmlJacksonAnnotationJsonFormat_Value_initWithNSString_withComFasterxmlJacksonAnnotationJsonFormat_Shape_withJavaUtilLocale_withJavaUtilTimeZone_(NSString *p, ComFasterxmlJacksonAnnotationJsonFormat_Shape *sh, JavaUtilLocale *l, JavaUtilTimeZone *tz);
+
+FOUNDATION_EXPORT void ComFasterxmlJacksonAnnotationJsonFormat_Value_initWithNSString_withComFasterxmlJacksonAnnotationJsonFormat_Shape_withJavaUtilLocale_withNSString_withJavaUtilTimeZone_(ComFasterxmlJacksonAnnotationJsonFormat_Value *self, NSString *p, ComFasterxmlJacksonAnnotationJsonFormat_Shape *sh, JavaUtilLocale *l, NSString *tzStr, JavaUtilTimeZone *tz);
+
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonFormat_Value *new_ComFasterxmlJacksonAnnotationJsonFormat_Value_initWithNSString_withComFasterxmlJacksonAnnotationJsonFormat_Shape_withJavaUtilLocale_withNSString_withJavaUtilTimeZone_(NSString *p, ComFasterxmlJacksonAnnotationJsonFormat_Shape *sh, JavaUtilLocale *l, NSString *tzStr, JavaUtilTimeZone *tz) NS_RETURNS_RETAINED;
+
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonFormat_Value *create_ComFasterxmlJacksonAnnotationJsonFormat_Value_initWithNSString_withComFasterxmlJacksonAnnotationJsonFormat_Shape_withJavaUtilLocale_withNSString_withJavaUtilTimeZone_(NSString *p, ComFasterxmlJacksonAnnotationJsonFormat_Shape *sh, JavaUtilLocale *l, NSString *tzStr, JavaUtilTimeZone *tz);
 
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJsonFormat_Value)
 
-#endif // _ComFasterxmlJacksonAnnotationJsonFormat_H_
+#endif
+
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
+#pragma pop_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonFormat")

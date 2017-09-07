@@ -3,15 +3,27 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/ObjectIdGenerators.java
 //
 
-#ifndef _ComFasterxmlJacksonAnnotationObjectIdGenerators_H_
-#define _ComFasterxmlJacksonAnnotationObjectIdGenerators_H_
-
 #include "J2ObjC_header.h"
-#include "com/fasterxml/jackson/annotation/ObjectIdGenerator.h"
 
-@class IOSClass;
-@class JavaLangInteger;
-@class JavaUtilUUID;
+#pragma push_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationObjectIdGenerators")
+#ifdef RESTRICT_ComFasterxmlJacksonAnnotationObjectIdGenerators
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationObjectIdGenerators 0
+#else
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationObjectIdGenerators 1
+#endif
+#undef RESTRICT_ComFasterxmlJacksonAnnotationObjectIdGenerators
+#ifdef INCLUDE_ComFasterxmlJacksonAnnotationObjectIdGenerators_UUIDGenerator
+#define INCLUDE_ComFasterxmlJacksonAnnotationObjectIdGenerators_Base 1
+#endif
+#ifdef INCLUDE_ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator
+#define INCLUDE_ComFasterxmlJacksonAnnotationObjectIdGenerators_Base 1
+#endif
+#ifdef INCLUDE_ComFasterxmlJacksonAnnotationObjectIdGenerators_PropertyGenerator
+#define INCLUDE_ComFasterxmlJacksonAnnotationObjectIdGenerators_Base 1
+#endif
+
+#if !defined (ComFasterxmlJacksonAnnotationObjectIdGenerators_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationObjectIdGenerators || defined(INCLUDE_ComFasterxmlJacksonAnnotationObjectIdGenerators))
+#define ComFasterxmlJacksonAnnotationObjectIdGenerators_
 
 @interface ComFasterxmlJacksonAnnotationObjectIdGenerators : NSObject
 
@@ -27,15 +39,56 @@ FOUNDATION_EXPORT void ComFasterxmlJacksonAnnotationObjectIdGenerators_init(ComF
 
 FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationObjectIdGenerators *new_ComFasterxmlJacksonAnnotationObjectIdGenerators_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationObjectIdGenerators *create_ComFasterxmlJacksonAnnotationObjectIdGenerators_init();
+
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationObjectIdGenerators)
 
-@interface ComFasterxmlJacksonAnnotationObjectIdGenerators_Base : ComFasterxmlJacksonAnnotationObjectIdGenerator
+#endif
+
+#if !defined (ComFasterxmlJacksonAnnotationObjectIdGenerators_Base_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationObjectIdGenerators || defined(INCLUDE_ComFasterxmlJacksonAnnotationObjectIdGenerators_Base))
+#define ComFasterxmlJacksonAnnotationObjectIdGenerators_Base_
+
+#define RESTRICT_ComFasterxmlJacksonAnnotationObjectIdGenerator 1
+#define INCLUDE_ComFasterxmlJacksonAnnotationObjectIdGenerator 1
+#include "com/fasterxml/jackson/annotation/ObjectIdGenerator.h"
+
+@class IOSClass;
+
+@interface ComFasterxmlJacksonAnnotationObjectIdGenerators_Base : ComFasterxmlJacksonAnnotationObjectIdGenerator {
+ @public
+  IOSClass *_scope_;
+}
+
+#pragma mark Public
+
+- (jboolean)canUseForWithComFasterxmlJacksonAnnotationObjectIdGenerator:(ComFasterxmlJacksonAnnotationObjectIdGenerator *)gen;
+
+- (id)generateIdWithId:(id)forPojo;
+
+- (IOSClass *)getScope;
+
+#pragma mark Protected
+
+- (instancetype)initWithIOSClass:(IOSClass *)scope;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationObjectIdGenerators_Base)
 
+J2OBJC_FIELD_SETTER(ComFasterxmlJacksonAnnotationObjectIdGenerators_Base, _scope_, IOSClass *)
+
+FOUNDATION_EXPORT void ComFasterxmlJacksonAnnotationObjectIdGenerators_Base_initWithIOSClass_(ComFasterxmlJacksonAnnotationObjectIdGenerators_Base *self, IOSClass *scope);
+
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationObjectIdGenerators_Base)
+
+#endif
+
+#if !defined (ComFasterxmlJacksonAnnotationObjectIdGenerators_None_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationObjectIdGenerators || defined(INCLUDE_ComFasterxmlJacksonAnnotationObjectIdGenerators_None))
+#define ComFasterxmlJacksonAnnotationObjectIdGenerators_None_
+
+#define RESTRICT_ComFasterxmlJacksonAnnotationObjectIdGenerator 1
+#define INCLUDE_ComFasterxmlJacksonAnnotationObjectIdGenerator 1
+#include "com/fasterxml/jackson/annotation/ObjectIdGenerator.h"
 
 @interface ComFasterxmlJacksonAnnotationObjectIdGenerators_None : ComFasterxmlJacksonAnnotationObjectIdGenerator
 
@@ -51,6 +104,13 @@ FOUNDATION_EXPORT void ComFasterxmlJacksonAnnotationObjectIdGenerators_None_init
 
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationObjectIdGenerators_None)
 
+#endif
+
+#if !defined (ComFasterxmlJacksonAnnotationObjectIdGenerators_PropertyGenerator_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationObjectIdGenerators || defined(INCLUDE_ComFasterxmlJacksonAnnotationObjectIdGenerators_PropertyGenerator))
+#define ComFasterxmlJacksonAnnotationObjectIdGenerators_PropertyGenerator_
+
+@class IOSClass;
+
 @interface ComFasterxmlJacksonAnnotationObjectIdGenerators_PropertyGenerator : ComFasterxmlJacksonAnnotationObjectIdGenerators_Base
 
 #pragma mark Protected
@@ -64,6 +124,16 @@ J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationObjectIdGenerators_Propert
 FOUNDATION_EXPORT void ComFasterxmlJacksonAnnotationObjectIdGenerators_PropertyGenerator_initWithIOSClass_(ComFasterxmlJacksonAnnotationObjectIdGenerators_PropertyGenerator *self, IOSClass *scope);
 
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationObjectIdGenerators_PropertyGenerator)
+
+#endif
+
+#if !defined (ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationObjectIdGenerators || defined(INCLUDE_ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator))
+#define ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator_
+
+@class ComFasterxmlJacksonAnnotationObjectIdGenerator;
+@class ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey;
+@class IOSClass;
+@class JavaLangInteger;
 
 @interface ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator : ComFasterxmlJacksonAnnotationObjectIdGenerators_Base {
  @public
@@ -89,6 +159,10 @@ J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationObjectIdGenerators_Prope
 
 - (jint)initialValue OBJC_METHOD_FAMILY_NONE;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithIOSClass:(IOSClass *)arg0 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator)
@@ -97,11 +171,25 @@ FOUNDATION_EXPORT void ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequen
 
 FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator *new_ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator *create_ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator_init();
+
 FOUNDATION_EXPORT void ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator_initWithIOSClass_withInt_(ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator *self, IOSClass *scope, jint fv);
 
 FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator *new_ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator_initWithIOSClass_withInt_(IOSClass *scope, jint fv) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator *create_ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator_initWithIOSClass_withInt_(IOSClass *scope, jint fv);
+
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator)
+
+#endif
+
+#if !defined (ComFasterxmlJacksonAnnotationObjectIdGenerators_UUIDGenerator_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationObjectIdGenerators || defined(INCLUDE_ComFasterxmlJacksonAnnotationObjectIdGenerators_UUIDGenerator))
+#define ComFasterxmlJacksonAnnotationObjectIdGenerators_UUIDGenerator_
+
+@class ComFasterxmlJacksonAnnotationObjectIdGenerator;
+@class ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey;
+@class IOSClass;
+@class JavaUtilUUID;
 
 @interface ComFasterxmlJacksonAnnotationObjectIdGenerators_UUIDGenerator : ComFasterxmlJacksonAnnotationObjectIdGenerators_Base
 
@@ -127,6 +215,10 @@ FOUNDATION_EXPORT void ComFasterxmlJacksonAnnotationObjectIdGenerators_UUIDGener
 
 FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationObjectIdGenerators_UUIDGenerator *new_ComFasterxmlJacksonAnnotationObjectIdGenerators_UUIDGenerator_init() NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationObjectIdGenerators_UUIDGenerator *create_ComFasterxmlJacksonAnnotationObjectIdGenerators_UUIDGenerator_init();
+
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationObjectIdGenerators_UUIDGenerator)
 
-#endif // _ComFasterxmlJacksonAnnotationObjectIdGenerators_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationObjectIdGenerators")

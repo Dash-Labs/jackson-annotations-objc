@@ -3,7 +3,6 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JsonAutoDetect.java
 //
 
-
 #include "IOSClass.h"
 #include "IOSObjectArray.h"
 #include "J2ObjC_source.h"
@@ -11,6 +10,7 @@
 #include "com/fasterxml/jackson/annotation/JsonAutoDetect.h"
 #include "java/lang/Enum.h"
 #include "java/lang/IllegalArgumentException.h"
+#include "java/lang/annotation/Annotation.h"
 #include "java/lang/annotation/ElementType.h"
 #include "java/lang/annotation/Retention.h"
 #include "java/lang/annotation/RetentionPolicy.h"
@@ -18,9 +18,9 @@
 #include "java/lang/reflect/Member.h"
 #include "java/lang/reflect/Modifier.h"
 
-__attribute__((unused)) static void ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_initWithNSString_withInt_(ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum *self, NSString *__name, jint __ordinal);
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonAutoDetect__Annotations$0();
 
-__attribute__((unused)) static ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum *new_ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_initWithNSString_withInt_(NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
+__attribute__((unused)) static void ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_initWithNSString_withInt_(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *self, NSString *__name, jint __ordinal);
 
 @implementation ComFasterxmlJacksonAnnotationJsonAutoDetect
 
@@ -30,35 +30,24 @@ __attribute__((unused)) static ComFasterxmlJacksonAnnotationJsonAutoDetect_Visib
 @synthesize creatorVisibility = creatorVisibility_;
 @synthesize fieldVisibility = fieldVisibility_;
 
-- (instancetype)initWithCreatorVisibility:(ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum *)creatorVisibility__ withFieldVisibility:(ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum *)fieldVisibility__ withGetterVisibility:(ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum *)getterVisibility__ withIsGetterVisibility:(ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum *)isGetterVisibility__ withSetterVisibility:(ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum *)setterVisibility__ {
-  if ((self = [super init])) {
-    self->creatorVisibility_ = RETAIN_(creatorVisibility__);
-    self->fieldVisibility_ = RETAIN_(fieldVisibility__);
-    self->getterVisibility_ = RETAIN_(getterVisibility__);
-    self->isGetterVisibility_ = RETAIN_(isGetterVisibility__);
-    self->setterVisibility_ = RETAIN_(setterVisibility__);
-  }
-  return self;
++ (ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *)getterVisibilityDefault {
+  return JreLoadEnum(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility, DEFAULT);
 }
 
-+ (ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum *)getterVisibilityDefault {
-  return ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_get_DEFAULT();
++ (ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *)isGetterVisibilityDefault {
+  return JreLoadEnum(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility, DEFAULT);
 }
 
-+ (ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum *)isGetterVisibilityDefault {
-  return ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_get_DEFAULT();
++ (ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *)setterVisibilityDefault {
+  return JreLoadEnum(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility, DEFAULT);
 }
 
-+ (ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum *)setterVisibilityDefault {
-  return ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_get_DEFAULT();
++ (ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *)creatorVisibilityDefault {
+  return JreLoadEnum(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility, DEFAULT);
 }
 
-+ (ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum *)creatorVisibilityDefault {
-  return ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_get_DEFAULT();
-}
-
-+ (ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum *)fieldVisibilityDefault {
-  return ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_get_DEFAULT();
++ (ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *)fieldVisibilityDefault {
+  return JreLoadEnum(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility, DEFAULT);
 }
 
 - (IOSClass *)annotationType {
@@ -66,134 +55,168 @@ __attribute__((unused)) static ComFasterxmlJacksonAnnotationJsonAutoDetect_Visib
 }
 
 - (NSString *)description {
-  return @"@com.fasterxml.jackson.annotation.JsonAutoDetect()";
+  return [NSString stringWithFormat:@"@com.fasterxml.jackson.annotation.JsonAutoDetect(getterVisibility=%@, isGetterVisibility=%@, setterVisibility=%@, creatorVisibility=%@, fieldVisibility=%@)", getterVisibility_, isGetterVisibility_, setterVisibility_, creatorVisibility_, fieldVisibility_];
 }
 
-+ (IOSObjectArray *)__annotations {
-  return [IOSObjectArray arrayWithObjects:(id[]) { [[[JavaLangAnnotationTarget alloc] initWithValue:[IOSObjectArray arrayWithObjects:(id[]) { JavaLangAnnotationElementTypeEnum_get_ANNOTATION_TYPE(), JavaLangAnnotationElementTypeEnum_get_TYPE() } count:2 type:NSObject_class_()]] autorelease], [[[JavaLangAnnotationRetention alloc] initWithValue:JavaLangAnnotationRetentionPolicyEnum_get_RUNTIME()] autorelease], [[[ComFasterxmlJacksonAnnotationJacksonAnnotation alloc] init] autorelease] } count:3 type:JavaLangAnnotationAnnotation_class_()];
+- (void)dealloc {
+  RELEASE_(getterVisibility_);
+  RELEASE_(isGetterVisibility_);
+  RELEASE_(setterVisibility_);
+  RELEASE_(creatorVisibility_);
+  RELEASE_(fieldVisibility_);
+  [super dealloc];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "getterVisibility", "getterVisibility", "Lcom.fasterxml.jackson.annotation.JsonAutoDetect$Visibility;", 0x401, NULL, NULL },
-    { "getterVisibilityDefault", "getterVisibility", "Lcom.fasterxml.jackson.annotation.JsonAutoDetect$Visibility;", 0x100a, NULL, NULL },
-    { "isGetterVisibility", "isGetterVisibility", "Lcom.fasterxml.jackson.annotation.JsonAutoDetect$Visibility;", 0x401, NULL, NULL },
-    { "isGetterVisibilityDefault", "isGetterVisibility", "Lcom.fasterxml.jackson.annotation.JsonAutoDetect$Visibility;", 0x100a, NULL, NULL },
-    { "setterVisibility", "setterVisibility", "Lcom.fasterxml.jackson.annotation.JsonAutoDetect$Visibility;", 0x401, NULL, NULL },
-    { "setterVisibilityDefault", "setterVisibility", "Lcom.fasterxml.jackson.annotation.JsonAutoDetect$Visibility;", 0x100a, NULL, NULL },
-    { "creatorVisibility", "creatorVisibility", "Lcom.fasterxml.jackson.annotation.JsonAutoDetect$Visibility;", 0x401, NULL, NULL },
-    { "creatorVisibilityDefault", "creatorVisibility", "Lcom.fasterxml.jackson.annotation.JsonAutoDetect$Visibility;", 0x100a, NULL, NULL },
-    { "fieldVisibility", "fieldVisibility", "Lcom.fasterxml.jackson.annotation.JsonAutoDetect$Visibility;", 0x401, NULL, NULL },
-    { "fieldVisibilityDefault", "fieldVisibility", "Lcom.fasterxml.jackson.annotation.JsonAutoDetect$Visibility;", 0x100a, NULL, NULL },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, "LComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility;", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility;", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility;", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility;", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility;", 0x401, -1, -1, -1, -1, -1, -1 },
   };
-  static const char *inner_classes[] = {"Lcom.fasterxml.jackson.annotation.JsonAutoDetect$Visibility;"};
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonAutoDetect = { 2, "JsonAutoDetect", "com.fasterxml.jackson.annotation", NULL, 0x2609, 10, methods, 0, NULL, 0, NULL, 1, inner_classes, NULL, NULL };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(getterVisibility);
+  methods[1].selector = @selector(isGetterVisibility);
+  methods[2].selector = @selector(setterVisibility);
+  methods[3].selector = @selector(creatorVisibility);
+  methods[4].selector = @selector(fieldVisibility);
+  #pragma clang diagnostic pop
+  static const J2ObjcFieldInfo fields[] = {
+    { "getterVisibility_", "LComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
+    { "isGetterVisibility_", "LComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
+    { "setterVisibility_", "LComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
+    { "creatorVisibility_", "LComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
+    { "fieldVisibility_", "LComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
+  };
+  static const void *ptrTable[] = { "LComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility;", (void *)&ComFasterxmlJacksonAnnotationJsonAutoDetect__Annotations$0 };
+  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonAutoDetect = { "JsonAutoDetect", "com.fasterxml.jackson.annotation", ptrTable, methods, fields, 7, 0x2609, 5, 5, -1, 0, -1, -1, 1 };
   return &_ComFasterxmlJacksonAnnotationJsonAutoDetect;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationJsonAutoDetect)
-
-J2OBJC_INITIALIZED_DEFN(ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum)
-
-ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum *ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_values_[6];
-
-@implementation ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum
-
-- (jboolean)isVisibleWithJavaLangReflectMember:(id<JavaLangReflectMember>)m {
-  switch ([self ordinal]) {
-    case ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_ANY:
-    return YES;
-    case ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_NONE:
-    return NO;
-    case ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_NON_PRIVATE:
-    return !JavaLangReflectModifier_isPrivateWithInt_([((id<JavaLangReflectMember>) nil_chk(m)) getModifiers]);
-    case ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_PROTECTED_AND_PUBLIC:
-    if (JavaLangReflectModifier_isProtectedWithInt_([((id<JavaLangReflectMember>) nil_chk(m)) getModifiers])) {
-      return YES;
-    }
-    case ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_PUBLIC_ONLY:
-    return JavaLangReflectModifier_isPublicWithInt_([((id<JavaLangReflectMember>) nil_chk(m)) getModifiers]);
-    default:
-    return NO;
-  }
-}
-
-- (instancetype)initWithNSString:(NSString *)__name
-                         withInt:(jint)__ordinal {
-  ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_initWithNSString_withInt_(self, __name, __ordinal);
+id<ComFasterxmlJacksonAnnotationJsonAutoDetect> create_ComFasterxmlJacksonAnnotationJsonAutoDetect(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *creatorVisibility, ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *fieldVisibility, ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *getterVisibility, ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *isGetterVisibility, ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *setterVisibility) {
+  ComFasterxmlJacksonAnnotationJsonAutoDetect *self = AUTORELEASE([[ComFasterxmlJacksonAnnotationJsonAutoDetect alloc] init]);
+  self->creatorVisibility_ = RETAIN_(creatorVisibility);
+  self->fieldVisibility_ = RETAIN_(fieldVisibility);
+  self->getterVisibility_ = RETAIN_(getterVisibility);
+  self->isGetterVisibility_ = RETAIN_(isGetterVisibility);
+  self->setterVisibility_ = RETAIN_(setterVisibility);
   return self;
 }
 
-IOSObjectArray *ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_values() {
-  ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_initialize();
-  return [IOSObjectArray arrayWithObjects:ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_values_ count:6 type:ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_class_()];
+IOSObjectArray *ComFasterxmlJacksonAnnotationJsonAutoDetect__Annotations$0() {
+  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, ANNOTATION_TYPE), JreLoadEnum(JavaLangAnnotationElementType, TYPE) } count:2 type:JavaLangAnnotationElementType_class_()]), create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_ComFasterxmlJacksonAnnotationJacksonAnnotation() } count:3 type:JavaLangAnnotationAnnotation_class_()];
+}
+
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationJsonAutoDetect)
+
+J2OBJC_INITIALIZED_DEFN(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility)
+
+ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_values_[6];
+
+@implementation ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility
+
+- (jboolean)isVisibleWithJavaLangReflectMember:(id<JavaLangReflectMember>)m {
+  switch ([self ordinal]) {
+    case ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_Enum_ANY:
+    return true;
+    case ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_Enum_NONE:
+    return false;
+    case ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_Enum_NON_PRIVATE:
+    return !JavaLangReflectModifier_isPrivateWithInt_([((id<JavaLangReflectMember>) nil_chk(m)) getModifiers]);
+    case ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_Enum_PROTECTED_AND_PUBLIC:
+    if (JavaLangReflectModifier_isProtectedWithInt_([((id<JavaLangReflectMember>) nil_chk(m)) getModifiers])) {
+      return true;
+    }
+    case ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_Enum_PUBLIC_ONLY:
+    return JavaLangReflectModifier_isPublicWithInt_([((id<JavaLangReflectMember>) nil_chk(m)) getModifiers]);
+    default:
+    return false;
+  }
 }
 
 + (IOSObjectArray *)values {
-  return ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_values();
+  return ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_values();
 }
 
-+ (ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum *)valueOfWithNSString:(NSString *)name {
-  return ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_valueOfWithNSString_(name);
-}
-
-ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum *ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_valueOfWithNSString_(NSString *name) {
-  ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_initialize();
-  for (int i = 0; i < 6; i++) {
-    ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum *e = ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_values_[i];
-    if ([name isEqual:[e name]]) {
-      return e;
-    }
-  }
-  @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:name] autorelease];
-  return nil;
-}
-
-- (id)copyWithZone:(NSZone *)zone {
-  return [self retain];
-}
-
-+ (void)initialize {
-  if (self == [ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum class]) {
-    ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_ANY = new_ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_initWithNSString_withInt_(@"ANY", 0);
-    ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_NON_PRIVATE = new_ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_initWithNSString_withInt_(@"NON_PRIVATE", 1);
-    ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_PROTECTED_AND_PUBLIC = new_ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_initWithNSString_withInt_(@"PROTECTED_AND_PUBLIC", 2);
-    ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_PUBLIC_ONLY = new_ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_initWithNSString_withInt_(@"PUBLIC_ONLY", 3);
-    ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_NONE = new_ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_initWithNSString_withInt_(@"NONE", 4);
-    ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_DEFAULT = new_ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_initWithNSString_withInt_(@"DEFAULT", 5);
-    J2OBJC_SET_INITIALIZED(ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum)
-  }
++ (ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *)valueOfWithNSString:(NSString *)name {
+  return ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_valueOfWithNSString_(name);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "isVisibleWithJavaLangReflectMember:", "isVisible", "Z", 0x1, NULL, NULL },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, "Z", 0x1, 0, 1, -1, -1, -1, -1 },
+    { NULL, "[LComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility;", 0x9, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility;", 0x9, 2, 3, -1, -1, -1, -1 },
   };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(isVisibleWithJavaLangReflectMember:);
+  methods[1].selector = @selector(values);
+  methods[2].selector = @selector(valueOfWithNSString:);
+  #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "ANY", "ANY", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonAutoDetect$Visibility;", &ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_ANY, NULL,  },
-    { "NON_PRIVATE", "NON_PRIVATE", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonAutoDetect$Visibility;", &ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_NON_PRIVATE, NULL,  },
-    { "PROTECTED_AND_PUBLIC", "PROTECTED_AND_PUBLIC", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonAutoDetect$Visibility;", &ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_PROTECTED_AND_PUBLIC, NULL,  },
-    { "PUBLIC_ONLY", "PUBLIC_ONLY", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonAutoDetect$Visibility;", &ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_PUBLIC_ONLY, NULL,  },
-    { "NONE", "NONE", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonAutoDetect$Visibility;", &ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_NONE, NULL,  },
-    { "DEFAULT", "DEFAULT", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonAutoDetect$Visibility;", &ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_DEFAULT, NULL,  },
+    { "ANY", "LComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility;", .constantValue.asLong = 0, 0x4019, -1, 4, -1, -1 },
+    { "NON_PRIVATE", "LComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility;", .constantValue.asLong = 0, 0x4019, -1, 5, -1, -1 },
+    { "PROTECTED_AND_PUBLIC", "LComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility;", .constantValue.asLong = 0, 0x4019, -1, 6, -1, -1 },
+    { "PUBLIC_ONLY", "LComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility;", .constantValue.asLong = 0, 0x4019, -1, 7, -1, -1 },
+    { "NONE", "LComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility;", .constantValue.asLong = 0, 0x4019, -1, 8, -1, -1 },
+    { "DEFAULT", "LComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility;", .constantValue.asLong = 0, 0x4019, -1, 9, -1, -1 },
   };
-  static const char *superclass_type_args[] = {"Lcom.fasterxml.jackson.annotation.JsonAutoDetect$Visibility;"};
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum = { 2, "Visibility", "com.fasterxml.jackson.annotation", "JsonAutoDetect", 0x4019, 1, methods, 6, fields, 1, superclass_type_args, 0, NULL, NULL, "Ljava/lang/Enum<Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;>;" };
-  return &_ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum;
+  static const void *ptrTable[] = { "isVisible", "LJavaLangReflectMember;", "valueOf", "LNSString;", &JreEnum(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility, ANY), &JreEnum(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility, NON_PRIVATE), &JreEnum(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility, PROTECTED_AND_PUBLIC), &JreEnum(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility, PUBLIC_ONLY), &JreEnum(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility, NONE), &JreEnum(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility, DEFAULT), "LComFasterxmlJacksonAnnotationJsonAutoDetect;", "Ljava/lang/Enum<Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;>;" };
+  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility = { "Visibility", "com.fasterxml.jackson.annotation", ptrTable, methods, fields, 7, 0x4019, 3, 6, 10, -1, -1, 11, -1 };
+  return &_ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility;
+}
+
++ (void)initialize {
+  if (self == [ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility class]) {
+    size_t objSize = class_getInstanceSize(self);
+    size_t allocSize = 6 * objSize;
+    uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
+    id e;
+    id names[] = {
+      @"ANY", @"NON_PRIVATE", @"PROTECTED_AND_PUBLIC", @"PUBLIC_ONLY", @"NONE", @"DEFAULT",
+    };
+    for (jint i = 0; i < 6; i++) {
+      (ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_values_[i] = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+      ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_initWithNSString_withInt_(e, names[i], i);
+    }
+    J2OBJC_SET_INITIALIZED(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility)
+  }
 }
 
 @end
 
-void ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_initWithNSString_withInt_(ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum *self, NSString *__name, jint __ordinal) {
+void ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_initWithNSString_withInt_(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *self, NSString *__name, jint __ordinal) {
   JavaLangEnum_initWithNSString_withInt_(self, __name, __ordinal);
 }
 
-ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum *new_ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_initWithNSString_withInt_(NSString *__name, jint __ordinal) {
-  ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum *self = [ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum alloc];
-  ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum_initWithNSString_withInt_(self, __name, __ordinal);
-  return self;
+IOSObjectArray *ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_values() {
+  ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_initialize();
+  return [IOSObjectArray arrayWithObjects:ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_values_ count:6 type:ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_class_()];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationJsonAutoDetect_VisibilityEnum)
+ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_valueOfWithNSString_(NSString *name) {
+  ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_initialize();
+  for (int i = 0; i < 6; i++) {
+    ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *e = ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_values_[i];
+    if ([name isEqual:[e name]]) {
+      return e;
+    }
+  }
+  @throw create_JavaLangIllegalArgumentException_initWithNSString_(name);
+  return nil;
+}
+
+ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_fromOrdinal(NSUInteger ordinal) {
+  ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_initialize();
+  if (ordinal >= 6) {
+    return nil;
+  }
+  return ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_values_[ordinal];
+}
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility)

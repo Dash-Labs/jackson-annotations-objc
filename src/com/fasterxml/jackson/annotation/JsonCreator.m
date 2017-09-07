@@ -3,7 +3,6 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JsonCreator.java
 //
 
-
 #include "IOSClass.h"
 #include "IOSObjectArray.h"
 #include "J2ObjC_source.h"
@@ -11,28 +10,22 @@
 #include "com/fasterxml/jackson/annotation/JsonCreator.h"
 #include "java/lang/Enum.h"
 #include "java/lang/IllegalArgumentException.h"
+#include "java/lang/annotation/Annotation.h"
 #include "java/lang/annotation/ElementType.h"
 #include "java/lang/annotation/Retention.h"
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static void ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_initWithNSString_withInt_(ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum *self, NSString *__name, jint __ordinal);
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonCreator__Annotations$0();
 
-__attribute__((unused)) static ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum *new_ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_initWithNSString_withInt_(NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
+__attribute__((unused)) static void ComFasterxmlJacksonAnnotationJsonCreator_Mode_initWithNSString_withInt_(ComFasterxmlJacksonAnnotationJsonCreator_Mode *self, NSString *__name, jint __ordinal);
 
 @implementation ComFasterxmlJacksonAnnotationJsonCreator
 
 @synthesize mode = mode_;
 
-- (instancetype)initWithMode:(ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum *)mode__ {
-  if ((self = [super init])) {
-    self->mode_ = RETAIN_(mode__);
-  }
-  return self;
-}
-
-+ (ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum *)modeDefault {
-  return ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_get_DEFAULT();
++ (ComFasterxmlJacksonAnnotationJsonCreator_Mode *)modeDefault {
+  return JreLoadEnum(ComFasterxmlJacksonAnnotationJsonCreator_Mode, DEFAULT);
 }
 
 - (IOSClass *)annotationType {
@@ -40,100 +33,125 @@ __attribute__((unused)) static ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum
 }
 
 - (NSString *)description {
-  return @"@com.fasterxml.jackson.annotation.JsonCreator()";
+  return [NSString stringWithFormat:@"@com.fasterxml.jackson.annotation.JsonCreator(mode=%@)", mode_];
 }
 
-+ (IOSObjectArray *)__annotations {
-  return [IOSObjectArray arrayWithObjects:(id[]) { [[[JavaLangAnnotationTarget alloc] initWithValue:[IOSObjectArray arrayWithObjects:(id[]) { JavaLangAnnotationElementTypeEnum_get_ANNOTATION_TYPE(), JavaLangAnnotationElementTypeEnum_get_METHOD(), JavaLangAnnotationElementTypeEnum_get_CONSTRUCTOR() } count:3 type:NSObject_class_()]] autorelease], [[[JavaLangAnnotationRetention alloc] initWithValue:JavaLangAnnotationRetentionPolicyEnum_get_RUNTIME()] autorelease], [[[ComFasterxmlJacksonAnnotationJacksonAnnotation alloc] init] autorelease] } count:3 type:JavaLangAnnotationAnnotation_class_()];
+- (void)dealloc {
+  RELEASE_(mode_);
+  [super dealloc];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "mode", "mode", "Lcom.fasterxml.jackson.annotation.JsonCreator$Mode;", 0x401, NULL, NULL },
-    { "modeDefault", "mode", "Lcom.fasterxml.jackson.annotation.JsonCreator$Mode;", 0x100a, NULL, NULL },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, "LComFasterxmlJacksonAnnotationJsonCreator_Mode;", 0x401, -1, -1, -1, -1, -1, -1 },
   };
-  static const char *inner_classes[] = {"Lcom.fasterxml.jackson.annotation.JsonCreator$Mode;"};
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonCreator = { 2, "JsonCreator", "com.fasterxml.jackson.annotation", NULL, 0x2609, 2, methods, 0, NULL, 0, NULL, 1, inner_classes, NULL, NULL };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(mode);
+  #pragma clang diagnostic pop
+  static const J2ObjcFieldInfo fields[] = {
+    { "mode_", "LComFasterxmlJacksonAnnotationJsonCreator_Mode;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
+  };
+  static const void *ptrTable[] = { "LComFasterxmlJacksonAnnotationJsonCreator_Mode;", (void *)&ComFasterxmlJacksonAnnotationJsonCreator__Annotations$0 };
+  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonCreator = { "JsonCreator", "com.fasterxml.jackson.annotation", ptrTable, methods, fields, 7, 0x2609, 1, 1, -1, 0, -1, -1, 1 };
   return &_ComFasterxmlJacksonAnnotationJsonCreator;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationJsonCreator)
-
-J2OBJC_INITIALIZED_DEFN(ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum)
-
-ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum *ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_values_[4];
-
-@implementation ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum
-
-- (instancetype)initWithNSString:(NSString *)__name
-                         withInt:(jint)__ordinal {
-  ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_initWithNSString_withInt_(self, __name, __ordinal);
+id<ComFasterxmlJacksonAnnotationJsonCreator> create_ComFasterxmlJacksonAnnotationJsonCreator(ComFasterxmlJacksonAnnotationJsonCreator_Mode *mode) {
+  ComFasterxmlJacksonAnnotationJsonCreator *self = AUTORELEASE([[ComFasterxmlJacksonAnnotationJsonCreator alloc] init]);
+  self->mode_ = RETAIN_(mode);
   return self;
 }
 
-IOSObjectArray *ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_values() {
-  ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_initialize();
-  return [IOSObjectArray arrayWithObjects:ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_values_ count:4 type:ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_class_()];
+IOSObjectArray *ComFasterxmlJacksonAnnotationJsonCreator__Annotations$0() {
+  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, ANNOTATION_TYPE), JreLoadEnum(JavaLangAnnotationElementType, METHOD), JreLoadEnum(JavaLangAnnotationElementType, CONSTRUCTOR) } count:3 type:JavaLangAnnotationElementType_class_()]), create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_ComFasterxmlJacksonAnnotationJacksonAnnotation() } count:3 type:JavaLangAnnotationAnnotation_class_()];
 }
+
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationJsonCreator)
+
+J2OBJC_INITIALIZED_DEFN(ComFasterxmlJacksonAnnotationJsonCreator_Mode)
+
+ComFasterxmlJacksonAnnotationJsonCreator_Mode *ComFasterxmlJacksonAnnotationJsonCreator_Mode_values_[4];
+
+@implementation ComFasterxmlJacksonAnnotationJsonCreator_Mode
 
 + (IOSObjectArray *)values {
-  return ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_values();
+  return ComFasterxmlJacksonAnnotationJsonCreator_Mode_values();
 }
 
-+ (ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum *)valueOfWithNSString:(NSString *)name {
-  return ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_valueOfWithNSString_(name);
-}
-
-ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum *ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_valueOfWithNSString_(NSString *name) {
-  ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_initialize();
-  for (int i = 0; i < 4; i++) {
-    ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum *e = ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_values_[i];
-    if ([name isEqual:[e name]]) {
-      return e;
-    }
-  }
-  @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:name] autorelease];
-  return nil;
-}
-
-- (id)copyWithZone:(NSZone *)zone {
-  return [self retain];
-}
-
-+ (void)initialize {
-  if (self == [ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum class]) {
-    ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_DEFAULT = new_ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_initWithNSString_withInt_(@"DEFAULT", 0);
-    ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_DELEGATING = new_ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_initWithNSString_withInt_(@"DELEGATING", 1);
-    ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_PROPERTIES = new_ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_initWithNSString_withInt_(@"PROPERTIES", 2);
-    ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_DISABLED = new_ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_initWithNSString_withInt_(@"DISABLED", 3);
-    J2OBJC_SET_INITIALIZED(ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum)
-  }
++ (ComFasterxmlJacksonAnnotationJsonCreator_Mode *)valueOfWithNSString:(NSString *)name {
+  return ComFasterxmlJacksonAnnotationJsonCreator_Mode_valueOfWithNSString_(name);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcFieldInfo fields[] = {
-    { "DEFAULT", "DEFAULT", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonCreator$Mode;", &ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_DEFAULT, NULL,  },
-    { "DELEGATING", "DELEGATING", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonCreator$Mode;", &ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_DELEGATING, NULL,  },
-    { "PROPERTIES", "PROPERTIES", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonCreator$Mode;", &ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_PROPERTIES, NULL,  },
-    { "DISABLED", "DISABLED", 0x4019, "Lcom.fasterxml.jackson.annotation.JsonCreator$Mode;", &ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_DISABLED, NULL,  },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, "[LComFasterxmlJacksonAnnotationJsonCreator_Mode;", 0x9, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LComFasterxmlJacksonAnnotationJsonCreator_Mode;", 0x9, 0, 1, -1, -1, -1, -1 },
   };
-  static const char *superclass_type_args[] = {"Lcom.fasterxml.jackson.annotation.JsonCreator$Mode;"};
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum = { 2, "Mode", "com.fasterxml.jackson.annotation", "JsonCreator", 0x4019, 0, NULL, 4, fields, 1, superclass_type_args, 0, NULL, NULL, "Ljava/lang/Enum<Lcom/fasterxml/jackson/annotation/JsonCreator$Mode;>;" };
-  return &_ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum;
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(values);
+  methods[1].selector = @selector(valueOfWithNSString:);
+  #pragma clang diagnostic pop
+  static const J2ObjcFieldInfo fields[] = {
+    { "DEFAULT", "LComFasterxmlJacksonAnnotationJsonCreator_Mode;", .constantValue.asLong = 0, 0x4019, -1, 2, -1, -1 },
+    { "DELEGATING", "LComFasterxmlJacksonAnnotationJsonCreator_Mode;", .constantValue.asLong = 0, 0x4019, -1, 3, -1, -1 },
+    { "PROPERTIES", "LComFasterxmlJacksonAnnotationJsonCreator_Mode;", .constantValue.asLong = 0, 0x4019, -1, 4, -1, -1 },
+    { "DISABLED", "LComFasterxmlJacksonAnnotationJsonCreator_Mode;", .constantValue.asLong = 0, 0x4019, -1, 5, -1, -1 },
+  };
+  static const void *ptrTable[] = { "valueOf", "LNSString;", &JreEnum(ComFasterxmlJacksonAnnotationJsonCreator_Mode, DEFAULT), &JreEnum(ComFasterxmlJacksonAnnotationJsonCreator_Mode, DELEGATING), &JreEnum(ComFasterxmlJacksonAnnotationJsonCreator_Mode, PROPERTIES), &JreEnum(ComFasterxmlJacksonAnnotationJsonCreator_Mode, DISABLED), "LComFasterxmlJacksonAnnotationJsonCreator;", "Ljava/lang/Enum<Lcom/fasterxml/jackson/annotation/JsonCreator$Mode;>;" };
+  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationJsonCreator_Mode = { "Mode", "com.fasterxml.jackson.annotation", ptrTable, methods, fields, 7, 0x4019, 2, 4, 6, -1, -1, 7, -1 };
+  return &_ComFasterxmlJacksonAnnotationJsonCreator_Mode;
+}
+
++ (void)initialize {
+  if (self == [ComFasterxmlJacksonAnnotationJsonCreator_Mode class]) {
+    size_t objSize = class_getInstanceSize(self);
+    size_t allocSize = 4 * objSize;
+    uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
+    id e;
+    id names[] = {
+      @"DEFAULT", @"DELEGATING", @"PROPERTIES", @"DISABLED",
+    };
+    for (jint i = 0; i < 4; i++) {
+      (ComFasterxmlJacksonAnnotationJsonCreator_Mode_values_[i] = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+      ComFasterxmlJacksonAnnotationJsonCreator_Mode_initWithNSString_withInt_(e, names[i], i);
+    }
+    J2OBJC_SET_INITIALIZED(ComFasterxmlJacksonAnnotationJsonCreator_Mode)
+  }
 }
 
 @end
 
-void ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_initWithNSString_withInt_(ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum *self, NSString *__name, jint __ordinal) {
+void ComFasterxmlJacksonAnnotationJsonCreator_Mode_initWithNSString_withInt_(ComFasterxmlJacksonAnnotationJsonCreator_Mode *self, NSString *__name, jint __ordinal) {
   JavaLangEnum_initWithNSString_withInt_(self, __name, __ordinal);
 }
 
-ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum *new_ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_initWithNSString_withInt_(NSString *__name, jint __ordinal) {
-  ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum *self = [ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum alloc];
-  ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum_initWithNSString_withInt_(self, __name, __ordinal);
-  return self;
+IOSObjectArray *ComFasterxmlJacksonAnnotationJsonCreator_Mode_values() {
+  ComFasterxmlJacksonAnnotationJsonCreator_Mode_initialize();
+  return [IOSObjectArray arrayWithObjects:ComFasterxmlJacksonAnnotationJsonCreator_Mode_values_ count:4 type:ComFasterxmlJacksonAnnotationJsonCreator_Mode_class_()];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationJsonCreator_ModeEnum)
+ComFasterxmlJacksonAnnotationJsonCreator_Mode *ComFasterxmlJacksonAnnotationJsonCreator_Mode_valueOfWithNSString_(NSString *name) {
+  ComFasterxmlJacksonAnnotationJsonCreator_Mode_initialize();
+  for (int i = 0; i < 4; i++) {
+    ComFasterxmlJacksonAnnotationJsonCreator_Mode *e = ComFasterxmlJacksonAnnotationJsonCreator_Mode_values_[i];
+    if ([name isEqual:[e name]]) {
+      return e;
+    }
+  }
+  @throw create_JavaLangIllegalArgumentException_initWithNSString_(name);
+  return nil;
+}
+
+ComFasterxmlJacksonAnnotationJsonCreator_Mode *ComFasterxmlJacksonAnnotationJsonCreator_Mode_fromOrdinal(NSUInteger ordinal) {
+  ComFasterxmlJacksonAnnotationJsonCreator_Mode_initialize();
+  if (ordinal >= 4) {
+    return nil;
+  }
+  return ComFasterxmlJacksonAnnotationJsonCreator_Mode_values_[ordinal];
+}
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationJsonCreator_Mode)

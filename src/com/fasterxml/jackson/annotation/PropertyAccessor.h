@@ -3,23 +3,41 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/PropertyAccessor.java
 //
 
-#ifndef _ComFasterxmlJacksonAnnotationPropertyAccessor_H_
-#define _ComFasterxmlJacksonAnnotationPropertyAccessor_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationPropertyAccessor")
+#ifdef RESTRICT_ComFasterxmlJacksonAnnotationPropertyAccessor
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationPropertyAccessor 0
+#else
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationPropertyAccessor 1
+#endif
+#undef RESTRICT_ComFasterxmlJacksonAnnotationPropertyAccessor
+
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
+#if !defined (ComFasterxmlJacksonAnnotationPropertyAccessor_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationPropertyAccessor || defined(INCLUDE_ComFasterxmlJacksonAnnotationPropertyAccessor))
+#define ComFasterxmlJacksonAnnotationPropertyAccessor_
+
+#define RESTRICT_JavaLangEnum 1
+#define INCLUDE_JavaLangEnum 1
 #include "java/lang/Enum.h"
 
-typedef NS_ENUM(NSUInteger, ComFasterxmlJacksonAnnotationPropertyAccessor) {
-  ComFasterxmlJacksonAnnotationPropertyAccessor_GETTER = 0,
-  ComFasterxmlJacksonAnnotationPropertyAccessor_SETTER = 1,
-  ComFasterxmlJacksonAnnotationPropertyAccessor_CREATOR = 2,
-  ComFasterxmlJacksonAnnotationPropertyAccessor_FIELD = 3,
-  ComFasterxmlJacksonAnnotationPropertyAccessor_IS_GETTER = 4,
-  ComFasterxmlJacksonAnnotationPropertyAccessor_NONE = 5,
-  ComFasterxmlJacksonAnnotationPropertyAccessor_ALL = 6,
+@class IOSObjectArray;
+
+typedef NS_ENUM(NSUInteger, ComFasterxmlJacksonAnnotationPropertyAccessor_Enum) {
+  ComFasterxmlJacksonAnnotationPropertyAccessor_Enum_GETTER = 0,
+  ComFasterxmlJacksonAnnotationPropertyAccessor_Enum_SETTER = 1,
+  ComFasterxmlJacksonAnnotationPropertyAccessor_Enum_CREATOR = 2,
+  ComFasterxmlJacksonAnnotationPropertyAccessor_Enum_FIELD = 3,
+  ComFasterxmlJacksonAnnotationPropertyAccessor_Enum_IS_GETTER = 4,
+  ComFasterxmlJacksonAnnotationPropertyAccessor_Enum_NONE = 5,
+  ComFasterxmlJacksonAnnotationPropertyAccessor_Enum_ALL = 6,
 };
 
-@interface ComFasterxmlJacksonAnnotationPropertyAccessorEnum : JavaLangEnum < NSCopying >
+@interface ComFasterxmlJacksonAnnotationPropertyAccessor : JavaLangEnum
 
 #pragma mark Public
 
@@ -33,43 +51,50 @@ typedef NS_ENUM(NSUInteger, ComFasterxmlJacksonAnnotationPropertyAccessor) {
 
 - (jboolean)setterEnabled;
 
-#pragma mark Package-Private
++ (ComFasterxmlJacksonAnnotationPropertyAccessor *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *ComFasterxmlJacksonAnnotationPropertyAccessorEnum_values();
-
-+ (ComFasterxmlJacksonAnnotationPropertyAccessorEnum *)valueOfWithNSString:(NSString *)name;
-FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationPropertyAccessorEnum *ComFasterxmlJacksonAnnotationPropertyAccessorEnum_valueOfWithNSString_(NSString *name);
-
-- (id)copyWithZone:(NSZone *)zone;
 
 @end
 
-J2OBJC_STATIC_INIT(ComFasterxmlJacksonAnnotationPropertyAccessorEnum)
+J2OBJC_STATIC_INIT(ComFasterxmlJacksonAnnotationPropertyAccessor)
 
-FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationPropertyAccessorEnum *ComFasterxmlJacksonAnnotationPropertyAccessorEnum_values_[];
+/*! INTERNAL ONLY - Use enum accessors declared below. */
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationPropertyAccessor *ComFasterxmlJacksonAnnotationPropertyAccessor_values_[];
 
-#define ComFasterxmlJacksonAnnotationPropertyAccessorEnum_GETTER ComFasterxmlJacksonAnnotationPropertyAccessorEnum_values_[ComFasterxmlJacksonAnnotationPropertyAccessor_GETTER]
-J2OBJC_ENUM_CONSTANT_GETTER(ComFasterxmlJacksonAnnotationPropertyAccessorEnum, GETTER)
+inline ComFasterxmlJacksonAnnotationPropertyAccessor *ComFasterxmlJacksonAnnotationPropertyAccessor_get_GETTER();
+J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationPropertyAccessor, GETTER)
 
-#define ComFasterxmlJacksonAnnotationPropertyAccessorEnum_SETTER ComFasterxmlJacksonAnnotationPropertyAccessorEnum_values_[ComFasterxmlJacksonAnnotationPropertyAccessor_SETTER]
-J2OBJC_ENUM_CONSTANT_GETTER(ComFasterxmlJacksonAnnotationPropertyAccessorEnum, SETTER)
+inline ComFasterxmlJacksonAnnotationPropertyAccessor *ComFasterxmlJacksonAnnotationPropertyAccessor_get_SETTER();
+J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationPropertyAccessor, SETTER)
 
-#define ComFasterxmlJacksonAnnotationPropertyAccessorEnum_CREATOR ComFasterxmlJacksonAnnotationPropertyAccessorEnum_values_[ComFasterxmlJacksonAnnotationPropertyAccessor_CREATOR]
-J2OBJC_ENUM_CONSTANT_GETTER(ComFasterxmlJacksonAnnotationPropertyAccessorEnum, CREATOR)
+inline ComFasterxmlJacksonAnnotationPropertyAccessor *ComFasterxmlJacksonAnnotationPropertyAccessor_get_CREATOR();
+J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationPropertyAccessor, CREATOR)
 
-#define ComFasterxmlJacksonAnnotationPropertyAccessorEnum_FIELD ComFasterxmlJacksonAnnotationPropertyAccessorEnum_values_[ComFasterxmlJacksonAnnotationPropertyAccessor_FIELD]
-J2OBJC_ENUM_CONSTANT_GETTER(ComFasterxmlJacksonAnnotationPropertyAccessorEnum, FIELD)
+inline ComFasterxmlJacksonAnnotationPropertyAccessor *ComFasterxmlJacksonAnnotationPropertyAccessor_get_FIELD();
+J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationPropertyAccessor, FIELD)
 
-#define ComFasterxmlJacksonAnnotationPropertyAccessorEnum_IS_GETTER ComFasterxmlJacksonAnnotationPropertyAccessorEnum_values_[ComFasterxmlJacksonAnnotationPropertyAccessor_IS_GETTER]
-J2OBJC_ENUM_CONSTANT_GETTER(ComFasterxmlJacksonAnnotationPropertyAccessorEnum, IS_GETTER)
+inline ComFasterxmlJacksonAnnotationPropertyAccessor *ComFasterxmlJacksonAnnotationPropertyAccessor_get_IS_GETTER();
+J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationPropertyAccessor, IS_GETTER)
 
-#define ComFasterxmlJacksonAnnotationPropertyAccessorEnum_NONE ComFasterxmlJacksonAnnotationPropertyAccessorEnum_values_[ComFasterxmlJacksonAnnotationPropertyAccessor_NONE]
-J2OBJC_ENUM_CONSTANT_GETTER(ComFasterxmlJacksonAnnotationPropertyAccessorEnum, NONE)
+inline ComFasterxmlJacksonAnnotationPropertyAccessor *ComFasterxmlJacksonAnnotationPropertyAccessor_get_NONE();
+J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationPropertyAccessor, NONE)
 
-#define ComFasterxmlJacksonAnnotationPropertyAccessorEnum_ALL ComFasterxmlJacksonAnnotationPropertyAccessorEnum_values_[ComFasterxmlJacksonAnnotationPropertyAccessor_ALL]
-J2OBJC_ENUM_CONSTANT_GETTER(ComFasterxmlJacksonAnnotationPropertyAccessorEnum, ALL)
+inline ComFasterxmlJacksonAnnotationPropertyAccessor *ComFasterxmlJacksonAnnotationPropertyAccessor_get_ALL();
+J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationPropertyAccessor, ALL)
 
-J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationPropertyAccessorEnum)
+FOUNDATION_EXPORT IOSObjectArray *ComFasterxmlJacksonAnnotationPropertyAccessor_values();
 
-#endif // _ComFasterxmlJacksonAnnotationPropertyAccessor_H_
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationPropertyAccessor *ComFasterxmlJacksonAnnotationPropertyAccessor_valueOfWithNSString_(NSString *name);
+
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationPropertyAccessor *ComFasterxmlJacksonAnnotationPropertyAccessor_fromOrdinal(NSUInteger ordinal);
+
+J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationPropertyAccessor)
+
+#endif
+
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
+#pragma pop_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationPropertyAccessor")

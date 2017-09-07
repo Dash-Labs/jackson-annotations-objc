@@ -3,14 +3,22 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/ObjectIdResolver.java
 //
 
-#ifndef _ComFasterxmlJacksonAnnotationObjectIdResolver_H_
-#define _ComFasterxmlJacksonAnnotationObjectIdResolver_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationObjectIdResolver")
+#ifdef RESTRICT_ComFasterxmlJacksonAnnotationObjectIdResolver
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationObjectIdResolver 0
+#else
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationObjectIdResolver 1
+#endif
+#undef RESTRICT_ComFasterxmlJacksonAnnotationObjectIdResolver
+
+#if !defined (ComFasterxmlJacksonAnnotationObjectIdResolver_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationObjectIdResolver || defined(INCLUDE_ComFasterxmlJacksonAnnotationObjectIdResolver))
+#define ComFasterxmlJacksonAnnotationObjectIdResolver_
 
 @class ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey;
 
-@protocol ComFasterxmlJacksonAnnotationObjectIdResolver < NSObject, JavaObject >
+@protocol ComFasterxmlJacksonAnnotationObjectIdResolver < JavaObject >
 
 - (void)bindItemWithComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey:(ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey *)id_
                                                                   withId:(id)pojo;
@@ -27,4 +35,6 @@ J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationObjectIdResolver)
 
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationObjectIdResolver)
 
-#endif // _ComFasterxmlJacksonAnnotationObjectIdResolver_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationObjectIdResolver")

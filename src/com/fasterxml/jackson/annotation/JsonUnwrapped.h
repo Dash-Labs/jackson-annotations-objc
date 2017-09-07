@@ -3,11 +3,24 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/JsonUnwrapped.java
 //
 
-#ifndef _ComFasterxmlJacksonAnnotationJsonUnwrapped_H_
-#define _ComFasterxmlJacksonAnnotationJsonUnwrapped_H_
-
 #include "J2ObjC_header.h"
+
+#pragma push_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonUnwrapped")
+#ifdef RESTRICT_ComFasterxmlJacksonAnnotationJsonUnwrapped
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonUnwrapped 0
+#else
+#define INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonUnwrapped 1
+#endif
+#undef RESTRICT_ComFasterxmlJacksonAnnotationJsonUnwrapped
+
+#if !defined (ComFasterxmlJacksonAnnotationJsonUnwrapped_) && (INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonUnwrapped || defined(INCLUDE_ComFasterxmlJacksonAnnotationJsonUnwrapped))
+#define ComFasterxmlJacksonAnnotationJsonUnwrapped_
+
+#define RESTRICT_JavaLangAnnotationAnnotation 1
+#define INCLUDE_JavaLangAnnotationAnnotation 1
 #include "java/lang/annotation/Annotation.h"
+
+@class IOSClass;
 
 @protocol ComFasterxmlJacksonAnnotationJsonUnwrapped < JavaLangAnnotationAnnotation >
 
@@ -18,22 +31,20 @@
 @end
 
 @interface ComFasterxmlJacksonAnnotationJsonUnwrapped : NSObject < ComFasterxmlJacksonAnnotationJsonUnwrapped > {
- @private
+ @public
   jboolean enabled_;
   NSString *prefix_;
   NSString *suffix_;
 }
 
-- (instancetype)initWithEnabled:(jboolean)enabled__ withPrefix:(NSString *)prefix__ withSuffix:(NSString *)suffix__;
-
-+ (jboolean)enabledDefault;
-+ (NSString *)prefixDefault;
-+ (NSString *)suffixDefault;
-
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonUnwrapped)
 
+FOUNDATION_EXPORT id<ComFasterxmlJacksonAnnotationJsonUnwrapped> create_ComFasterxmlJacksonAnnotationJsonUnwrapped(jboolean enabled, NSString *prefix, NSString *suffix);
+
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJsonUnwrapped)
 
-#endif // _ComFasterxmlJacksonAnnotationJsonUnwrapped_H_
+#endif
+
+#pragma pop_macro("INCLUDE_ALL_ComFasterxmlJacksonAnnotationJsonUnwrapped")

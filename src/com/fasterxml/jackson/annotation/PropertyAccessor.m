@@ -3,123 +3,128 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/PropertyAccessor.java
 //
 
-
-#include "IOSClass.h"
+#include "IOSObjectArray.h"
 #include "J2ObjC_source.h"
 #include "com/fasterxml/jackson/annotation/PropertyAccessor.h"
 #include "java/lang/Enum.h"
 #include "java/lang/IllegalArgumentException.h"
 
-__attribute__((unused)) static void ComFasterxmlJacksonAnnotationPropertyAccessorEnum_initWithNSString_withInt_(ComFasterxmlJacksonAnnotationPropertyAccessorEnum *self, NSString *__name, jint __ordinal);
+__attribute__((unused)) static void ComFasterxmlJacksonAnnotationPropertyAccessor_initWithNSString_withInt_(ComFasterxmlJacksonAnnotationPropertyAccessor *self, NSString *__name, jint __ordinal);
 
-__attribute__((unused)) static ComFasterxmlJacksonAnnotationPropertyAccessorEnum *new_ComFasterxmlJacksonAnnotationPropertyAccessorEnum_initWithNSString_withInt_(NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
+J2OBJC_INITIALIZED_DEFN(ComFasterxmlJacksonAnnotationPropertyAccessor)
 
-J2OBJC_INITIALIZED_DEFN(ComFasterxmlJacksonAnnotationPropertyAccessorEnum)
+ComFasterxmlJacksonAnnotationPropertyAccessor *ComFasterxmlJacksonAnnotationPropertyAccessor_values_[7];
 
-ComFasterxmlJacksonAnnotationPropertyAccessorEnum *ComFasterxmlJacksonAnnotationPropertyAccessorEnum_values_[7];
-
-@implementation ComFasterxmlJacksonAnnotationPropertyAccessorEnum
-
-- (instancetype)initWithNSString:(NSString *)__name
-                         withInt:(jint)__ordinal {
-  ComFasterxmlJacksonAnnotationPropertyAccessorEnum_initWithNSString_withInt_(self, __name, __ordinal);
-  return self;
-}
+@implementation ComFasterxmlJacksonAnnotationPropertyAccessor
 
 - (jboolean)creatorEnabled {
-  return (self == ComFasterxmlJacksonAnnotationPropertyAccessorEnum_CREATOR) || (self == ComFasterxmlJacksonAnnotationPropertyAccessorEnum_ALL);
+  return (self == JreEnum(ComFasterxmlJacksonAnnotationPropertyAccessor, CREATOR)) || (self == JreEnum(ComFasterxmlJacksonAnnotationPropertyAccessor, ALL));
 }
 
 - (jboolean)getterEnabled {
-  return (self == ComFasterxmlJacksonAnnotationPropertyAccessorEnum_GETTER) || (self == ComFasterxmlJacksonAnnotationPropertyAccessorEnum_ALL);
+  return (self == JreEnum(ComFasterxmlJacksonAnnotationPropertyAccessor, GETTER)) || (self == JreEnum(ComFasterxmlJacksonAnnotationPropertyAccessor, ALL));
 }
 
 - (jboolean)isGetterEnabled {
-  return (self == ComFasterxmlJacksonAnnotationPropertyAccessorEnum_IS_GETTER) || (self == ComFasterxmlJacksonAnnotationPropertyAccessorEnum_ALL);
+  return (self == JreEnum(ComFasterxmlJacksonAnnotationPropertyAccessor, IS_GETTER)) || (self == JreEnum(ComFasterxmlJacksonAnnotationPropertyAccessor, ALL));
 }
 
 - (jboolean)setterEnabled {
-  return (self == ComFasterxmlJacksonAnnotationPropertyAccessorEnum_SETTER) || (self == ComFasterxmlJacksonAnnotationPropertyAccessorEnum_ALL);
+  return (self == JreEnum(ComFasterxmlJacksonAnnotationPropertyAccessor, SETTER)) || (self == JreEnum(ComFasterxmlJacksonAnnotationPropertyAccessor, ALL));
 }
 
 - (jboolean)fieldEnabled {
-  return (self == ComFasterxmlJacksonAnnotationPropertyAccessorEnum_FIELD) || (self == ComFasterxmlJacksonAnnotationPropertyAccessorEnum_ALL);
-}
-
-IOSObjectArray *ComFasterxmlJacksonAnnotationPropertyAccessorEnum_values() {
-  ComFasterxmlJacksonAnnotationPropertyAccessorEnum_initialize();
-  return [IOSObjectArray arrayWithObjects:ComFasterxmlJacksonAnnotationPropertyAccessorEnum_values_ count:7 type:ComFasterxmlJacksonAnnotationPropertyAccessorEnum_class_()];
+  return (self == JreEnum(ComFasterxmlJacksonAnnotationPropertyAccessor, FIELD)) || (self == JreEnum(ComFasterxmlJacksonAnnotationPropertyAccessor, ALL));
 }
 
 + (IOSObjectArray *)values {
-  return ComFasterxmlJacksonAnnotationPropertyAccessorEnum_values();
+  return ComFasterxmlJacksonAnnotationPropertyAccessor_values();
 }
 
-+ (ComFasterxmlJacksonAnnotationPropertyAccessorEnum *)valueOfWithNSString:(NSString *)name {
-  return ComFasterxmlJacksonAnnotationPropertyAccessorEnum_valueOfWithNSString_(name);
-}
-
-ComFasterxmlJacksonAnnotationPropertyAccessorEnum *ComFasterxmlJacksonAnnotationPropertyAccessorEnum_valueOfWithNSString_(NSString *name) {
-  ComFasterxmlJacksonAnnotationPropertyAccessorEnum_initialize();
-  for (int i = 0; i < 7; i++) {
-    ComFasterxmlJacksonAnnotationPropertyAccessorEnum *e = ComFasterxmlJacksonAnnotationPropertyAccessorEnum_values_[i];
-    if ([name isEqual:[e name]]) {
-      return e;
-    }
-  }
-  @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:name] autorelease];
-  return nil;
-}
-
-- (id)copyWithZone:(NSZone *)zone {
-  return [self retain];
-}
-
-+ (void)initialize {
-  if (self == [ComFasterxmlJacksonAnnotationPropertyAccessorEnum class]) {
-    ComFasterxmlJacksonAnnotationPropertyAccessorEnum_GETTER = new_ComFasterxmlJacksonAnnotationPropertyAccessorEnum_initWithNSString_withInt_(@"GETTER", 0);
-    ComFasterxmlJacksonAnnotationPropertyAccessorEnum_SETTER = new_ComFasterxmlJacksonAnnotationPropertyAccessorEnum_initWithNSString_withInt_(@"SETTER", 1);
-    ComFasterxmlJacksonAnnotationPropertyAccessorEnum_CREATOR = new_ComFasterxmlJacksonAnnotationPropertyAccessorEnum_initWithNSString_withInt_(@"CREATOR", 2);
-    ComFasterxmlJacksonAnnotationPropertyAccessorEnum_FIELD = new_ComFasterxmlJacksonAnnotationPropertyAccessorEnum_initWithNSString_withInt_(@"FIELD", 3);
-    ComFasterxmlJacksonAnnotationPropertyAccessorEnum_IS_GETTER = new_ComFasterxmlJacksonAnnotationPropertyAccessorEnum_initWithNSString_withInt_(@"IS_GETTER", 4);
-    ComFasterxmlJacksonAnnotationPropertyAccessorEnum_NONE = new_ComFasterxmlJacksonAnnotationPropertyAccessorEnum_initWithNSString_withInt_(@"NONE", 5);
-    ComFasterxmlJacksonAnnotationPropertyAccessorEnum_ALL = new_ComFasterxmlJacksonAnnotationPropertyAccessorEnum_initWithNSString_withInt_(@"ALL", 6);
-    J2OBJC_SET_INITIALIZED(ComFasterxmlJacksonAnnotationPropertyAccessorEnum)
-  }
++ (ComFasterxmlJacksonAnnotationPropertyAccessor *)valueOfWithNSString:(NSString *)name {
+  return ComFasterxmlJacksonAnnotationPropertyAccessor_valueOfWithNSString_(name);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "creatorEnabled", NULL, "Z", 0x1, NULL, NULL },
-    { "getterEnabled", NULL, "Z", 0x1, NULL, NULL },
-    { "isGetterEnabled", NULL, "Z", 0x1, NULL, NULL },
-    { "setterEnabled", NULL, "Z", 0x1, NULL, NULL },
-    { "fieldEnabled", NULL, "Z", 0x1, NULL, NULL },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "[LComFasterxmlJacksonAnnotationPropertyAccessor;", 0x9, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LComFasterxmlJacksonAnnotationPropertyAccessor;", 0x9, 0, 1, -1, -1, -1, -1 },
   };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(creatorEnabled);
+  methods[1].selector = @selector(getterEnabled);
+  methods[2].selector = @selector(isGetterEnabled);
+  methods[3].selector = @selector(setterEnabled);
+  methods[4].selector = @selector(fieldEnabled);
+  methods[5].selector = @selector(values);
+  methods[6].selector = @selector(valueOfWithNSString:);
+  #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "GETTER", "GETTER", 0x4019, "Lcom.fasterxml.jackson.annotation.PropertyAccessor;", &ComFasterxmlJacksonAnnotationPropertyAccessorEnum_GETTER, NULL,  },
-    { "SETTER", "SETTER", 0x4019, "Lcom.fasterxml.jackson.annotation.PropertyAccessor;", &ComFasterxmlJacksonAnnotationPropertyAccessorEnum_SETTER, NULL,  },
-    { "CREATOR", "CREATOR", 0x4019, "Lcom.fasterxml.jackson.annotation.PropertyAccessor;", &ComFasterxmlJacksonAnnotationPropertyAccessorEnum_CREATOR, NULL,  },
-    { "FIELD", "FIELD", 0x4019, "Lcom.fasterxml.jackson.annotation.PropertyAccessor;", &ComFasterxmlJacksonAnnotationPropertyAccessorEnum_FIELD, NULL,  },
-    { "IS_GETTER", "IS_GETTER", 0x4019, "Lcom.fasterxml.jackson.annotation.PropertyAccessor;", &ComFasterxmlJacksonAnnotationPropertyAccessorEnum_IS_GETTER, NULL,  },
-    { "NONE", "NONE", 0x4019, "Lcom.fasterxml.jackson.annotation.PropertyAccessor;", &ComFasterxmlJacksonAnnotationPropertyAccessorEnum_NONE, NULL,  },
-    { "ALL", "ALL", 0x4019, "Lcom.fasterxml.jackson.annotation.PropertyAccessor;", &ComFasterxmlJacksonAnnotationPropertyAccessorEnum_ALL, NULL,  },
+    { "GETTER", "LComFasterxmlJacksonAnnotationPropertyAccessor;", .constantValue.asLong = 0, 0x4019, -1, 2, -1, -1 },
+    { "SETTER", "LComFasterxmlJacksonAnnotationPropertyAccessor;", .constantValue.asLong = 0, 0x4019, -1, 3, -1, -1 },
+    { "CREATOR", "LComFasterxmlJacksonAnnotationPropertyAccessor;", .constantValue.asLong = 0, 0x4019, -1, 4, -1, -1 },
+    { "FIELD", "LComFasterxmlJacksonAnnotationPropertyAccessor;", .constantValue.asLong = 0, 0x4019, -1, 5, -1, -1 },
+    { "IS_GETTER", "LComFasterxmlJacksonAnnotationPropertyAccessor;", .constantValue.asLong = 0, 0x4019, -1, 6, -1, -1 },
+    { "NONE", "LComFasterxmlJacksonAnnotationPropertyAccessor;", .constantValue.asLong = 0, 0x4019, -1, 7, -1, -1 },
+    { "ALL", "LComFasterxmlJacksonAnnotationPropertyAccessor;", .constantValue.asLong = 0, 0x4019, -1, 8, -1, -1 },
   };
-  static const char *superclass_type_args[] = {"Lcom.fasterxml.jackson.annotation.PropertyAccessor;"};
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationPropertyAccessorEnum = { 2, "PropertyAccessor", "com.fasterxml.jackson.annotation", NULL, 0x4011, 5, methods, 7, fields, 1, superclass_type_args, 0, NULL, NULL, "Ljava/lang/Enum<Lcom/fasterxml/jackson/annotation/PropertyAccessor;>;" };
-  return &_ComFasterxmlJacksonAnnotationPropertyAccessorEnum;
+  static const void *ptrTable[] = { "valueOf", "LNSString;", &JreEnum(ComFasterxmlJacksonAnnotationPropertyAccessor, GETTER), &JreEnum(ComFasterxmlJacksonAnnotationPropertyAccessor, SETTER), &JreEnum(ComFasterxmlJacksonAnnotationPropertyAccessor, CREATOR), &JreEnum(ComFasterxmlJacksonAnnotationPropertyAccessor, FIELD), &JreEnum(ComFasterxmlJacksonAnnotationPropertyAccessor, IS_GETTER), &JreEnum(ComFasterxmlJacksonAnnotationPropertyAccessor, NONE), &JreEnum(ComFasterxmlJacksonAnnotationPropertyAccessor, ALL), "Ljava/lang/Enum<Lcom/fasterxml/jackson/annotation/PropertyAccessor;>;" };
+  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationPropertyAccessor = { "PropertyAccessor", "com.fasterxml.jackson.annotation", ptrTable, methods, fields, 7, 0x4011, 7, 7, -1, -1, -1, 9, -1 };
+  return &_ComFasterxmlJacksonAnnotationPropertyAccessor;
+}
+
++ (void)initialize {
+  if (self == [ComFasterxmlJacksonAnnotationPropertyAccessor class]) {
+    size_t objSize = class_getInstanceSize(self);
+    size_t allocSize = 7 * objSize;
+    uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
+    id e;
+    id names[] = {
+      @"GETTER", @"SETTER", @"CREATOR", @"FIELD", @"IS_GETTER", @"NONE", @"ALL",
+    };
+    for (jint i = 0; i < 7; i++) {
+      (ComFasterxmlJacksonAnnotationPropertyAccessor_values_[i] = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+      ComFasterxmlJacksonAnnotationPropertyAccessor_initWithNSString_withInt_(e, names[i], i);
+    }
+    J2OBJC_SET_INITIALIZED(ComFasterxmlJacksonAnnotationPropertyAccessor)
+  }
 }
 
 @end
 
-void ComFasterxmlJacksonAnnotationPropertyAccessorEnum_initWithNSString_withInt_(ComFasterxmlJacksonAnnotationPropertyAccessorEnum *self, NSString *__name, jint __ordinal) {
+void ComFasterxmlJacksonAnnotationPropertyAccessor_initWithNSString_withInt_(ComFasterxmlJacksonAnnotationPropertyAccessor *self, NSString *__name, jint __ordinal) {
   JavaLangEnum_initWithNSString_withInt_(self, __name, __ordinal);
 }
 
-ComFasterxmlJacksonAnnotationPropertyAccessorEnum *new_ComFasterxmlJacksonAnnotationPropertyAccessorEnum_initWithNSString_withInt_(NSString *__name, jint __ordinal) {
-  ComFasterxmlJacksonAnnotationPropertyAccessorEnum *self = [ComFasterxmlJacksonAnnotationPropertyAccessorEnum alloc];
-  ComFasterxmlJacksonAnnotationPropertyAccessorEnum_initWithNSString_withInt_(self, __name, __ordinal);
-  return self;
+IOSObjectArray *ComFasterxmlJacksonAnnotationPropertyAccessor_values() {
+  ComFasterxmlJacksonAnnotationPropertyAccessor_initialize();
+  return [IOSObjectArray arrayWithObjects:ComFasterxmlJacksonAnnotationPropertyAccessor_values_ count:7 type:ComFasterxmlJacksonAnnotationPropertyAccessor_class_()];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationPropertyAccessorEnum)
+ComFasterxmlJacksonAnnotationPropertyAccessor *ComFasterxmlJacksonAnnotationPropertyAccessor_valueOfWithNSString_(NSString *name) {
+  ComFasterxmlJacksonAnnotationPropertyAccessor_initialize();
+  for (int i = 0; i < 7; i++) {
+    ComFasterxmlJacksonAnnotationPropertyAccessor *e = ComFasterxmlJacksonAnnotationPropertyAccessor_values_[i];
+    if ([name isEqual:[e name]]) {
+      return e;
+    }
+  }
+  @throw create_JavaLangIllegalArgumentException_initWithNSString_(name);
+  return nil;
+}
+
+ComFasterxmlJacksonAnnotationPropertyAccessor *ComFasterxmlJacksonAnnotationPropertyAccessor_fromOrdinal(NSUInteger ordinal) {
+  ComFasterxmlJacksonAnnotationPropertyAccessor_initialize();
+  if (ordinal >= 7) {
+    return nil;
+  }
+  return ComFasterxmlJacksonAnnotationPropertyAccessor_values_[ordinal];
+}
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationPropertyAccessor)

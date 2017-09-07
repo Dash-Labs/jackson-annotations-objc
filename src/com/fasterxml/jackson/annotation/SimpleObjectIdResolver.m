@@ -3,7 +3,6 @@
 //  source: /Users/blangel/projects/3rd-party/jackson-annotations/target/src/com/fasterxml/jackson/annotation/SimpleObjectIdResolver.java
 //
 
-
 #include "IOSClass.h"
 #include "J2ObjC_source.h"
 #include "com/fasterxml/jackson/annotation/ObjectIdGenerator.h"
@@ -15,32 +14,34 @@
 
 @implementation ComFasterxmlJacksonAnnotationSimpleObjectIdResolver
 
+J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
   ComFasterxmlJacksonAnnotationSimpleObjectIdResolver_init(self);
   return self;
 }
+J2OBJC_IGNORE_DESIGNATED_END
 
 - (void)bindItemWithComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey:(ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey *)id_
                                                                   withId:(id)ob {
   if (_items_ == nil) {
-    ComFasterxmlJacksonAnnotationSimpleObjectIdResolver_setAndConsume__items_(self, new_JavaUtilHashMap_init());
+    JreStrongAssignAndConsume(&_items_, new_JavaUtilHashMap_init());
   }
   else if ([_items_ containsKeyWithId:id_]) {
-    @throw [new_JavaLangIllegalStateException_initWithNSString_(JreStrcat("$$$@C", @"Already had POJO for id (", [[nil_chk(((ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey *) nil_chk(id_))->key_) getClass] getName], @") [", id_, ']')) autorelease];
+    @throw create_JavaLangIllegalStateException_initWithNSString_(JreStrcat("$$$@C", @"Already had POJO for id (", [[nil_chk(((ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey *) nil_chk(id_))->key_) java_getClass] getName], @") [", id_, ']'));
   }
   [((id<JavaUtilMap>) nil_chk(_items_)) putWithId:id_ withId:ob];
 }
 
 - (id)resolveIdWithComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey:(ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey *)id_ {
-  return (_items_ == nil) ? nil : [_items_ getWithId:id_];
+  return (_items_ == nil) ? nil : [((id<JavaUtilMap>) nil_chk(_items_)) getWithId:id_];
 }
 
 - (jboolean)canUseForWithComFasterxmlJacksonAnnotationObjectIdResolver:(id<ComFasterxmlJacksonAnnotationObjectIdResolver>)resolverType {
-  return [((id<ComFasterxmlJacksonAnnotationObjectIdResolver>) nil_chk(resolverType)) getClass] == [self getClass];
+  return [((id<ComFasterxmlJacksonAnnotationObjectIdResolver>) nil_chk(resolverType)) java_getClass] == [self java_getClass];
 }
 
 - (id<ComFasterxmlJacksonAnnotationObjectIdResolver>)newForDeserializationWithId:(id)context {
-  return [new_ComFasterxmlJacksonAnnotationSimpleObjectIdResolver_init() autorelease];
+  return create_ComFasterxmlJacksonAnnotationSimpleObjectIdResolver_init();
 }
 
 - (void)dealloc {
@@ -49,17 +50,26 @@
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "init", "SimpleObjectIdResolver", NULL, 0x1, NULL, NULL },
-    { "bindItemWithComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey:withId:", "bindItem", "V", 0x1, NULL, NULL },
-    { "resolveIdWithComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey:", "resolveId", "Ljava.lang.Object;", 0x1, NULL, NULL },
-    { "canUseForWithComFasterxmlJacksonAnnotationObjectIdResolver:", "canUseFor", "Z", 0x1, NULL, NULL },
-    { "newForDeserializationWithId:", "newForDeserialization", "Lcom.fasterxml.jackson.annotation.ObjectIdResolver;", 0x1, NULL, NULL },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, NULL, 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 0, 1, -1, -1, -1, -1 },
+    { NULL, "LNSObject;", 0x1, 2, 3, -1, -1, -1, -1 },
+    { NULL, "Z", 0x1, 4, 5, -1, -1, -1, -1 },
+    { NULL, "LComFasterxmlJacksonAnnotationObjectIdResolver;", 0x1, 6, 7, -1, -1, -1, -1 },
   };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(init);
+  methods[1].selector = @selector(bindItemWithComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey:withId:);
+  methods[2].selector = @selector(resolveIdWithComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey:);
+  methods[3].selector = @selector(canUseForWithComFasterxmlJacksonAnnotationObjectIdResolver:);
+  methods[4].selector = @selector(newForDeserializationWithId:);
+  #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "_items_", NULL, 0x4, "Ljava.util.Map;", NULL, "Ljava/util/Map<Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;Ljava/lang/Object;>;",  },
+    { "_items_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x4, -1, -1, 8, -1 },
   };
-  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationSimpleObjectIdResolver = { 2, "SimpleObjectIdResolver", "com.fasterxml.jackson.annotation", NULL, 0x1, 5, methods, 1, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const void *ptrTable[] = { "bindItem", "LComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey;LNSObject;", "resolveId", "LComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey;", "canUseFor", "LComFasterxmlJacksonAnnotationObjectIdResolver;", "newForDeserialization", "LNSObject;", "Ljava/util/Map<Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;Ljava/lang/Object;>;" };
+  static const J2ObjcClassInfo _ComFasterxmlJacksonAnnotationSimpleObjectIdResolver = { "SimpleObjectIdResolver", "com.fasterxml.jackson.annotation", ptrTable, methods, fields, 7, 0x1, 5, 1, -1, -1, -1, -1, -1 };
   return &_ComFasterxmlJacksonAnnotationSimpleObjectIdResolver;
 }
 
@@ -70,9 +80,11 @@ void ComFasterxmlJacksonAnnotationSimpleObjectIdResolver_init(ComFasterxmlJackso
 }
 
 ComFasterxmlJacksonAnnotationSimpleObjectIdResolver *new_ComFasterxmlJacksonAnnotationSimpleObjectIdResolver_init() {
-  ComFasterxmlJacksonAnnotationSimpleObjectIdResolver *self = [ComFasterxmlJacksonAnnotationSimpleObjectIdResolver alloc];
-  ComFasterxmlJacksonAnnotationSimpleObjectIdResolver_init(self);
-  return self;
+  J2OBJC_NEW_IMPL(ComFasterxmlJacksonAnnotationSimpleObjectIdResolver, init)
+}
+
+ComFasterxmlJacksonAnnotationSimpleObjectIdResolver *create_ComFasterxmlJacksonAnnotationSimpleObjectIdResolver_init() {
+  J2OBJC_CREATE_IMPL(ComFasterxmlJacksonAnnotationSimpleObjectIdResolver, init)
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationSimpleObjectIdResolver)
