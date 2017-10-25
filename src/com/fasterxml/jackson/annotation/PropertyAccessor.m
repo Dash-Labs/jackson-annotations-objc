@@ -89,12 +89,9 @@ ComFasterxmlJacksonAnnotationPropertyAccessor *ComFasterxmlJacksonAnnotationProp
     size_t allocSize = 7 * objSize;
     uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
     id e;
-    id names[] = {
-      @"GETTER", @"SETTER", @"CREATOR", @"FIELD", @"IS_GETTER", @"NONE", @"ALL",
-    };
     for (jint i = 0; i < 7; i++) {
       (ComFasterxmlJacksonAnnotationPropertyAccessor_values_[i] = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
-      ComFasterxmlJacksonAnnotationPropertyAccessor_initWithNSString_withInt_(e, names[i], i);
+      ComFasterxmlJacksonAnnotationPropertyAccessor_initWithNSString_withInt_(e, JreEnumConstantName(ComFasterxmlJacksonAnnotationPropertyAccessor_class_(), i), i);
     }
     J2OBJC_SET_INITIALIZED(ComFasterxmlJacksonAnnotationPropertyAccessor)
   }

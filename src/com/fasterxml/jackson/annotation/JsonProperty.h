@@ -43,12 +43,12 @@
 
 J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonProperty)
 
-inline NSString *ComFasterxmlJacksonAnnotationJsonProperty_get_USE_DEFAULT_NAME();
+inline NSString *ComFasterxmlJacksonAnnotationJsonProperty_get_USE_DEFAULT_NAME(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
 FOUNDATION_EXPORT NSString *ComFasterxmlJacksonAnnotationJsonProperty_USE_DEFAULT_NAME;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(ComFasterxmlJacksonAnnotationJsonProperty, USE_DEFAULT_NAME, NSString *)
 
-inline jint ComFasterxmlJacksonAnnotationJsonProperty_get_INDEX_UNKNOWN();
+inline jint ComFasterxmlJacksonAnnotationJsonProperty_get_INDEX_UNKNOWN(void);
 #define ComFasterxmlJacksonAnnotationJsonProperty_INDEX_UNKNOWN -1
 J2OBJC_STATIC_FIELD_CONSTANT(ComFasterxmlJacksonAnnotationJsonProperty, INDEX_UNKNOWN, jint)
 

@@ -17,7 +17,7 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonTypeInfo__Annotations$0();
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonTypeInfo__Annotations$0(void);
 
 @interface ComFasterxmlJacksonAnnotationJsonTypeInfo_Id () {
  @public
@@ -32,7 +32,7 @@ __attribute__((unused)) static void ComFasterxmlJacksonAnnotationJsonTypeInfo_Id
 
 __attribute__((unused)) static void ComFasterxmlJacksonAnnotationJsonTypeInfo_As_initWithNSString_withInt_(ComFasterxmlJacksonAnnotationJsonTypeInfo_As *self, NSString *__name, jint __ordinal);
 
-__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonTypeInfo_None__Annotations$0();
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonTypeInfo_None__Annotations$0(void);
 
 @implementation ComFasterxmlJacksonAnnotationJsonTypeInfo
 
@@ -267,12 +267,9 @@ ComFasterxmlJacksonAnnotationJsonTypeInfo_As *ComFasterxmlJacksonAnnotationJsonT
     size_t allocSize = 5 * objSize;
     uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
     id e;
-    id names[] = {
-      @"PROPERTY", @"WRAPPER_OBJECT", @"WRAPPER_ARRAY", @"EXTERNAL_PROPERTY", @"EXISTING_PROPERTY",
-    };
     for (jint i = 0; i < 5; i++) {
       (ComFasterxmlJacksonAnnotationJsonTypeInfo_As_values_[i] = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
-      ComFasterxmlJacksonAnnotationJsonTypeInfo_As_initWithNSString_withInt_(e, names[i], i);
+      ComFasterxmlJacksonAnnotationJsonTypeInfo_As_initWithNSString_withInt_(e, JreEnumConstantName(ComFasterxmlJacksonAnnotationJsonTypeInfo_As_class_(), i), i);
     }
     J2OBJC_SET_INITIALIZED(ComFasterxmlJacksonAnnotationJsonTypeInfo_As)
   }

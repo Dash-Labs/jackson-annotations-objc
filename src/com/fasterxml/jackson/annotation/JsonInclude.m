@@ -16,7 +16,7 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonInclude__Annotations$0();
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonInclude__Annotations$0(void);
 
 __attribute__((unused)) static void ComFasterxmlJacksonAnnotationJsonInclude_Include_initWithNSString_withInt_(ComFasterxmlJacksonAnnotationJsonInclude_Include *self, NSString *__name, jint __ordinal);
 
@@ -126,12 +126,9 @@ ComFasterxmlJacksonAnnotationJsonInclude_Include *ComFasterxmlJacksonAnnotationJ
     size_t allocSize = 4 * objSize;
     uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
     id e;
-    id names[] = {
-      @"ALWAYS", @"NON_NULL", @"NON_DEFAULT", @"NON_EMPTY",
-    };
     for (jint i = 0; i < 4; i++) {
       (ComFasterxmlJacksonAnnotationJsonInclude_Include_values_[i] = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
-      ComFasterxmlJacksonAnnotationJsonInclude_Include_initWithNSString_withInt_(e, names[i], i);
+      ComFasterxmlJacksonAnnotationJsonInclude_Include_initWithNSString_withInt_(e, JreEnumConstantName(ComFasterxmlJacksonAnnotationJsonInclude_Include_class_(), i), i);
     }
     J2OBJC_SET_INITIALIZED(ComFasterxmlJacksonAnnotationJsonInclude_Include)
   }

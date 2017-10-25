@@ -14,7 +14,7 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonProperty__Annotations$0();
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonProperty__Annotations$0(void);
 
 NSString *ComFasterxmlJacksonAnnotationJsonProperty_USE_DEFAULT_NAME = @"";
 

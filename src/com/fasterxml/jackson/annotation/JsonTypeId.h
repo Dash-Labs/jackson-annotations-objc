@@ -32,7 +32,7 @@
 
 J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonTypeId)
 
-FOUNDATION_EXPORT id<ComFasterxmlJacksonAnnotationJsonTypeId> create_ComFasterxmlJacksonAnnotationJsonTypeId();
+FOUNDATION_EXPORT id<ComFasterxmlJacksonAnnotationJsonTypeId> create_ComFasterxmlJacksonAnnotationJsonTypeId(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJsonTypeId)
 
