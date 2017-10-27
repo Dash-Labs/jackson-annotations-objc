@@ -18,7 +18,7 @@
 #include "java/util/Locale.h"
 #include "java/util/TimeZone.h"
 
-__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonFormat__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonFormat__Annotations$0();
 
 __attribute__((unused)) static void ComFasterxmlJacksonAnnotationJsonFormat_Shape_initWithNSString_withInt_(ComFasterxmlJacksonAnnotationJsonFormat_Shape *self, NSString *__name, jint __ordinal);
 
@@ -187,9 +187,12 @@ ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJson
     size_t allocSize = 9 * objSize;
     uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
     id e;
+    id names[] = {
+      @"ANY", @"SCALAR", @"ARRAY", @"OBJECT", @"NUMBER", @"NUMBER_FLOAT", @"NUMBER_INT", @"STRING", @"BOOLEAN",
+    };
     for (jint i = 0; i < 9; i++) {
       (ComFasterxmlJacksonAnnotationJsonFormat_Shape_values_[i] = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
-      ComFasterxmlJacksonAnnotationJsonFormat_Shape_initWithNSString_withInt_(e, JreEnumConstantName(ComFasterxmlJacksonAnnotationJsonFormat_Shape_class_(), i), i);
+      ComFasterxmlJacksonAnnotationJsonFormat_Shape_initWithNSString_withInt_(e, names[i], i);
     }
     J2OBJC_SET_INITIALIZED(ComFasterxmlJacksonAnnotationJsonFormat_Shape)
   }

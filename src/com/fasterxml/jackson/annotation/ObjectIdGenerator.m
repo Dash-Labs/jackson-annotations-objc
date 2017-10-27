@@ -14,7 +14,7 @@
 
 @end
 
-inline jlong ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_get_serialVersionUID(void);
+inline jlong ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_get_serialVersionUID();
 #define ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_serialVersionUID 1LL
 J2OBJC_STATIC_FIELD_CONSTANT(ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey, serialVersionUID, jlong)
 

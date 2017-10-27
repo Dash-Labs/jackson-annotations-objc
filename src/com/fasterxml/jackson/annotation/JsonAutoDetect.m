@@ -18,7 +18,7 @@
 #include "java/lang/reflect/Member.h"
 #include "java/lang/reflect/Modifier.h"
 
-__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonAutoDetect__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonAutoDetect__Annotations$0();
 
 __attribute__((unused)) static void ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_initWithNSString_withInt_(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *self, NSString *__name, jint __ordinal);
 
@@ -181,9 +181,12 @@ ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *ComFasterxmlJacksonAnnot
     size_t allocSize = 6 * objSize;
     uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
     id e;
+    id names[] = {
+      @"ANY", @"NON_PRIVATE", @"PROTECTED_AND_PUBLIC", @"PUBLIC_ONLY", @"NONE", @"DEFAULT",
+    };
     for (jint i = 0; i < 6; i++) {
       (ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_values_[i] = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
-      ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_initWithNSString_withInt_(e, JreEnumConstantName(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_class_(), i), i);
+      ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_initWithNSString_withInt_(e, names[i], i);
     }
     J2OBJC_SET_INITIALIZED(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility)
   }

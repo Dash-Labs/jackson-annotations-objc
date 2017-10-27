@@ -15,7 +15,7 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonIdentityInfo__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonIdentityInfo__Annotations$0();
 
 @implementation ComFasterxmlJacksonAnnotationJsonIdentityInfo
 

@@ -16,7 +16,7 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonCreator__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonCreator__Annotations$0();
 
 __attribute__((unused)) static void ComFasterxmlJacksonAnnotationJsonCreator_Mode_initWithNSString_withInt_(ComFasterxmlJacksonAnnotationJsonCreator_Mode *self, NSString *__name, jint __ordinal);
 
@@ -116,9 +116,12 @@ ComFasterxmlJacksonAnnotationJsonCreator_Mode *ComFasterxmlJacksonAnnotationJson
     size_t allocSize = 4 * objSize;
     uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
     id e;
+    id names[] = {
+      @"DEFAULT", @"DELEGATING", @"PROPERTIES", @"DISABLED",
+    };
     for (jint i = 0; i < 4; i++) {
       (ComFasterxmlJacksonAnnotationJsonCreator_Mode_values_[i] = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
-      ComFasterxmlJacksonAnnotationJsonCreator_Mode_initWithNSString_withInt_(e, JreEnumConstantName(ComFasterxmlJacksonAnnotationJsonCreator_Mode_class_(), i), i);
+      ComFasterxmlJacksonAnnotationJsonCreator_Mode_initWithNSString_withInt_(e, names[i], i);
     }
     J2OBJC_SET_INITIALIZED(ComFasterxmlJacksonAnnotationJsonCreator_Mode)
   }
