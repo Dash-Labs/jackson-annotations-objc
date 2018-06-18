@@ -14,7 +14,7 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonUnwrapped__Annotations$0();
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonUnwrapped__Annotations$0(void);
 
 @implementation ComFasterxmlJacksonAnnotationJsonUnwrapped
 
@@ -39,7 +39,15 @@ __attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJson
 }
 
 - (NSString *)description {
-  return @"@com.fasterxml.jackson.annotation.JsonUnwrapped()";
+  return [NSString stringWithFormat:@"@com.fasterxml.jackson.annotation.JsonUnwrapped(enabled=%d, prefix=%@, suffix=%@)", enabled_, prefix_, suffix_];
+}
+
+- (jboolean)isEqual:(id)obj {
+  return JreAnnotationEquals(self, obj);
+}
+
+- (NSUInteger)hash {
+  return JreAnnotationHashCode(self);
 }
 
 - (void)dealloc {
@@ -56,6 +64,7 @@ __attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJson
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(enabled);
   methods[1].selector = @selector(prefix);
   methods[2].selector = @selector(suffix);

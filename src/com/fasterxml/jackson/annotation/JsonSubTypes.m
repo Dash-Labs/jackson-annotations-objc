@@ -14,7 +14,7 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonSubTypes__Annotations$0();
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonSubTypes__Annotations$0(void);
 
 @interface ComFasterxmlJacksonAnnotationJsonSubTypes_Type : NSObject
 
@@ -29,7 +29,15 @@ __attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJson
 }
 
 - (NSString *)description {
-  return @"@com.fasterxml.jackson.annotation.JsonSubTypes()";
+  return [NSString stringWithFormat:@"@com.fasterxml.jackson.annotation.JsonSubTypes(value=%@)", value_];
+}
+
+- (jboolean)isEqual:(id)obj {
+  return JreAnnotationEquals(self, obj);
+}
+
+- (NSUInteger)hash {
+  return JreAnnotationHashCode(self);
 }
 
 - (void)dealloc {
@@ -43,6 +51,7 @@ __attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJson
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(value);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
@@ -76,6 +85,7 @@ J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationJsonSubTypes)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(value);
   methods[1].selector = @selector(name);
   #pragma clang diagnostic pop

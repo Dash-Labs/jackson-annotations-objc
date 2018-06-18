@@ -27,6 +27,10 @@
 @property (readonly) NSString *value;
 @property (readonly) NSString *namespace__;
 
+- (jboolean)isEqual:(id)obj;
+
+- (NSUInteger)hash;
+
 @end
 
 @interface ComFasterxmlJacksonAnnotationJsonRootName : NSObject < ComFasterxmlJacksonAnnotationJsonRootName > {

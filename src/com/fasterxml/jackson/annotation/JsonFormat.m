@@ -18,7 +18,7 @@
 #include "java/util/Locale.h"
 #include "java/util/TimeZone.h"
 
-__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonFormat__Annotations$0();
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonFormat__Annotations$0(void);
 
 __attribute__((unused)) static void ComFasterxmlJacksonAnnotationJsonFormat_Shape_initWithNSString_withInt_(ComFasterxmlJacksonAnnotationJsonFormat_Shape *self, NSString *__name, jint __ordinal);
 
@@ -70,7 +70,15 @@ NSString *ComFasterxmlJacksonAnnotationJsonFormat_DEFAULT_TIMEZONE = @"##default
 }
 
 - (NSString *)description {
-  return @"@com.fasterxml.jackson.annotation.JsonFormat()";
+  return [NSString stringWithFormat:@"@com.fasterxml.jackson.annotation.JsonFormat(pattern=%@, shape=%@, locale=%@, timezone=%@)", pattern_, shape_, locale_, timezone_];
+}
+
+- (jboolean)isEqual:(id)obj {
+  return JreAnnotationEquals(self, obj);
+}
+
+- (NSUInteger)hash {
+  return JreAnnotationHashCode(self);
 }
 
 - (void)dealloc {
@@ -90,6 +98,7 @@ NSString *ComFasterxmlJacksonAnnotationJsonFormat_DEFAULT_TIMEZONE = @"##default
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(pattern);
   methods[1].selector = @selector(shape);
   methods[2].selector = @selector(locale);
@@ -147,10 +156,6 @@ ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJson
   return ComFasterxmlJacksonAnnotationJsonFormat_Shape_valueOfWithNSString_(name);
 }
 
-- (id)copyWithZone:(NSZone *)zone {
-  return self;
-}
-
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
@@ -160,6 +165,7 @@ ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJson
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(isNumeric);
   methods[1].selector = @selector(isStructured);
   methods[2].selector = @selector(values);
@@ -187,12 +193,9 @@ ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJson
     size_t allocSize = 9 * objSize;
     uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
     id e;
-    id names[] = {
-      @"ANY", @"SCALAR", @"ARRAY", @"OBJECT", @"NUMBER", @"NUMBER_FLOAT", @"NUMBER_INT", @"STRING", @"BOOLEAN",
-    };
     for (jint i = 0; i < 9; i++) {
-      (ComFasterxmlJacksonAnnotationJsonFormat_Shape_values_[i] = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
-      ComFasterxmlJacksonAnnotationJsonFormat_Shape_initWithNSString_withInt_(e, names[i], i);
+      ((void)(ComFasterxmlJacksonAnnotationJsonFormat_Shape_values_[i] = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
+      ComFasterxmlJacksonAnnotationJsonFormat_Shape_initWithNSString_withInt_(e, JreEnumConstantName(ComFasterxmlJacksonAnnotationJsonFormat_Shape_class_(), i), i);
     }
     J2OBJC_SET_INITIALIZED(ComFasterxmlJacksonAnnotationJsonFormat_Shape)
   }
@@ -365,6 +368,7 @@ withComFasterxmlJacksonAnnotationJsonFormat_Shape:(ComFasterxmlJacksonAnnotation
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(initWithComFasterxmlJacksonAnnotationJsonFormat:);
   methods[2].selector = @selector(initWithNSString:withComFasterxmlJacksonAnnotationJsonFormat_Shape:withNSString:withNSString:);

@@ -18,7 +18,7 @@
 #include "java/lang/reflect/Member.h"
 #include "java/lang/reflect/Modifier.h"
 
-__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonAutoDetect__Annotations$0();
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonAutoDetect__Annotations$0(void);
 
 __attribute__((unused)) static void ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_initWithNSString_withInt_(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *self, NSString *__name, jint __ordinal);
 
@@ -55,7 +55,15 @@ __attribute__((unused)) static void ComFasterxmlJacksonAnnotationJsonAutoDetect_
 }
 
 - (NSString *)description {
-  return @"@com.fasterxml.jackson.annotation.JsonAutoDetect()";
+  return [NSString stringWithFormat:@"@com.fasterxml.jackson.annotation.JsonAutoDetect(getterVisibility=%@, isGetterVisibility=%@, setterVisibility=%@, creatorVisibility=%@, fieldVisibility=%@)", getterVisibility_, isGetterVisibility_, setterVisibility_, creatorVisibility_, fieldVisibility_];
+}
+
+- (jboolean)isEqual:(id)obj {
+  return JreAnnotationEquals(self, obj);
+}
+
+- (NSUInteger)hash {
+  return JreAnnotationHashCode(self);
 }
 
 - (void)dealloc {
@@ -77,6 +85,7 @@ __attribute__((unused)) static void ComFasterxmlJacksonAnnotationJsonAutoDetect_
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(getterVisibility);
   methods[1].selector = @selector(isGetterVisibility);
   methods[2].selector = @selector(setterVisibility);
@@ -146,10 +155,6 @@ ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *ComFasterxmlJacksonAnnot
   return ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_valueOfWithNSString_(name);
 }
 
-- (id)copyWithZone:(NSZone *)zone {
-  return self;
-}
-
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, "Z", 0x1, 0, 1, -1, -1, -1, -1 },
@@ -158,6 +163,7 @@ ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *ComFasterxmlJacksonAnnot
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(isVisibleWithJavaLangReflectMember:);
   methods[1].selector = @selector(values);
   methods[2].selector = @selector(valueOfWithNSString:);
@@ -181,12 +187,9 @@ ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *ComFasterxmlJacksonAnnot
     size_t allocSize = 6 * objSize;
     uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
     id e;
-    id names[] = {
-      @"ANY", @"NON_PRIVATE", @"PROTECTED_AND_PUBLIC", @"PUBLIC_ONLY", @"NONE", @"DEFAULT",
-    };
     for (jint i = 0; i < 6; i++) {
-      (ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_values_[i] = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
-      ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_initWithNSString_withInt_(e, names[i], i);
+      ((void)(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_values_[i] = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
+      ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_initWithNSString_withInt_(e, JreEnumConstantName(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_class_(), i), i);
     }
     J2OBJC_SET_INITIALIZED(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility)
   }

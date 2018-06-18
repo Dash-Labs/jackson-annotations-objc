@@ -17,7 +17,7 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonTypeInfo__Annotations$0();
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonTypeInfo__Annotations$0(void);
 
 @interface ComFasterxmlJacksonAnnotationJsonTypeInfo_Id () {
  @public
@@ -32,7 +32,7 @@ __attribute__((unused)) static void ComFasterxmlJacksonAnnotationJsonTypeInfo_Id
 
 __attribute__((unused)) static void ComFasterxmlJacksonAnnotationJsonTypeInfo_As_initWithNSString_withInt_(ComFasterxmlJacksonAnnotationJsonTypeInfo_As *self, NSString *__name, jint __ordinal);
 
-__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonTypeInfo_None__Annotations$0();
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonTypeInfo_None__Annotations$0(void);
 
 @implementation ComFasterxmlJacksonAnnotationJsonTypeInfo
 
@@ -63,7 +63,15 @@ __attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJson
 }
 
 - (NSString *)description {
-  return @"@com.fasterxml.jackson.annotation.JsonTypeInfo()";
+  return [NSString stringWithFormat:@"@com.fasterxml.jackson.annotation.JsonTypeInfo(use=%@, include=%@, property=%@, defaultImpl=%@, visible=%d)", use_, include_, property_, defaultImpl_, visible_];
+}
+
+- (jboolean)isEqual:(id)obj {
+  return JreAnnotationEquals(self, obj);
+}
+
+- (NSUInteger)hash {
+  return JreAnnotationHashCode(self);
 }
 
 - (void)dealloc {
@@ -84,6 +92,7 @@ __attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJson
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(use);
   methods[1].selector = @selector(include);
   methods[2].selector = @selector(property);
@@ -138,10 +147,6 @@ ComFasterxmlJacksonAnnotationJsonTypeInfo_Id *ComFasterxmlJacksonAnnotationJsonT
   return ComFasterxmlJacksonAnnotationJsonTypeInfo_Id_valueOfWithNSString_(name);
 }
 
-- (id)copyWithZone:(NSZone *)zone {
-  return self;
-}
-
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
@@ -150,6 +155,7 @@ ComFasterxmlJacksonAnnotationJsonTypeInfo_Id *ComFasterxmlJacksonAnnotationJsonT
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(getDefaultPropertyName);
   methods[1].selector = @selector(values);
   methods[2].selector = @selector(valueOfWithNSString:);
@@ -173,15 +179,15 @@ ComFasterxmlJacksonAnnotationJsonTypeInfo_Id *ComFasterxmlJacksonAnnotationJsonT
     size_t allocSize = 5 * objSize;
     uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
     id e;
-    (JreEnum(ComFasterxmlJacksonAnnotationJsonTypeInfo_Id, NONE) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(ComFasterxmlJacksonAnnotationJsonTypeInfo_Id, NONE) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     ComFasterxmlJacksonAnnotationJsonTypeInfo_Id_initWithNSString_withNSString_withInt_(e, nil, @"NONE", 0);
-    (JreEnum(ComFasterxmlJacksonAnnotationJsonTypeInfo_Id, CLASS) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(ComFasterxmlJacksonAnnotationJsonTypeInfo_Id, CLASS) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     ComFasterxmlJacksonAnnotationJsonTypeInfo_Id_initWithNSString_withNSString_withInt_(e, @"@class", @"CLASS", 1);
-    (JreEnum(ComFasterxmlJacksonAnnotationJsonTypeInfo_Id, MINIMAL_CLASS) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(ComFasterxmlJacksonAnnotationJsonTypeInfo_Id, MINIMAL_CLASS) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     ComFasterxmlJacksonAnnotationJsonTypeInfo_Id_initWithNSString_withNSString_withInt_(e, @"@c", @"MINIMAL_CLASS", 2);
-    (JreEnum(ComFasterxmlJacksonAnnotationJsonTypeInfo_Id, NAME) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(ComFasterxmlJacksonAnnotationJsonTypeInfo_Id, NAME) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     ComFasterxmlJacksonAnnotationJsonTypeInfo_Id_initWithNSString_withNSString_withInt_(e, @"@type", @"NAME", 3);
-    (JreEnum(ComFasterxmlJacksonAnnotationJsonTypeInfo_Id, CUSTOM) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(ComFasterxmlJacksonAnnotationJsonTypeInfo_Id, CUSTOM) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     ComFasterxmlJacksonAnnotationJsonTypeInfo_Id_initWithNSString_withNSString_withInt_(e, nil, @"CUSTOM", 4);
     J2OBJC_SET_INITIALIZED(ComFasterxmlJacksonAnnotationJsonTypeInfo_Id)
   }
@@ -235,10 +241,6 @@ ComFasterxmlJacksonAnnotationJsonTypeInfo_As *ComFasterxmlJacksonAnnotationJsonT
   return ComFasterxmlJacksonAnnotationJsonTypeInfo_As_valueOfWithNSString_(name);
 }
 
-- (id)copyWithZone:(NSZone *)zone {
-  return self;
-}
-
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, "[LComFasterxmlJacksonAnnotationJsonTypeInfo_As;", 0x9, -1, -1, -1, -1, -1, -1 },
@@ -246,6 +248,7 @@ ComFasterxmlJacksonAnnotationJsonTypeInfo_As *ComFasterxmlJacksonAnnotationJsonT
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(values);
   methods[1].selector = @selector(valueOfWithNSString:);
   #pragma clang diagnostic pop
@@ -267,12 +270,9 @@ ComFasterxmlJacksonAnnotationJsonTypeInfo_As *ComFasterxmlJacksonAnnotationJsonT
     size_t allocSize = 5 * objSize;
     uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
     id e;
-    id names[] = {
-      @"PROPERTY", @"WRAPPER_OBJECT", @"WRAPPER_ARRAY", @"EXTERNAL_PROPERTY", @"EXISTING_PROPERTY",
-    };
     for (jint i = 0; i < 5; i++) {
-      (ComFasterxmlJacksonAnnotationJsonTypeInfo_As_values_[i] = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
-      ComFasterxmlJacksonAnnotationJsonTypeInfo_As_initWithNSString_withInt_(e, names[i], i);
+      ((void)(ComFasterxmlJacksonAnnotationJsonTypeInfo_As_values_[i] = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
+      ComFasterxmlJacksonAnnotationJsonTypeInfo_As_initWithNSString_withInt_(e, JreEnumConstantName(ComFasterxmlJacksonAnnotationJsonTypeInfo_As_class_(), i), i);
     }
     J2OBJC_SET_INITIALIZED(ComFasterxmlJacksonAnnotationJsonTypeInfo_As)
   }
@@ -326,6 +326,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LComFasterxmlJacksonAnnotationJsonTypeInfo;", (void *)&ComFasterxmlJacksonAnnotationJsonTypeInfo_None__Annotations$0 };

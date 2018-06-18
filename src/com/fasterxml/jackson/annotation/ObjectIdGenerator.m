@@ -14,7 +14,7 @@
 
 @end
 
-inline jlong ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_get_serialVersionUID();
+inline jlong ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_get_serialVersionUID(void);
 #define ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey_serialVersionUID 1LL
 J2OBJC_STATIC_FIELD_CONSTANT(ComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey, serialVersionUID, jlong)
 
@@ -86,6 +86,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(getScope);
   methods[2].selector = @selector(canUseForWithComFasterxmlJacksonAnnotationObjectIdGenerator:);
@@ -145,6 +146,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationObjectIdGenerator)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithIOSClass:withIOSClass:withId:);
   methods[1].selector = @selector(hash);
   methods[2].selector = @selector(isEqual:);

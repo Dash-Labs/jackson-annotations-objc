@@ -29,6 +29,10 @@
 @property (readonly) IOSClass *resolver;
 @property (readonly) IOSClass *scope;
 
+- (jboolean)isEqual:(id)obj;
+
+- (NSUInteger)hash;
+
 @end
 
 @interface ComFasterxmlJacksonAnnotationJsonIdentityInfo : NSObject < ComFasterxmlJacksonAnnotationJsonIdentityInfo > {

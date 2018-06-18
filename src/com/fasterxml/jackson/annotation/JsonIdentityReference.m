@@ -14,7 +14,7 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonIdentityReference__Annotations$0();
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonIdentityReference__Annotations$0(void);
 
 @implementation ComFasterxmlJacksonAnnotationJsonIdentityReference
 
@@ -29,7 +29,15 @@ __attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJson
 }
 
 - (NSString *)description {
-  return @"@com.fasterxml.jackson.annotation.JsonIdentityReference()";
+  return [NSString stringWithFormat:@"@com.fasterxml.jackson.annotation.JsonIdentityReference(alwaysAsId=%d)", alwaysAsId_];
+}
+
+- (jboolean)isEqual:(id)obj {
+  return JreAnnotationEquals(self, obj);
+}
+
+- (NSUInteger)hash {
+  return JreAnnotationHashCode(self);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -38,6 +46,7 @@ __attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJson
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(alwaysAsId);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {

@@ -16,7 +16,7 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonCreator__Annotations$0();
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonCreator__Annotations$0(void);
 
 __attribute__((unused)) static void ComFasterxmlJacksonAnnotationJsonCreator_Mode_initWithNSString_withInt_(ComFasterxmlJacksonAnnotationJsonCreator_Mode *self, NSString *__name, jint __ordinal);
 
@@ -33,7 +33,15 @@ __attribute__((unused)) static void ComFasterxmlJacksonAnnotationJsonCreator_Mod
 }
 
 - (NSString *)description {
-  return @"@com.fasterxml.jackson.annotation.JsonCreator()";
+  return [NSString stringWithFormat:@"@com.fasterxml.jackson.annotation.JsonCreator(mode=%@)", mode_];
+}
+
+- (jboolean)isEqual:(id)obj {
+  return JreAnnotationEquals(self, obj);
+}
+
+- (NSUInteger)hash {
+  return JreAnnotationHashCode(self);
 }
 
 - (void)dealloc {
@@ -47,6 +55,7 @@ __attribute__((unused)) static void ComFasterxmlJacksonAnnotationJsonCreator_Mod
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(mode);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
@@ -85,10 +94,6 @@ ComFasterxmlJacksonAnnotationJsonCreator_Mode *ComFasterxmlJacksonAnnotationJson
   return ComFasterxmlJacksonAnnotationJsonCreator_Mode_valueOfWithNSString_(name);
 }
 
-- (id)copyWithZone:(NSZone *)zone {
-  return self;
-}
-
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, "[LComFasterxmlJacksonAnnotationJsonCreator_Mode;", 0x9, -1, -1, -1, -1, -1, -1 },
@@ -96,6 +101,7 @@ ComFasterxmlJacksonAnnotationJsonCreator_Mode *ComFasterxmlJacksonAnnotationJson
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(values);
   methods[1].selector = @selector(valueOfWithNSString:);
   #pragma clang diagnostic pop
@@ -116,12 +122,9 @@ ComFasterxmlJacksonAnnotationJsonCreator_Mode *ComFasterxmlJacksonAnnotationJson
     size_t allocSize = 4 * objSize;
     uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
     id e;
-    id names[] = {
-      @"DEFAULT", @"DELEGATING", @"PROPERTIES", @"DISABLED",
-    };
     for (jint i = 0; i < 4; i++) {
-      (ComFasterxmlJacksonAnnotationJsonCreator_Mode_values_[i] = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
-      ComFasterxmlJacksonAnnotationJsonCreator_Mode_initWithNSString_withInt_(e, names[i], i);
+      ((void)(ComFasterxmlJacksonAnnotationJsonCreator_Mode_values_[i] = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
+      ComFasterxmlJacksonAnnotationJsonCreator_Mode_initWithNSString_withInt_(e, JreEnumConstantName(ComFasterxmlJacksonAnnotationJsonCreator_Mode_class_(), i), i);
     }
     J2OBJC_SET_INITIALIZED(ComFasterxmlJacksonAnnotationJsonCreator_Mode)
   }

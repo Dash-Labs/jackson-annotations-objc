@@ -14,7 +14,7 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonTypeId__Annotations$0();
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonTypeId__Annotations$0(void);
 
 @implementation ComFasterxmlJacksonAnnotationJsonTypeId
 
@@ -24,6 +24,14 @@ __attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJson
 
 - (NSString *)description {
   return @"@com.fasterxml.jackson.annotation.JsonTypeId()";
+}
+
+- (jboolean)isEqual:(id)obj {
+  return JreAnnotationEquals(self, obj);
+}
+
+- (NSUInteger)hash {
+  return JreAnnotationHashCode(self);
 }
 
 + (const J2ObjcClassInfo *)__metadata {

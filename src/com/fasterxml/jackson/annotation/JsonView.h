@@ -27,6 +27,10 @@
 
 @property (readonly) IOSObjectArray *value;
 
+- (jboolean)isEqual:(id)obj;
+
+- (NSUInteger)hash;
+
 @end
 
 @interface ComFasterxmlJacksonAnnotationJsonView : NSObject < ComFasterxmlJacksonAnnotationJsonView > {

@@ -28,6 +28,10 @@
 @property (readonly) IOSObjectArray *value;
 @property (readonly) jboolean alphabetic;
 
+- (jboolean)isEqual:(id)obj;
+
+- (NSUInteger)hash;
+
 @end
 
 @interface ComFasterxmlJacksonAnnotationJsonPropertyOrder : NSObject < ComFasterxmlJacksonAnnotationJsonPropertyOrder > {

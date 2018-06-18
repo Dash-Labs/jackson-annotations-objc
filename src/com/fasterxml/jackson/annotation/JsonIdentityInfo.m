@@ -15,7 +15,7 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonIdentityInfo__Annotations$0();
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonIdentityInfo__Annotations$0(void);
 
 @implementation ComFasterxmlJacksonAnnotationJsonIdentityInfo
 
@@ -41,7 +41,15 @@ __attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJson
 }
 
 - (NSString *)description {
-  return @"@com.fasterxml.jackson.annotation.JsonIdentityInfo()";
+  return [NSString stringWithFormat:@"@com.fasterxml.jackson.annotation.JsonIdentityInfo(property=%@, generator=%@, resolver=%@, scope=%@)", property_, generator_, resolver_, scope_];
+}
+
+- (jboolean)isEqual:(id)obj {
+  return JreAnnotationEquals(self, obj);
+}
+
+- (NSUInteger)hash {
+  return JreAnnotationHashCode(self);
 }
 
 - (void)dealloc {
@@ -61,6 +69,7 @@ __attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJson
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(property);
   methods[1].selector = @selector(generator);
   methods[2].selector = @selector(resolver);

@@ -21,6 +21,7 @@
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(bindItemWithComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey:withId:);
   methods[1].selector = @selector(resolveIdWithComFasterxmlJacksonAnnotationObjectIdGenerator_IdKey:);
   methods[2].selector = @selector(newForDeserializationWithId:);

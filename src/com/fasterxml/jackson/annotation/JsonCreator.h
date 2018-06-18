@@ -32,6 +32,10 @@
 
 @property (readonly) ComFasterxmlJacksonAnnotationJsonCreator_Mode *mode;
 
+- (jboolean)isEqual:(id)obj;
+
+- (NSUInteger)hash;
+
 @end
 
 @interface ComFasterxmlJacksonAnnotationJsonCreator : NSObject < ComFasterxmlJacksonAnnotationJsonCreator > {
@@ -65,17 +69,13 @@ typedef NS_ENUM(NSUInteger, ComFasterxmlJacksonAnnotationJsonCreator_Mode_Enum) 
   ComFasterxmlJacksonAnnotationJsonCreator_Mode_Enum_DISABLED = 3,
 };
 
-@interface ComFasterxmlJacksonAnnotationJsonCreator_Mode : JavaLangEnum < NSCopying >
+@interface ComFasterxmlJacksonAnnotationJsonCreator_Mode : JavaLangEnum
 
 #pragma mark Public
 
 + (ComFasterxmlJacksonAnnotationJsonCreator_Mode *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
-
-#pragma mark Package-Private
-
-- (id)copyWithZone:(NSZone *)zone;
 
 @end
 
@@ -84,19 +84,19 @@ J2OBJC_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonCreator_Mode)
 /*! INTERNAL ONLY - Use enum accessors declared below. */
 FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonCreator_Mode *ComFasterxmlJacksonAnnotationJsonCreator_Mode_values_[];
 
-inline ComFasterxmlJacksonAnnotationJsonCreator_Mode *ComFasterxmlJacksonAnnotationJsonCreator_Mode_get_DEFAULT();
+inline ComFasterxmlJacksonAnnotationJsonCreator_Mode *ComFasterxmlJacksonAnnotationJsonCreator_Mode_get_DEFAULT(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonCreator_Mode, DEFAULT)
 
-inline ComFasterxmlJacksonAnnotationJsonCreator_Mode *ComFasterxmlJacksonAnnotationJsonCreator_Mode_get_DELEGATING();
+inline ComFasterxmlJacksonAnnotationJsonCreator_Mode *ComFasterxmlJacksonAnnotationJsonCreator_Mode_get_DELEGATING(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonCreator_Mode, DELEGATING)
 
-inline ComFasterxmlJacksonAnnotationJsonCreator_Mode *ComFasterxmlJacksonAnnotationJsonCreator_Mode_get_PROPERTIES();
+inline ComFasterxmlJacksonAnnotationJsonCreator_Mode *ComFasterxmlJacksonAnnotationJsonCreator_Mode_get_PROPERTIES(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonCreator_Mode, PROPERTIES)
 
-inline ComFasterxmlJacksonAnnotationJsonCreator_Mode *ComFasterxmlJacksonAnnotationJsonCreator_Mode_get_DISABLED();
+inline ComFasterxmlJacksonAnnotationJsonCreator_Mode *ComFasterxmlJacksonAnnotationJsonCreator_Mode_get_DISABLED(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonCreator_Mode, DISABLED)
 
-FOUNDATION_EXPORT IOSObjectArray *ComFasterxmlJacksonAnnotationJsonCreator_Mode_values();
+FOUNDATION_EXPORT IOSObjectArray *ComFasterxmlJacksonAnnotationJsonCreator_Mode_values(void);
 
 FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonCreator_Mode *ComFasterxmlJacksonAnnotationJsonCreator_Mode_valueOfWithNSString_(NSString *name);
 

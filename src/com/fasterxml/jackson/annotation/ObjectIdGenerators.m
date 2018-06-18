@@ -10,11 +10,11 @@
 #include "java/lang/Integer.h"
 #include "java/util/UUID.h"
 
-inline jlong ComFasterxmlJacksonAnnotationObjectIdGenerators_PropertyGenerator_get_serialVersionUID();
+inline jlong ComFasterxmlJacksonAnnotationObjectIdGenerators_PropertyGenerator_get_serialVersionUID(void);
 #define ComFasterxmlJacksonAnnotationObjectIdGenerators_PropertyGenerator_serialVersionUID 1LL
 J2OBJC_STATIC_FIELD_CONSTANT(ComFasterxmlJacksonAnnotationObjectIdGenerators_PropertyGenerator, serialVersionUID, jlong)
 
-inline jlong ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator_get_serialVersionUID();
+inline jlong ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator_get_serialVersionUID(void);
 #define ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator_serialVersionUID 1LL
 J2OBJC_STATIC_FIELD_CONSTANT(ComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator, serialVersionUID, jlong)
 
@@ -24,7 +24,7 @@ J2OBJC_STATIC_FIELD_CONSTANT(ComFasterxmlJacksonAnnotationObjectIdGenerators_Int
 
 @end
 
-inline jlong ComFasterxmlJacksonAnnotationObjectIdGenerators_UUIDGenerator_get_serialVersionUID();
+inline jlong ComFasterxmlJacksonAnnotationObjectIdGenerators_UUIDGenerator_get_serialVersionUID(void);
 #define ComFasterxmlJacksonAnnotationObjectIdGenerators_UUIDGenerator_serialVersionUID 1LL
 J2OBJC_STATIC_FIELD_CONSTANT(ComFasterxmlJacksonAnnotationObjectIdGenerators_UUIDGenerator, serialVersionUID, jlong)
 
@@ -49,6 +49,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LComFasterxmlJacksonAnnotationObjectIdGenerators_Base;LComFasterxmlJacksonAnnotationObjectIdGenerators_None;LComFasterxmlJacksonAnnotationObjectIdGenerators_PropertyGenerator;LComFasterxmlJacksonAnnotationObjectIdGenerators_IntSequenceGenerator;LComFasterxmlJacksonAnnotationObjectIdGenerators_UUIDGenerator;" };
@@ -107,6 +108,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationObjectIdGenerators
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithIOSClass:);
   methods[1].selector = @selector(getScope);
   methods[2].selector = @selector(canUseForWithComFasterxmlJacksonAnnotationObjectIdGenerator:);
@@ -144,6 +146,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LComFasterxmlJacksonAnnotationObjectIdGenerators;", "Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<Ljava/lang/Object;>;" };
@@ -172,6 +175,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonAnnotationObjectIdGenerators
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithIOSClass:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
@@ -239,6 +243,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(initWithIOSClass:withInt:);
   methods[2].selector = @selector(initialValue);
@@ -331,6 +336,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(initWithIOSClass:);
   methods[2].selector = @selector(forScopeWithIOSClass:);

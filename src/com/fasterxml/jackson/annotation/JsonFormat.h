@@ -35,6 +35,10 @@
 @property (readonly) NSString *locale;
 @property (readonly) NSString *timezone;
 
+- (jboolean)isEqual:(id)obj;
+
+- (NSUInteger)hash;
+
 @end
 
 @interface ComFasterxmlJacksonAnnotationJsonFormat : NSObject < ComFasterxmlJacksonAnnotationJsonFormat > {
@@ -49,12 +53,12 @@
 
 J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonFormat)
 
-inline NSString *ComFasterxmlJacksonAnnotationJsonFormat_get_DEFAULT_LOCALE();
+inline NSString *ComFasterxmlJacksonAnnotationJsonFormat_get_DEFAULT_LOCALE(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
 FOUNDATION_EXPORT NSString *ComFasterxmlJacksonAnnotationJsonFormat_DEFAULT_LOCALE;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(ComFasterxmlJacksonAnnotationJsonFormat, DEFAULT_LOCALE, NSString *)
 
-inline NSString *ComFasterxmlJacksonAnnotationJsonFormat_get_DEFAULT_TIMEZONE();
+inline NSString *ComFasterxmlJacksonAnnotationJsonFormat_get_DEFAULT_TIMEZONE(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
 FOUNDATION_EXPORT NSString *ComFasterxmlJacksonAnnotationJsonFormat_DEFAULT_TIMEZONE;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(ComFasterxmlJacksonAnnotationJsonFormat, DEFAULT_TIMEZONE, NSString *)
@@ -86,7 +90,7 @@ typedef NS_ENUM(NSUInteger, ComFasterxmlJacksonAnnotationJsonFormat_Shape_Enum) 
   ComFasterxmlJacksonAnnotationJsonFormat_Shape_Enum_BOOLEAN = 8,
 };
 
-@interface ComFasterxmlJacksonAnnotationJsonFormat_Shape : JavaLangEnum < NSCopying >
+@interface ComFasterxmlJacksonAnnotationJsonFormat_Shape : JavaLangEnum
 
 #pragma mark Public
 
@@ -98,10 +102,6 @@ typedef NS_ENUM(NSUInteger, ComFasterxmlJacksonAnnotationJsonFormat_Shape_Enum) 
 
 + (IOSObjectArray *)values;
 
-#pragma mark Package-Private
-
-- (id)copyWithZone:(NSZone *)zone;
-
 @end
 
 J2OBJC_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonFormat_Shape)
@@ -109,34 +109,34 @@ J2OBJC_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonFormat_Shape)
 /*! INTERNAL ONLY - Use enum accessors declared below. */
 FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_values_[];
 
-inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_ANY();
+inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_ANY(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonFormat_Shape, ANY)
 
-inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_SCALAR();
+inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_SCALAR(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonFormat_Shape, SCALAR)
 
-inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_ARRAY();
+inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_ARRAY(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonFormat_Shape, ARRAY)
 
-inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_OBJECT();
+inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_OBJECT(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonFormat_Shape, OBJECT)
 
-inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_NUMBER();
+inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_NUMBER(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonFormat_Shape, NUMBER)
 
-inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_NUMBER_FLOAT();
+inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_NUMBER_FLOAT(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonFormat_Shape, NUMBER_FLOAT)
 
-inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_NUMBER_INT();
+inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_NUMBER_INT(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonFormat_Shape, NUMBER_INT)
 
-inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_STRING();
+inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_STRING(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonFormat_Shape, STRING)
 
-inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_BOOLEAN();
+inline ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_get_BOOLEAN(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonFormat_Shape, BOOLEAN)
 
-FOUNDATION_EXPORT IOSObjectArray *ComFasterxmlJacksonAnnotationJsonFormat_Shape_values();
+FOUNDATION_EXPORT IOSObjectArray *ComFasterxmlJacksonAnnotationJsonFormat_Shape_values(void);
 
 FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonFormat_Shape *ComFasterxmlJacksonAnnotationJsonFormat_Shape_valueOfWithNSString_(NSString *name);
 
@@ -210,9 +210,9 @@ J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonFormat_Value)
 
 FOUNDATION_EXPORT void ComFasterxmlJacksonAnnotationJsonFormat_Value_init(ComFasterxmlJacksonAnnotationJsonFormat_Value *self);
 
-FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonFormat_Value *new_ComFasterxmlJacksonAnnotationJsonFormat_Value_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonFormat_Value *new_ComFasterxmlJacksonAnnotationJsonFormat_Value_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonFormat_Value *create_ComFasterxmlJacksonAnnotationJsonFormat_Value_init();
+FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonFormat_Value *create_ComFasterxmlJacksonAnnotationJsonFormat_Value_init(void);
 
 FOUNDATION_EXPORT void ComFasterxmlJacksonAnnotationJsonFormat_Value_initWithComFasterxmlJacksonAnnotationJsonFormat_(ComFasterxmlJacksonAnnotationJsonFormat_Value *self, id<ComFasterxmlJacksonAnnotationJsonFormat> ann);
 

@@ -37,6 +37,10 @@
 @property (readonly) IOSClass *defaultImpl;
 @property (readonly) jboolean visible;
 
+- (jboolean)isEqual:(id)obj;
+
+- (NSUInteger)hash;
+
 @end
 
 @interface ComFasterxmlJacksonAnnotationJsonTypeInfo : NSObject < ComFasterxmlJacksonAnnotationJsonTypeInfo > {
@@ -75,7 +79,7 @@ typedef NS_ENUM(NSUInteger, ComFasterxmlJacksonAnnotationJsonTypeInfo_Id_Enum) {
   ComFasterxmlJacksonAnnotationJsonTypeInfo_Id_Enum_CUSTOM = 4,
 };
 
-@interface ComFasterxmlJacksonAnnotationJsonTypeInfo_Id : JavaLangEnum < NSCopying >
+@interface ComFasterxmlJacksonAnnotationJsonTypeInfo_Id : JavaLangEnum
 
 #pragma mark Public
 
@@ -85,10 +89,6 @@ typedef NS_ENUM(NSUInteger, ComFasterxmlJacksonAnnotationJsonTypeInfo_Id_Enum) {
 
 + (IOSObjectArray *)values;
 
-#pragma mark Package-Private
-
-- (id)copyWithZone:(NSZone *)zone;
-
 @end
 
 J2OBJC_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonTypeInfo_Id)
@@ -96,22 +96,22 @@ J2OBJC_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonTypeInfo_Id)
 /*! INTERNAL ONLY - Use enum accessors declared below. */
 FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonTypeInfo_Id *ComFasterxmlJacksonAnnotationJsonTypeInfo_Id_values_[];
 
-inline ComFasterxmlJacksonAnnotationJsonTypeInfo_Id *ComFasterxmlJacksonAnnotationJsonTypeInfo_Id_get_NONE();
+inline ComFasterxmlJacksonAnnotationJsonTypeInfo_Id *ComFasterxmlJacksonAnnotationJsonTypeInfo_Id_get_NONE(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonTypeInfo_Id, NONE)
 
-inline ComFasterxmlJacksonAnnotationJsonTypeInfo_Id *ComFasterxmlJacksonAnnotationJsonTypeInfo_Id_get_CLASS();
+inline ComFasterxmlJacksonAnnotationJsonTypeInfo_Id *ComFasterxmlJacksonAnnotationJsonTypeInfo_Id_get_CLASS(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonTypeInfo_Id, CLASS)
 
-inline ComFasterxmlJacksonAnnotationJsonTypeInfo_Id *ComFasterxmlJacksonAnnotationJsonTypeInfo_Id_get_MINIMAL_CLASS();
+inline ComFasterxmlJacksonAnnotationJsonTypeInfo_Id *ComFasterxmlJacksonAnnotationJsonTypeInfo_Id_get_MINIMAL_CLASS(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonTypeInfo_Id, MINIMAL_CLASS)
 
-inline ComFasterxmlJacksonAnnotationJsonTypeInfo_Id *ComFasterxmlJacksonAnnotationJsonTypeInfo_Id_get_NAME();
+inline ComFasterxmlJacksonAnnotationJsonTypeInfo_Id *ComFasterxmlJacksonAnnotationJsonTypeInfo_Id_get_NAME(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonTypeInfo_Id, NAME)
 
-inline ComFasterxmlJacksonAnnotationJsonTypeInfo_Id *ComFasterxmlJacksonAnnotationJsonTypeInfo_Id_get_CUSTOM();
+inline ComFasterxmlJacksonAnnotationJsonTypeInfo_Id *ComFasterxmlJacksonAnnotationJsonTypeInfo_Id_get_CUSTOM(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonTypeInfo_Id, CUSTOM)
 
-FOUNDATION_EXPORT IOSObjectArray *ComFasterxmlJacksonAnnotationJsonTypeInfo_Id_values();
+FOUNDATION_EXPORT IOSObjectArray *ComFasterxmlJacksonAnnotationJsonTypeInfo_Id_values(void);
 
 FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonTypeInfo_Id *ComFasterxmlJacksonAnnotationJsonTypeInfo_Id_valueOfWithNSString_(NSString *name);
 
@@ -138,17 +138,13 @@ typedef NS_ENUM(NSUInteger, ComFasterxmlJacksonAnnotationJsonTypeInfo_As_Enum) {
   ComFasterxmlJacksonAnnotationJsonTypeInfo_As_Enum_EXISTING_PROPERTY = 4,
 };
 
-@interface ComFasterxmlJacksonAnnotationJsonTypeInfo_As : JavaLangEnum < NSCopying >
+@interface ComFasterxmlJacksonAnnotationJsonTypeInfo_As : JavaLangEnum
 
 #pragma mark Public
 
 + (ComFasterxmlJacksonAnnotationJsonTypeInfo_As *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
-
-#pragma mark Package-Private
-
-- (id)copyWithZone:(NSZone *)zone;
 
 @end
 
@@ -157,22 +153,22 @@ J2OBJC_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonTypeInfo_As)
 /*! INTERNAL ONLY - Use enum accessors declared below. */
 FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonTypeInfo_As *ComFasterxmlJacksonAnnotationJsonTypeInfo_As_values_[];
 
-inline ComFasterxmlJacksonAnnotationJsonTypeInfo_As *ComFasterxmlJacksonAnnotationJsonTypeInfo_As_get_PROPERTY();
+inline ComFasterxmlJacksonAnnotationJsonTypeInfo_As *ComFasterxmlJacksonAnnotationJsonTypeInfo_As_get_PROPERTY(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonTypeInfo_As, PROPERTY)
 
-inline ComFasterxmlJacksonAnnotationJsonTypeInfo_As *ComFasterxmlJacksonAnnotationJsonTypeInfo_As_get_WRAPPER_OBJECT();
+inline ComFasterxmlJacksonAnnotationJsonTypeInfo_As *ComFasterxmlJacksonAnnotationJsonTypeInfo_As_get_WRAPPER_OBJECT(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonTypeInfo_As, WRAPPER_OBJECT)
 
-inline ComFasterxmlJacksonAnnotationJsonTypeInfo_As *ComFasterxmlJacksonAnnotationJsonTypeInfo_As_get_WRAPPER_ARRAY();
+inline ComFasterxmlJacksonAnnotationJsonTypeInfo_As *ComFasterxmlJacksonAnnotationJsonTypeInfo_As_get_WRAPPER_ARRAY(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonTypeInfo_As, WRAPPER_ARRAY)
 
-inline ComFasterxmlJacksonAnnotationJsonTypeInfo_As *ComFasterxmlJacksonAnnotationJsonTypeInfo_As_get_EXTERNAL_PROPERTY();
+inline ComFasterxmlJacksonAnnotationJsonTypeInfo_As *ComFasterxmlJacksonAnnotationJsonTypeInfo_As_get_EXTERNAL_PROPERTY(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonTypeInfo_As, EXTERNAL_PROPERTY)
 
-inline ComFasterxmlJacksonAnnotationJsonTypeInfo_As *ComFasterxmlJacksonAnnotationJsonTypeInfo_As_get_EXISTING_PROPERTY();
+inline ComFasterxmlJacksonAnnotationJsonTypeInfo_As *ComFasterxmlJacksonAnnotationJsonTypeInfo_As_get_EXISTING_PROPERTY(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonTypeInfo_As, EXISTING_PROPERTY)
 
-FOUNDATION_EXPORT IOSObjectArray *ComFasterxmlJacksonAnnotationJsonTypeInfo_As_values();
+FOUNDATION_EXPORT IOSObjectArray *ComFasterxmlJacksonAnnotationJsonTypeInfo_As_values(void);
 
 FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonTypeInfo_As *ComFasterxmlJacksonAnnotationJsonTypeInfo_As_valueOfWithNSString_(NSString *name);
 

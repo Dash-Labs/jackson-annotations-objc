@@ -28,6 +28,10 @@
 @property (readonly) IOSObjectArray *value;
 @property (readonly) jboolean ignoreUnknown;
 
+- (jboolean)isEqual:(id)obj;
+
+- (NSUInteger)hash;
+
 @end
 
 @interface ComFasterxmlJacksonAnnotationJsonIgnoreProperties : NSObject < ComFasterxmlJacksonAnnotationJsonIgnoreProperties > {

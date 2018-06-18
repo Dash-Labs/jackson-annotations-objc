@@ -45,10 +45,6 @@ ComFasterxmlJacksonAnnotationPropertyAccessor *ComFasterxmlJacksonAnnotationProp
   return ComFasterxmlJacksonAnnotationPropertyAccessor_valueOfWithNSString_(name);
 }
 
-- (id)copyWithZone:(NSZone *)zone {
-  return self;
-}
-
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
@@ -61,6 +57,7 @@ ComFasterxmlJacksonAnnotationPropertyAccessor *ComFasterxmlJacksonAnnotationProp
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(creatorEnabled);
   methods[1].selector = @selector(getterEnabled);
   methods[2].selector = @selector(isGetterEnabled);
@@ -89,12 +86,9 @@ ComFasterxmlJacksonAnnotationPropertyAccessor *ComFasterxmlJacksonAnnotationProp
     size_t allocSize = 7 * objSize;
     uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
     id e;
-    id names[] = {
-      @"GETTER", @"SETTER", @"CREATOR", @"FIELD", @"IS_GETTER", @"NONE", @"ALL",
-    };
     for (jint i = 0; i < 7; i++) {
-      (ComFasterxmlJacksonAnnotationPropertyAccessor_values_[i] = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
-      ComFasterxmlJacksonAnnotationPropertyAccessor_initWithNSString_withInt_(e, names[i], i);
+      ((void)(ComFasterxmlJacksonAnnotationPropertyAccessor_values_[i] = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
+      ComFasterxmlJacksonAnnotationPropertyAccessor_initWithNSString_withInt_(e, JreEnumConstantName(ComFasterxmlJacksonAnnotationPropertyAccessor_class_(), i), i);
     }
     J2OBJC_SET_INITIALIZED(ComFasterxmlJacksonAnnotationPropertyAccessor)
   }

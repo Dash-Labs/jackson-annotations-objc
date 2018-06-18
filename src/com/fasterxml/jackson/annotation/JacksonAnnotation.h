@@ -24,6 +24,10 @@
 
 @protocol ComFasterxmlJacksonAnnotationJacksonAnnotation < JavaLangAnnotationAnnotation >
 
+- (jboolean)isEqual:(id)obj;
+
+- (NSUInteger)hash;
+
 @end
 
 @interface ComFasterxmlJacksonAnnotationJacksonAnnotation : NSObject < ComFasterxmlJacksonAnnotationJacksonAnnotation >
@@ -32,7 +36,7 @@
 
 J2OBJC_EMPTY_STATIC_INIT(ComFasterxmlJacksonAnnotationJacksonAnnotation)
 
-FOUNDATION_EXPORT id<ComFasterxmlJacksonAnnotationJacksonAnnotation> create_ComFasterxmlJacksonAnnotationJacksonAnnotation();
+FOUNDATION_EXPORT id<ComFasterxmlJacksonAnnotationJacksonAnnotation> create_ComFasterxmlJacksonAnnotationJacksonAnnotation(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(ComFasterxmlJacksonAnnotationJacksonAnnotation)
 

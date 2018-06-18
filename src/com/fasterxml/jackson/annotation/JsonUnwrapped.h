@@ -28,6 +28,10 @@
 @property (readonly) NSString *prefix;
 @property (readonly) NSString *suffix;
 
+- (jboolean)isEqual:(id)obj;
+
+- (NSUInteger)hash;
+
 @end
 
 @interface ComFasterxmlJacksonAnnotationJsonUnwrapped : NSObject < ComFasterxmlJacksonAnnotationJsonUnwrapped > {

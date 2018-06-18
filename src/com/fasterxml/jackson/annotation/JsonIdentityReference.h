@@ -26,6 +26,10 @@
 
 @property (readonly) jboolean alwaysAsId;
 
+- (jboolean)isEqual:(id)obj;
+
+- (NSUInteger)hash;
+
 @end
 
 @interface ComFasterxmlJacksonAnnotationJsonIdentityReference : NSObject < ComFasterxmlJacksonAnnotationJsonIdentityReference > {

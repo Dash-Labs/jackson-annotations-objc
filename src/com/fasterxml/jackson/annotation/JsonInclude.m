@@ -16,7 +16,7 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonInclude__Annotations$0();
+__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonAnnotationJsonInclude__Annotations$0(void);
 
 __attribute__((unused)) static void ComFasterxmlJacksonAnnotationJsonInclude_Include_initWithNSString_withInt_(ComFasterxmlJacksonAnnotationJsonInclude_Include *self, NSString *__name, jint __ordinal);
 
@@ -38,7 +38,15 @@ __attribute__((unused)) static void ComFasterxmlJacksonAnnotationJsonInclude_Inc
 }
 
 - (NSString *)description {
-  return @"@com.fasterxml.jackson.annotation.JsonInclude()";
+  return [NSString stringWithFormat:@"@com.fasterxml.jackson.annotation.JsonInclude(value=%@, content=%@)", value_, content_];
+}
+
+- (jboolean)isEqual:(id)obj {
+  return JreAnnotationEquals(self, obj);
+}
+
+- (NSUInteger)hash {
+  return JreAnnotationHashCode(self);
 }
 
 - (void)dealloc {
@@ -54,6 +62,7 @@ __attribute__((unused)) static void ComFasterxmlJacksonAnnotationJsonInclude_Inc
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(value);
   methods[1].selector = @selector(content);
   #pragma clang diagnostic pop
@@ -95,10 +104,6 @@ ComFasterxmlJacksonAnnotationJsonInclude_Include *ComFasterxmlJacksonAnnotationJ
   return ComFasterxmlJacksonAnnotationJsonInclude_Include_valueOfWithNSString_(name);
 }
 
-- (id)copyWithZone:(NSZone *)zone {
-  return self;
-}
-
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, "[LComFasterxmlJacksonAnnotationJsonInclude_Include;", 0x9, -1, -1, -1, -1, -1, -1 },
@@ -106,6 +111,7 @@ ComFasterxmlJacksonAnnotationJsonInclude_Include *ComFasterxmlJacksonAnnotationJ
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(values);
   methods[1].selector = @selector(valueOfWithNSString:);
   #pragma clang diagnostic pop
@@ -126,12 +132,9 @@ ComFasterxmlJacksonAnnotationJsonInclude_Include *ComFasterxmlJacksonAnnotationJ
     size_t allocSize = 4 * objSize;
     uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
     id e;
-    id names[] = {
-      @"ALWAYS", @"NON_NULL", @"NON_DEFAULT", @"NON_EMPTY",
-    };
     for (jint i = 0; i < 4; i++) {
-      (ComFasterxmlJacksonAnnotationJsonInclude_Include_values_[i] = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
-      ComFasterxmlJacksonAnnotationJsonInclude_Include_initWithNSString_withInt_(e, names[i], i);
+      ((void)(ComFasterxmlJacksonAnnotationJsonInclude_Include_values_[i] = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
+      ComFasterxmlJacksonAnnotationJsonInclude_Include_initWithNSString_withInt_(e, JreEnumConstantName(ComFasterxmlJacksonAnnotationJsonInclude_Include_class_(), i), i);
     }
     J2OBJC_SET_INITIALIZED(ComFasterxmlJacksonAnnotationJsonInclude_Include)
   }

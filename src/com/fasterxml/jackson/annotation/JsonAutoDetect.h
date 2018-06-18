@@ -36,6 +36,10 @@
 @property (readonly) ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *creatorVisibility;
 @property (readonly) ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *fieldVisibility;
 
+- (jboolean)isEqual:(id)obj;
+
+- (NSUInteger)hash;
+
 @end
 
 @interface ComFasterxmlJacksonAnnotationJsonAutoDetect : NSObject < ComFasterxmlJacksonAnnotationJsonAutoDetect > {
@@ -76,7 +80,7 @@ typedef NS_ENUM(NSUInteger, ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibili
   ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_Enum_DEFAULT = 5,
 };
 
-@interface ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility : JavaLangEnum < NSCopying >
+@interface ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility : JavaLangEnum
 
 #pragma mark Public
 
@@ -86,10 +90,6 @@ typedef NS_ENUM(NSUInteger, ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibili
 
 + (IOSObjectArray *)values;
 
-#pragma mark Package-Private
-
-- (id)copyWithZone:(NSZone *)zone;
-
 @end
 
 J2OBJC_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility)
@@ -97,25 +97,25 @@ J2OBJC_STATIC_INIT(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility)
 /*! INTERNAL ONLY - Use enum accessors declared below. */
 FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_values_[];
 
-inline ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_get_ANY();
+inline ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_get_ANY(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility, ANY)
 
-inline ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_get_NON_PRIVATE();
+inline ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_get_NON_PRIVATE(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility, NON_PRIVATE)
 
-inline ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_get_PROTECTED_AND_PUBLIC();
+inline ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_get_PROTECTED_AND_PUBLIC(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility, PROTECTED_AND_PUBLIC)
 
-inline ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_get_PUBLIC_ONLY();
+inline ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_get_PUBLIC_ONLY(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility, PUBLIC_ONLY)
 
-inline ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_get_NONE();
+inline ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_get_NONE(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility, NONE)
 
-inline ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_get_DEFAULT();
+inline ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_get_DEFAULT(void);
 J2OBJC_ENUM_CONSTANT(ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility, DEFAULT)
 
-FOUNDATION_EXPORT IOSObjectArray *ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_values();
+FOUNDATION_EXPORT IOSObjectArray *ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_values(void);
 
 FOUNDATION_EXPORT ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility *ComFasterxmlJacksonAnnotationJsonAutoDetect_Visibility_valueOfWithNSString_(NSString *name);
 
